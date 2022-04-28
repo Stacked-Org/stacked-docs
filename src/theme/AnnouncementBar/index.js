@@ -37,22 +37,11 @@ export default function AnnouncementBar() {
 
       {/* Custom content */}
       <div
-        className="container flex flex-row text-center justify-between w-screen xl:w-2/3" // Developer provided the HTML, so assume it's safe.
+        className="container flex flex-row text-center justify-start w-screen xl:w-2/3" // Developer provided the HTML, so assume it's safe.
       >
         <Link to={"/"} className="flex flex-row items-center space-x-2 announcement-banner-links">
-          <img src={"img/logo_white.png"} width="25" />
+          <img src={"/img/logo_white.png"} width="25" />
           <p className="font-bold">{siteConfig.organizationName}</p>
-        </Link>
-        <Link
-          className="flex flex-row items-center space-x-2 announcement-banner-links"
-          to={"https://filledstacks.com"}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <p>
-            Deploy <b> Stacked </b> in seconds
-          </p>
-          <FiArrowRight />
         </Link>
       </div>
       {/* End of custom content */}

@@ -18,8 +18,8 @@ export default function Home() {
       <HomepageHeader />
       <main className="bg-white">
         <HomepagePackages />
-        <CompanySlider />
-        <CaseProjects />
+        {/* <CompanySlider /> */}
+        {/* <CaseProjects /> */}
       </main>
     </Layout>
   );
