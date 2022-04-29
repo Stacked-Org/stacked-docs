@@ -1,39 +1,40 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require("prism-react-renderer/themes/github");
+const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  title: "Flutter Stacked Architecture - FilledStacks",
+  tagline: "The perfect community for your mobile app development project",
+  url: "https://your-docusaurus-test-site.com",
+  baseUrl: "/",
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
+  favicon: "img/favicon.ico",
+  organizationName: "FilledStacks", // Usually your GitHub org/user name.
+  projectName: "Stacked Docs", // Usually your repo name.
 
   presets: [
     [
-      'classic',
+      "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl:
+            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
       }),
     ],
@@ -42,77 +43,134 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+        defaultMode: "light",
+        disableSwitch: true,
+        respectPrefersColorScheme: false,
+      },
       navbar: {
-        title: 'My Site',
-        logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
-        },
+        title: "Stacked",
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'Tutorial',
+            type: "doc",
+            docId: "intro",
+            position: "left",
+            label: "Docs",
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
+            position: "left",
+            label: "Tutorials",
+            to: "/blog",
+          },
+          { to: "/blog", label: "Contributions", position: "left" },
+          { to: "/blog", label: "Teams", position: "left" },
+          {
+            to: "https://www.filledstacks.com/",
+            label: "Learn",
+            position: "right",
+            className: "navbar-button",
+          },
+          {
+            to: "https://github.com/FilledStacks/stacked",
+            position: "right",
+            className: "navbar-icon-button",
           },
         ],
       },
+      announcementBar: {
+        id: "announcement-top-header",
+        content:
+          "Custom content" /** content for announcement banner is made manually by importing the react component of docusarus. Found theme/AnnouncementBar folder */,
+        backgroundColor: "black",
+        textColor: "white",
+        isCloseable: false,
+      },
       footer: {
-        style: 'dark',
+        style: "light",
         links: [
           {
-            title: 'Docs',
+            title: "General resources",
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: "Docs",
+                to: "/docs/intro",
+              },
+              {
+                label: "Tutorial",
+                to: "/docs/intro",
+              },
+              {
+                label: "Contribution",
+                to: "/docs/intro",
+              },
+              {
+                label: "Teams",
+                to: "/docs/intro",
               },
             ],
           },
           {
-            title: 'Community',
+            title: "More",
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: "GitHub",
+                to: "https://github.com/FilledStacks/stacked",
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: "Pub.dev",
+                to: "https://pub.dev/packages/stacked",
               },
             ],
           },
           {
-            title: 'More',
+            title: "About FilledStacks",
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
+                label: "Open Source Software",
+                to: "/blog",
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                label: "GitHub",
+                to: "https://github.com/FilledStacks/",
+              },
+            ],
+          },
+          {
+            title: "Legal",
+            items: [
+              {
+                label: "Privacy Policy",
+                to: "/blog",
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        logo: {
+          src: "img/logo.png",
+          width: 34,
+          height: 34,
+        },
+        copyright: `Copyright © ${new Date().getFullYear()} FilledStacks, Inc. All rights reserved.`,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
     }),
+
+  plugins: [
+    async function myPlugin(context, options) {
+      return {
+        name: "docusaurus-tailwindcss",
+        configurePostCss(postcssOptions) {
+          // Appends TailwindCSS and AutoPrefixer.
+          postcssOptions.plugins.push(require("tailwindcss"));
+          postcssOptions.plugins.push(require("autoprefixer"));
+          return postcssOptions;
+        },
+      };
+    },
+  ],
 };
 
 module.exports = config;
