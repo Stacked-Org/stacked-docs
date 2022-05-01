@@ -57,13 +57,13 @@ const config = {
             position: "left",
             label: "Docs",
           },
-          {
-            position: "left",
-            label: "Tutorials",
-            to: "/blog",
-          },
-          { to: "/blog", label: "Contributions", position: "left" },
-          { to: "/blog", label: "Teams", position: "left" },
+          // {
+          //   position: "left",
+          //   label: "Tutorials",
+          //   to: "/blog",
+          // },
+          // { to: "/blog", label: "Contributions", position: "left" },
+          // { to: "/blog", label: "Teams", position: "left" },
           {
             to: "https://www.filledstacks.com/",
             label: "Learn",
