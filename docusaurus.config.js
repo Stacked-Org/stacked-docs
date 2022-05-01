@@ -93,7 +93,7 @@ const config = {
             items: [
               {
                 label: "Docs",
-                to: "/docs",
+                to: "/docs/why-stacked",
               },
               // {
               //   label: "Tutorial",
@@ -127,23 +127,23 @@ const config = {
             items: [
               {
                 label: "Open Source Software",
-                to: "/blog",
+                to: "https://github.com/FilledStacks/stacked",
               },
               {
                 label: "GitHub",
-                to: "https://github.com/FilledStacks/",
+                to: "https://github.com/FilledStacks/stacked",
               },
             ],
           },
-          {
-            title: "Legal",
-            items: [
-              {
-                label: "Privacy Policy",
-                to: "/blog",
-              },
-            ],
-          },
+          // {
+          //   title: "Legal",
+          //   items: [
+          //     {
+          //       label: "Privacy Policy",
+          //       to: "/blog",
+          //     },
+          //   ],
+          // },
         ],
         logo: {
           src: "img/logo.png",
