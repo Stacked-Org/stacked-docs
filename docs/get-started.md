@@ -3,7 +3,7 @@ sidebar_label: "Get Started"
 sidebar_position: 1
 ---
 
-# Get Started
+# Stacked Overview
 
 Before jumping into any code let's do a quick overview of what Stacked is. Stacked is based on a basic MVVM architecture. It consists of 3 major pieces:
 
@@ -28,30 +28,7 @@ Don't worry. No need to remember this. We will remind you of it constantly throu
 
 :::
 
-## Installation
+## Get Started
 
-We start by adding `stacked` to our pubspec.yaml
+Activate the stacked tools
 
-```yaml
-    stacked:
-```
-
-## Basic Usage
-
-Now that we have it installed lets go over the most basic usage of stacked. Binding your View to a ViewModel. We'll start from the beginning which is creating a flutter app. 
-
-:::info
-
-These steps assume that you have everything setup for flutter to run. If you don't follow these [Flutter setup instructions](https://docs.flutter.dev/get-started/install)
-
-:::
-
-### Creating a Flutter app
-
-Run the flutter command
-
-```shell
-flutter create stacked_app
-```
-
-Then you can open this in VS code or your editor of choice.

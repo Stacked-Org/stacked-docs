@@ -21,7 +21,7 @@ const PackagesList = [
         ahead and move your docs into the <code>docs</code> directory.
       </>
     ),
-    link: "/docs/intro",
+    link: "/docs/",
   },
   {
     title: "Powered by React",

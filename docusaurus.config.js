@@ -53,7 +53,7 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "intro",
+            docId: "why-stacked",
             position: "left",
             label: "Docs",
           },
@@ -93,20 +93,20 @@ const config = {
             items: [
               {
                 label: "Docs",
-                to: "/docs/intro",
+                to: "/docs",
               },
-              {
-                label: "Tutorial",
-                to: "/docs/intro",
-              },
-              {
-                label: "Contribution",
-                to: "/docs/intro",
-              },
-              {
-                label: "Teams",
-                to: "/docs/intro",
-              },
+              // {
+              //   label: "Tutorial",
+              //   to: "/docs/intro",
+              // },
+              // {
+              //   label: "Contribution",
+              //   to: "/docs/intro",
+              // },
+              // {
+              //   label: "Teams",
+              //   to: "/docs/",
+              // },
             ],
           },
           {

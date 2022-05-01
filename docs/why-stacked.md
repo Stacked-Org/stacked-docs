@@ -3,7 +3,7 @@ sidebar_label: "Why Stacked"
 sidebar_position: 0
 ---
 
-# What is Stacked
+## What is Stacked
 
 Stacked is a production framework for Flutter. For teams or solo developers that require high quality code, Stacked simplifies the development and maintenance of production ready Flutter applications. [FilledStacks](https://www.youtube.com/filledstacks) is a mobile software development agency with experience using Native, Xamarin and now Flutter to develop over 30 applications for large companies. We know what is required to build big, **scalable**, **testable** and **maintanable applications**, this is the core focus of Stacked.
 
@@ -38,7 +38,7 @@ Stacked is not **ONLY** a Flutter state management solution. It's a Framework bu
 
 We don't have everything ticked off, but in this year (2022) we will be making waves with how easy development with Stacked is.
 
-### Anti-Flutter
+### Pro Flutter
 
 Stacked does not "force flutter to be something else". Stacked simply adds a thin layer of abstraction on top of Flutter to make development, testing and maintenance a first class citizen in your code health. We have abstracted the use of `BuildContext` in cases where it makes sense but we are not against the `BuildContext`. We have 1 simple rule, no UI (framework engine) code in our `ViewModels` and that simple rule is there for a single reason, as soon as you add that in, you take the unit testabillity of your `ViewModels` away. As we've said, unit testing is important to us. We want unit tests, not tests dependent on Flutter to start up. So ... no UI code in your ViewModels.
 
