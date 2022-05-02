@@ -98,7 +98,7 @@ const PackagesList = [
 function Packages({ title, description, link }) {
   return (
     <div className="md:w-1/2 lg:w-1/3 px-2 mb-5">
-      <div className="flex flex-col space-y-4 border rounded-md py-6 px-6 hover:border-transparent hover:shadow-xl transition duration-700 ease-in-out">
+      <div className="flex flex-col space-y-4 rounded-md py-6 px-6 hover:border-transparent hover:shadow-xl transition duration-700 ease-in-out">
         <h3 className="font-bold text-lg">{title}</h3>
         <p className="font-light">{description}</p>
         <Link
@@ -106,7 +106,7 @@ function Packages({ title, description, link }) {
           className="flex flex-row items-center text-purple-500 space-x-3 text-decoration-none hover:no-underline"
         >
           <p>Documentation</p>
-          <FiArrowRight />
+          <FiArrowRight className="-mt-5" />
         </Link>
       </div>
     </div>
