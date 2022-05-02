@@ -14,7 +14,7 @@ export default function Home() {
       description="Stacked gives you a great developer experience with all the features
       you need for production. Navigation, Dependency Injection, Clear
       Docs, Easy setup with a custom cli for easy setup."
-      wrapperClassName="bg-gray-100"
+      wrapperClassName="bg-gray-100 landing-page"
     >
       <HomepageHeader />
       <main className="bg-white">

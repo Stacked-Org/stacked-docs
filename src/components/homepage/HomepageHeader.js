@@ -22,8 +22,8 @@ export default function HomepageHeader() {
         </div>
         <div className="flex flex-row justify-center items-center space-x-3">
           {/* TODO::Updating the license, if it is not MIT */}
-          <p>License: MIT</p>
-          <button className="px-2 py-1 rounded-lg text-purple-500 hover:bg-purple-200">
+          <p className="mt-5">License: MIT</p>
+          <button className="px-4 py-2 rounded-lg text-purple-500 hover:bg-purple-200 border-none">
             GitHub
           </button>
         </div>

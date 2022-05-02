@@ -11,7 +11,6 @@ import { useThemeConfig, useAnnouncementBar } from "@docusaurus/theme-common";
 import { translate } from "@docusaurus/Translate";
 import IconClose from "@theme/IconClose";
 import styles from "./styles.module.css";
-import { FiArrowRight } from "react-icons/fi";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 export default function AnnouncementBar() {
@@ -41,7 +40,7 @@ export default function AnnouncementBar() {
       >
         <Link to={"/"} className="flex flex-row items-center space-x-2 announcement-banner-links">
           <img src={"/img/logo_white.png"} width="25" />
-          <p className="font-bold">{siteConfig.organizationName}</p>
+          <p className="font-bold text-white mt-5">{siteConfig.organizationName}</p>
         </Link>
       </div>
       {/* End of custom content */}
