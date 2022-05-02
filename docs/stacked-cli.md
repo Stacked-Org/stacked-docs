@@ -100,16 +100,16 @@ Underneath your last `MockSpec<T>()` add
 // @stacked-service-mock
 ```
 
-Underneath your last `getAndRegisterService` function add
+Underneath your last `getAndRegisterService` that creates a mock and returns add
 
 ```dart
-// @stacked-mock-helper
+// @stacked-mock-create
 ```
 
 Underneath your last registration in `registerServices` add 
 
 ```dart
-// @stacked-mock-helper-register
+// @stacked-mock-register
 ```
 
 Now you can run `stacked create service myService` and you'll see the files created plus all the registration happens.
