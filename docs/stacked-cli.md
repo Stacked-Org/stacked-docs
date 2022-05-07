@@ -89,7 +89,7 @@ This command creates all the scaffolding to add a new service into the project.
 2. Creates the unit tests file in `test/services/`
 3. Adds the service Mock into the test_helpers and registers it
 
-To allow for #3 we need to know where to add the service Mock, it's registration and its import. Open up your test_helper.dart file and under all the imports add 
+To allow for #3 we need to know where to add the service Mock, it's registration and its import. Open up your test_helpers.dart file and under all the imports add 
 
 ```dart
 // @stacked-import
