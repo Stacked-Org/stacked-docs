@@ -53,7 +53,8 @@ Using the stacked cli in an existing project takes a little bit more effort than
 
 1. You need to have your app file in `lib/app/app.dart`
 2. If you have tests setup as presented in the [unit testing videos](https://youtu.be/5BFlo9k3KNU) your helper file should be `test/helpers/test_helpers.dart`
-3. You tell stacked where to make modifications
+3. Path for services and viewmodels tests should be `test/services` and `test/viewmodels`, respectively.
+4. You tell stacked where to make modifications
 
 The way we know where to add modifications into your code is by reading what we call a **template identifier**. This tells our tools, "At this position you can make a modification". At the moment we only have 2 scaffolding commands:
 
