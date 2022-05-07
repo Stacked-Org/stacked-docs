@@ -64,7 +64,7 @@ This command creates all the scaffolding to add a new view into the project.
 
 1. Creates a new folder with the view name in `lib/ui/views/`
 2. Creates a new view and viewmodel files in `lib/ui/views/viewName/`
-3. Creates the ViewModel tests file in the `test/viewmodel_tests/` folder
+3. Creates the ViewModel tests file in the `test/viewmodels/` folder
 4. Adds the route to the `lib/app/app.dart` file
 
 For us to achieve #4 we need to know where to add the route and its import. To indicate that we use the **template identifiers**. Open your `lib/app/app.dart` file and underneath the last import add
