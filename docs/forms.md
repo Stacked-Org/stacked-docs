@@ -5,87 +5,94 @@ sidebar_position: 4
 
 # Forms
 
-After finishing setting up flutter and stacked (if you didn't setup stacked check out [get-started](get-started.md)), one of the features stacked provides is form handling by connecting form data in view and view model so that business logic and UI are separate and consistent with our goal. 
+After finishing setting up flutter and stacked (if you didn't setup stacked, check out [get-started](get-started.md)), one of the features stacked provides is form handling. We automatically sync the values from the controller with the ViewModel, reducing the amount of boilerplate required to manage forms.
+ 
 
 ## Form Setup
 
-Before generating methods for handling the controllers and validation messages. You need to tell the generator what your form has. And to tell the generator we use [annotations](https://medium.com/swlh/dart-annotations-a-simple-intro-to-reflection-c654275cc967). 
+To make use of the form functionality, we use the `@FormView` annotaton on the View that contains the form. It will tell the generator what to include when generating. So, before generating methods for handling the controllers and validation messages, You must inform the generator of the contents of the form.
 
-Go into the view file and At the top of your class add
+Go into the file containing the form and At the top of your class, add
 
 ```dart
 @FormView(fields: [])
 ```
 
-`fields` accepts Lists of `FormField` which can be:
+`fields` accepts a list of `FormField` types, and `FormTextField` is one of the types for `FormField`.
 
-- **FormTextField** 
-- **FormDateField** 
-- **FormDropdownField** 
+A **FormTextField** requires a name. Controllers and FocusNodes will be created using this name.
 
-Each of the items above accepts name which is required to generate an appropriate controllers and keys 
+:::tip Example
 
-As an example let's assume you have a folder named `sign_in` which has `sign_in_view.dart` and `sign_in_viewmodel.dart` on your sign_in_view it has two textfields username and password your annotaion will look like
+Let's assume you have a folder named `sign_in` which has `sign_in_view.dart` and `sign_in_viewmodel.dart`. In your `sign_in_view` file, it has two textfields, username and password. Your annotation will look like this:
 
 ```dart
 @FormView(fields: [
     FormTextField(name: 'username'),
     FormTextField(name: 'password'),
 ])
+class SignInView extends StatlessWidget{
+    ...
 ```
+:::
 
 ## Form Generating
 
-After adding the annotation go on your terminal and run 
+After adding the annotation, go to your terminal and run 
 
 ```shell
 flutter pub run build_runner build --delete-conflicting-outputs
 ```
 
 
-The command will generate a `sign_in_view.form.dart` which has a mixin `$SignInView` holding TextEditingControllers, FocusNodes and extensions to set validation messages 
+The command will generate a `[form_file_name].form.dart` which has a mixin holding TextEditingControllers, FocusNodes, and extensions to set validation messages. 
 
-in the previous example it will generate
+:::tip In the previous example it will generate
 
-TextEditingControllers:
-- **usernameController** 
-- **passwordController** 
+* TextEditingControllers:
+  * usernameController
+  * passwordController 
   
-FocusNodes:
-- **usernameFocusNode** 
-- **passwordFocusNode** 
+* FocusNodes:
+  * usernameFocusNode 
+  * passwordFocusNode 
 
-but your other two files won't know about it. so you have to connect them. 
+:::
 
 ## Connecting Generated File with View and Viewmodel
 
-On your view import the newly generated file `sign_in_view.form.dart` and extend the mixin generated.  
+In your view, import the newly generated file `[form_file_name].form.dart`, and extend the mixin generated.  
 
-continuing from the example above it will be like
 
 ```dart
-import 'sign_in_view.form.dart';
+import '[form_file_name].form.dart';
 ...
-class SignInView extends StatlessWidget with $SignInView{
+class [FormFileName]View extends StatlessWidget with $[FormFileName]View{
 ```
 
-to listen to text editing controller's change you must call listenToFormUpdated after your model is ready;
+To automatically sync the controllers with the ViewModels, you must call listenToFormUpdated in onModelReady and pass it the model.
 
 ```dart
-import 'sign_in_view.form.dart';
 ...
-onModelReady: (viewmodel)=>listenToFormUpdated(viewmodel)
-...
+@override
+  Widget build(BuildContext context) {
+    return ViewModelBuilder<[FormFileName]ViewModel>.reactive(
+      onModelReady: (viewModel) {
+        // #3: Listen to text updates
+        listenToFormUpdated(viewModel);
+      },
+      builder: (context, viewModel, child) {
+          ...
+      }
 ```
 
-and on your viewmodel import the generated file and change BaseViewModel or AnyViewModel to FormViewModel to access the values of the controllers and set data's from the view model.
-
-continuing from the example above it will be like
+ The `listenToFormUpdated` function expects a `FormViewModel` so you can open the ViewModel for your file and extend from a `FormViewModel`
 
 ```dart
-import 'sign_in_view.form.dart';
 ...
-class SignInViewModel extends FormViewModel {
+class [FormFileName]ViewModel extends FormViewModel {
+    ...
+}
 ```
 
 ## Form Validation
@@ -94,9 +101,14 @@ To use form validation on your TextEditingControllers you can supply your own cu
 
 ```dart
 
-String? passwordValidator(String? value){
-    if(value==null||value.isEmpty) return 'Password is Required';
-    if(value.length<6) return 'Password Must be greater than 6 characters';
+String? passwordValidator(String value) {
+     if(value.isEmpty) {
+         return 'Password is Required';
+     }
+     if(value.length < 6) {
+         return 'Password Must be greater than 6 characters';
+     }
+     return null;
 }
 
 @FormView(fields: [
@@ -106,11 +118,11 @@ String? passwordValidator(String? value){
     ),
 ])
 ```
-don't forget to run `flutter pub run build_runner build --delete-conflicting-outputs` to update the generated file.
+Don't forget to run `flutter pub run build_runner build --delete-conflicting-outputs` to update the generated file.
 
-Underneath the validator you supplied will be called on every action on the text field and assign the String you supplied to the validation message if the conditions are not met.
+The validator is executed for every character and the value returned is stored in [field_name]ValidationMessage. In addition to that, there's also a boolean value called has[field_name]ValidationMessage that indicates if a validation message is present.
 
-To access the validation message you can use `viewModel.passwordValidationMessage` since validationMessage is generated for every controller and a boolean to check if the variable is empty or not.
+The common way to conditionally show a validation message is to make use of the boolean mentioned above and the validation message value. See an example below.
 
 ```dart
 if (viewModel.hasPasswordValidationMessage)
