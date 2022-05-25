@@ -97,7 +97,7 @@ class [FormFileName]ViewModel extends FormViewModel {
 
 ## Form Validation
 
-To use form validation on your TextEditingControllers you can supply your own custom unit testable validator inside `FormTextField`
+To use form validation on your TextEditingControllers you can supply your own custom unit testable validator inside `FormTextField`. Validator inside `FormTextField` expects a method that takes a String and returns a nullable String.
 
 ```dart
 
