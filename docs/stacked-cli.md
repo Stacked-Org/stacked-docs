@@ -1,4 +1,5 @@
 ---
+id: stacked-cli
 sidebar_label: "Stacked Cli"
 sidebar_position: 3
 ---

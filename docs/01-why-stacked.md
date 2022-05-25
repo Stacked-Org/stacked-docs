@@ -1,4 +1,5 @@
 ---
+id: why-stacked
 sidebar_label: "Why Stacked"
 sidebar_position: 0
 ---
