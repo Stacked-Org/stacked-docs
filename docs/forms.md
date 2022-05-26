@@ -10,9 +10,7 @@ After finishing setting up flutter and stacked (if you didn't setup stacked, che
 
 ## Form Setup
 
-To make use of the form functionality, we use the `@FormView` annotaton on the View that contains the form. It will tell the generator what to include when generating. So, before generating methods for handling the controllers and validation messages, You must inform the generator of the contents of the form.
-
-Go into the file containing the form and At the top of your class, add
+To make use of the form functionality, we use the `@FormView` annotaton on the View that contains the form. It will tell the generator what to include when generating. Go into the file containing the form and At the top of your class, add
 
 ```dart
 @FormView(fields: [])
@@ -20,11 +18,7 @@ Go into the file containing the form and At the top of your class, add
 
 `fields` accepts a list of `FormField` types, and `FormTextField` is one of the types for `FormField`.
 
-A **FormTextField** requires a name. Controllers and FocusNodes will be created using this name.
-
-:::tip Example
-
-Let's assume you have a folder named `sign_in` which has `sign_in_view.dart` and `sign_in_viewmodel.dart`. In your `sign_in_view` file, it has two textfields, username and password. Your annotation will look like this:
+A **FormTextField** requires a name. A controllers and FocusNodes will be created using this name. Let's assume you have a folder named `sign_in` which has `sign_in_view.dart` and `sign_in_viewmodel.dart`. In your `sign_in_view` file, it has two textfields, username and password. Your annotation will look like this:
 
 ```dart
 @FormView(fields: [
@@ -34,7 +28,6 @@ Let's assume you have a folder named `sign_in` which has `sign_in_view.dart` and
 class SignInView extends StatlessWidget{
     ...
 ```
-:::
 
 ## Form Generating
 
@@ -45,9 +38,9 @@ flutter pub run build_runner build --delete-conflicting-outputs
 ```
 
 
-The command will generate a `[form_file_name].form.dart` which has a mixin holding TextEditingControllers, FocusNodes, and extensions to set validation messages. 
+The command will generate a `sign_in_view.form.dart` which has a mixin holding TextEditingControllers, FocusNodes, and extensions to set validation messages. 
 
-:::tip In the previous example it will generate
+**In the previous example it will generate**
 
 * TextEditingControllers:
   * usernameController
@@ -57,17 +50,16 @@ The command will generate a `[form_file_name].form.dart` which has a mixin holdi
   * usernameFocusNode 
   * passwordFocusNode 
 
-:::
 
 ## Connecting Generated File with View and Viewmodel
 
-In your view, import the newly generated file `[form_file_name].form.dart`, and extend the mixin generated.  
+In your view, import the newly generated file `sign_in_view.form.dart`, and extend the mixin generated.  
 
 
 ```dart
-import '[form_file_name].form.dart';
+import 'sign_in_view.form.dart';
 ...
-class [FormFileName]View extends StatlessWidget with $[FormFileName]View{
+class SignInView extends StatlessWidget with $SignInView{
 ```
 
 To automatically sync the controllers with the ViewModels, you must call listenToFormUpdated in onModelReady and pass it the model.
@@ -76,9 +68,8 @@ To automatically sync the controllers with the ViewModels, you must call listenT
 ...
 @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder<[FormFileName]ViewModel>.reactive(
+    return ViewModelBuilder<SignInViewModel>.reactive(
       onModelReady: (viewModel) {
-        // #3: Listen to text updates
         listenToFormUpdated(viewModel);
       },
       builder: (context, viewModel, child) {
@@ -90,14 +81,14 @@ To automatically sync the controllers with the ViewModels, you must call listenT
 
 ```dart
 ...
-class [FormFileName]ViewModel extends FormViewModel {
+class SignInViewModel extends FormViewModel {
     ...
 }
 ```
 
 ## Form Validation
 
-To use form validation on your TextEditingControllers you can supply your own custom unit testable validator inside `FormTextField`. Validator inside `FormTextField` expects a method that takes a String and returns a nullable String.
+To use form validation on your TextEditingControllers you can supply your own custom unit testable validator inside `FormTextField`. The validator property on `FormTextField` expects a method that takes a String and returns a nullable String.
 
 ```dart
 
