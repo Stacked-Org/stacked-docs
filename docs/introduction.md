@@ -1,6 +1,6 @@
 ---
 id: introduction
-sidebar_label: "What is Stacked"
+sidebar_label: "Introduction"
 sidebar_position: 0
 ---
 
