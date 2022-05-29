@@ -1,12 +1,12 @@
 ---
-id: why-stacked
-sidebar_label: "Why Stacked"
+id: introduction
+sidebar_label: "What is Stacked"
 sidebar_position: 0
 ---
 
-## What is Stacked
+# Introduction
 
-Stacked is a production framework for Flutter. For teams or solo developers that require high quality code, Stacked simplifies the development and maintenance of production ready Flutter applications. [FilledStacks](https://www.youtube.com/filledstacks) is a mobile software development agency with experience using Native, Xamarin and now Flutter to develop over 30 applications for large companies. We know what is required to build big, **scalable**, **testable** and **maintanable applications**, this is the core focus of Stacked.
+Stacked is a production framework for Flutter. For teams or solo developers that require high quality code, Stacked simplifies the development and maintenance of production ready Flutter applications. Built by [FilledStacks](https://www.youtube.com/filledstacks), a mobile software development agency with experience using Native iOS and Android, Xamarin and now Flutter has build over 30 applications. We know what is required to build big, **scalable**, **testable** and **maintanable applications**, this is the core focus of Stacked.
 
 - **Scalable**: Stacked is built to make your team scalable and keep your productivity high. With good code conventions and a strong opinion on how to develop functionality, you or your team will have a clear guide around adding and maintaining features.
 
@@ -27,20 +27,20 @@ Like what you hear? [Get Started](get-started.md) and start building
 
 ## What is Stacked Not
 
-### State Management
+### ONLY State Management
 
 Stacked is not **ONLY** a Flutter state management solution. It's a Framework built ontop of Flutter. It provides all the building blocks for the basics that you would require, built in a way that makes Flutter more fun and even easier to use. What exactly makes stacked a Framework? There are a few things you need to technically qualify as a Framework.
 
 - **Routing** :white_check_mark:
 - **State Management** :white_check_mark: :fire:
-- **Devtools**: In Progress :man-running:
+- **Devtools**: :white_check_mark:
+- **Documentation**: Right here :white_check_mark:
 - **IDE Support**: In Progress :woman-running:
-- **Documentation**: Right here :eyes:
 
-We don't have everything ticked off, but in this year (2022) we will be making waves with how easy development with Stacked is.
+We don't have everything ticked off, but in this year (2022) we will be pushing hard to get it done.
 
 ### Pro Flutter
 
-Stacked does not "force flutter to be something else". Stacked simply adds a thin layer of abstraction on top of Flutter to make development, testing and maintenance a first class citizen in your code health. We have abstracted the use of `BuildContext` in cases where it makes sense but we are not against the `BuildContext`. We have 1 simple rule, no UI (framework engine) code in our `ViewModels` and that simple rule is there for a single reason, as soon as you add that in, you take the unit testabillity of your `ViewModels` away. As we've said, unit testing is important to us. We want unit tests, not tests dependent on Flutter to start up. So ... no UI code in your ViewModels.
+Stacked does not "force flutter to be something else". Stacked simply adds a thin layer of abstraction on top of Flutter to make development, testing and maintenance a first class citizen in your code health. We have abstracted the use of `BuildContext` in cases where it makes sense but we are not against the `BuildContext`. We have 1 simple rule, no UI (Flutter framework) code in our `ViewModels` and that simple rule is there for a single reason, as soon as you add that in, you take the unit testabillity of your `ViewModels` away. As we've said, unit testing is important to us. We want unit tests, not tests dependent on Flutter to start up. So ... no UI code in your ViewModels.
 
-Stacked is built for Flutter, using Flutter and we think it's the best way to develop and scale code bases for mobile applications.
+Stacked is built for Flutter, using Flutter and we think it's the best way to develop and scale code bases for Flutter applications.

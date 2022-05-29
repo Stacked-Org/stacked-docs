@@ -53,7 +53,7 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "why-stacked",
+            docId: "introduction",
             position: "left",
             label: "Docs",
           },
