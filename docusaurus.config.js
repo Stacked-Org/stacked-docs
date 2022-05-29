@@ -93,7 +93,7 @@ const config = {
             items: [
               {
                 label: "Docs",
-                to: "/docs/why-stacked",
+                to: "/docs/introduction",
               },
               // {
               //   label: "Tutorial",
