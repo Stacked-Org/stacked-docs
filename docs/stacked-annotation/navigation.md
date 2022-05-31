@@ -1,7 +1,7 @@
 ---
 id: navigation
-sidebar_label: "Navigation"
-sidebar_position: 3
+title: "Navigation"
+sidebar_position: 1
 ---
 
 # Navigation
