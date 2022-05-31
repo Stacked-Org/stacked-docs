@@ -1,6 +1,7 @@
 ---
-sidebar_label: "Forms"
-sidebar_position: 4
+id: forms
+title: "Forms"
+sidebar_position: 3
 ---
 
 # Forms

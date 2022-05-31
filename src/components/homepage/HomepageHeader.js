@@ -16,7 +16,7 @@ export default function HomepageHeader() {
           </p>
         </div>
         <div className="flex flex-row justify-center space-x-10">
-          <Link to="/docs/introduction" className="bg-purple-500 text-white rounded-lg px-6 md:px-16 py-3 shadow-xl shadow-purple-200 hover:text-purple-500 hover:bg-white hover:border-purple-500 transition duration-700 ease-in-out">
+          <Link to="/docs/getting-started/introduction" className="bg-purple-500 text-white rounded-lg px-6 md:px-16 py-3 shadow-xl shadow-purple-200 hover:text-purple-500 hover:bg-white hover:border-purple-500 transition duration-700 ease-in-out">
             Start Learning
           </Link>
         </div>
