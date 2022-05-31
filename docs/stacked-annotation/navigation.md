@@ -38,7 +38,7 @@ To generate your new router. This will be automatically done for you when you cr
 
 ## Navigating to a Route
 
-_If you've followed along from [Introduction](introduction) then you can continue. If not, run `stacked create app my_first_app`. cd into the my_first_app repo and run `flutter create view login`_
+_If you've followed along from [Introduction](../getting-started/introduction.md) then you can continue. If not, run `stacked create app my_first_app`. cd into the my_first_app repo and run `flutter create view login`_
 
 To perform a navigation you need to do 2 things:
 1. Import the `NavigationService`

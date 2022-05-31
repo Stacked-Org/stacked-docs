@@ -6,7 +6,7 @@ sidebar_position: 3
 
 # Forms
 
-After finishing setting up flutter and stacked (if you didn't setup stacked, check out [get-started](get-started.md)), one of the features stacked provides is form handling. We automatically sync the values from the controller with the ViewModel, reducing the amount of boilerplate required to manage forms.
+After finishing setting up flutter and stacked (if you didn't setup stacked, check out [get-started](../getting-started/get-started.md)), one of the features stacked provides is form handling. We automatically sync the values from the controller with the ViewModel, reducing the amount of boilerplate required to manage forms.
  
 
 ## Form Setup
