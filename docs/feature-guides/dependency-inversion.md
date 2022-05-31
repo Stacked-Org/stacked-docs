@@ -1,6 +1,6 @@
 ---
-id: dependency-registeration
-title: "Dependency Registration"
+id: dependency-inversion
+title: "Dependency Inversion"
 sidebar_position: 4
 ---
 

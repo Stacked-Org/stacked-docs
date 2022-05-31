@@ -1,10 +1,16 @@
 ---
-id: stacked-app
-title: Stacked App
+id: stacked-setup
+title: Stacked Setup
 sidebar_position: 0
 ---
 
 ## Application Setup
+
+:::info Non cli users
+
+If you generated your app with the cli then this doesn't apply. 
+
+:::
 
 In addition to providing state management it's been clear that every stacked application also requires the following functionality:
 
@@ -12,7 +18,7 @@ In addition to providing state management it's been clear that every stacked app
 - Dependency registration for service location
 - A Logger formatted to improve code maintenance and awareness of application inner workings
 
-From v 1.9.0 and onward we have the functionality to generate this code for the user. This will remove the reliance on auto_route as well as injectable. To use this functionality it's quite simple. Add the [stacked_generator] package to your application and if you don't have `build_runner` add that in as well.
+To use this functionality it's quite simple, add the [stacked_generator] package to your application and if you don't have `build_runner` add that in as well.
 
 ```yaml
 dev_dependencies:
@@ -30,4 +36,4 @@ class App {
 }
 ```
 
-In that file we define a class called App and we annotate it with `StackedApp`. This annotation class takes in `routes` and `dependencies`.
+In that file we define a class called App and we annotate it with `StackedApp`. This annotation class takes in `routes` and `dependencies`. This is all generated for you when you create an app with the cli.

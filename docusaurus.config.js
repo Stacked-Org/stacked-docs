@@ -91,22 +91,7 @@ const config = {
           {
             title: "General resources",
             items: [
-              // {
-              //   label: "Docs",
-              //   to: "/docs/Getting Started/get-started - Getting Started/introduction",
-              // },
-              // {
-              //   label: "Tutorial",
-              //   to: "/docs/intro",
-              // },
-              // {
-              //   label: "Contribution",
-              //   to: "/docs/intro",
-              // },
-              // {
-              //   label: "Teams",
-              //   to: "/docs/",
-              // },
+     
             ],
           },
           {
