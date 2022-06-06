@@ -1,10 +1,10 @@
 ---
-id: navigation
-title: "Navigation"
+id: navigation-basics
+title: "Navigation Basics"
 sidebar_position: 1
 ---
 
-# Navigation
+# Navigation Basics
 
 Stacked has a navigation system setup that relies on code generation and navigator 1.0 functionality. Navigation funtionality is accessible through a service called `NavigationService`. The reason it's wrapped in a service is to allow it to be used where yout business logic makes those navigation decisions. This also makes it mockable and thus, unit testable. 
 
