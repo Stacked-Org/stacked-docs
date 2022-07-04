@@ -4,7 +4,7 @@ sidebar_label: "Stacked Cli"
 sidebar_position: 5
 ---
 
-# Stacked Cli [![Pub Version](https://img.shields.io/pub/v/stacked_cli)](https://pub.dev/packages/stacked_cli)
+# Stacked Cli [![Pub Version](https://img.shields.io/pub/v/stacked_cli)](https://pub.dev/packages/stacked_tools)
 
 The stacked cli is apart of the `stacked_tools` package. This CLI is made to speed up the development using the stacked framework.
 
