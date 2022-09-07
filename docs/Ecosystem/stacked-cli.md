@@ -87,9 +87,18 @@ This command creates all the scaffolding to add a new service into the project.
 
 1. Creates a new service file in `lib/services/`
 2. Creates the unit tests file in `test/services/`
-3. Adds the service Mock into the test_helpers and registers it
+3. Registers the service with your `StackedApp`
+4. Adds the service Mock into the test_helpers and registers it
 
-To allow for #3 we need to know where to add the service Mock, it's registration and its import. Open up your test_helper.dart file and under all the imports add 
+To allow for #3 we need to add the identifier to our file that contains our dependency registrations. Open up your file that contains your `StackedApp` and add 
+
+```dart
+// @stacked-service
+```
+
+Under the last dependency registration.
+
+To allow for #4 we need to know where to add the service Mock, it's registration and its import. Open up your test_helper.dart file and under all the imports add 
 
 ```dart
 // @stacked-import
@@ -98,7 +107,7 @@ To allow for #3 we need to know where to add the service Mock, it's registration
 Underneath your last `MockSpec<T>()` add
 
 ```dart
-// @stacked-service-mock
+// @stacked-mock-spec
 ```
 
 Underneath your last `getAndRegisterService` that creates a mock and returns add
@@ -122,9 +131,11 @@ If you want to use stacked_tools in a package that doesn't fit the structure tha
 - `views_path`: The relative path where views and viewmodels will be generated. The default value is: `lib/ui/views`
 - `services_path`: The relative path where services will be generated. The default value is: `lib/services`
 - `stacked_app_path`: The relative path to the file that contains the `StackedApp` setup. The default value is: `lib/app/app.dart`
-- `test_helpers_path`: The relative path to where the `test_helpers.dart` file can be located. Default: `test/helpers`
+- `test_helpers_path`: The relative path to the file that contains the test_helpers (mocks, registerService, etc). Default: `test/helpers/test_helpers.dart`
 - `test_services_path`: The relative path to where the service's unit tests will be generated. Default: `test/services`
 - `test_views_path`: The relative path to where the viewmodel's unit tests will be generated. Default: `test/viewmodels`
+- `locator_name`: The name of the locator that mock services are registered on. This is used when creating a new service using the `create service` command. Default: `locator`
+- `register_mocks_function`: The name of the function that registers all the mocks when running a test. This is used when generating a test file during `create service` command. Default: `registerServices`
 
 Only included the paths you want to use. If you exclude one the default value will be used for it. 
 
@@ -135,8 +146,10 @@ Only included the paths you want to use. If you exclude one the default value wi
     "views_path" : "lib/ui/views",
     "services_path" : "lib/services",
     "stacked_app_path" : "lib/app/app.dart",
-    "test_helpers_path" : "test/helpers",
+    "test_helpers_path" : "test/helpers/test_helpers.dart",
     "test_services_path" : "test/services",
     "test_views_path" : "test/viewmodels",
+    "locator_name" : "locator",
+    "register_mocks_function" : "registerServices"
 }
 ```
