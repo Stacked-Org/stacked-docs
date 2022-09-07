@@ -114,3 +114,29 @@ Underneath your last registration in `registerServices` add
 ```
 
 Now you can run `stacked create service myService` and you'll see the files created plus all the registration happens.
+
+## Config
+
+If you want to use stacked_tools in a package that doesn't fit the structure that the cli expects then you can configure stacked to look in the correct places. Create a new file in the root of your package called `stacked.config.json`. Inside you can create a json body with the following properties:
+
+- `views_path`: The relative path where views and viewmodels will be generated. The default value is: `lib/ui/views`
+- `services_path`: The relative path where services will be generated. The default value is: `lib/services`
+- `stacked_app_path`: The relative path to the file that contains the `StackedApp` setup. The default value is: `lib/app/app.dart`
+- `test_helpers_path`: The relative path to where the `test_helpers.dart` file can be located. Default: `test/helpers`
+- `test_services_path`: The relative path to where the service's unit tests will be generated. Default: `test/services`
+- `test_views_path`: The relative path to where the viewmodel's unit tests will be generated. Default: `test/viewmodels`
+
+Only included the paths you want to use. If you exclude one the default value will be used for it. 
+
+### Example
+
+```json
+{
+    "views_path" : "lib/ui/views",
+    "services_path" : "lib/services",
+    "stacked_app_path" : "lib/app/app.dart",
+    "test_helpers_path" : "test/helpers",
+    "test_services_path" : "test/services",
+    "test_views_path" : "test/viewmodels",
+}
+```
