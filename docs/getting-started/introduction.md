@@ -10,7 +10,7 @@ Stacked is a production framework for Flutter. For teams or solo developers that
 
 - **Scalable**: Stacked is built to make your team scalable and keep your productivity high. With good code conventions and a strong opinion on how to develop functionality, you or your team will have a clear guide around adding and maintaining features.
 
-- **Testable**: We put an emphasis on unit tests and our MVVM architecture is desiged to make unit testing any part of your business logic or state as easy as possible. By splitting your UI from your Business and State logic it's easier to unit. 
+- **Testable**: We put an emphasis on unit tests so our MVVM architecture is designed to make testing any part of your business or presentation logic as easy as possible. By splitting your UI from your logic it's easier to unit. 
 
 - **Maintainable**: We have strong opinions on separation of concerns, that with our strict code principles will all you to scale your code consistently and without worry of turning into spaghetti as you grow.
 
@@ -21,7 +21,7 @@ Flutter allows you to build your UI using code. This means that everything in Fl
 
 :::info
 
-Like what you hear? [Get Started](get-started.md) and start building
+Like what you hear? [Quick Start](quick-start.md) and start building
 
 :::
 
