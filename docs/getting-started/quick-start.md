@@ -10,7 +10,7 @@ sidebar_position: 2
 Make sure you have Flutter installed and setup. If not, head over to [Flutter Install](https://docs.flutter.dev/get-started/install) to get is setup
 :::
 
-To start with stacked install the `stacked_tools` package through pub by running the following command.
+To start with stacked, install the `stacked_tools` package by running.
 
 ```shell
 dart pub global activate stacked_tools
@@ -46,23 +46,16 @@ Everything to build a production flutter app with your team.
 
 ## HomeView overview
 
-Let's describe the main widgets of the view.
+The HomeView (as all other views) extends from a `StackedView<T>`. The type `T` has to be a ViewModel or any class that extends `ChangeNotifier`.
 
-- A Text which shows "Hello, STACKED!".
-- A MaterialButton which shows the counterLabel and calls incrementCounter on viewmodel when pressed.
-- A MaterialButton which calls showDialog on viewmodel when pressed.
-- A MaterialButton which calls showBottomSheet on viewmodel when pressed.
+This class is the core of our state management solution. When the ViewModel supplied as `T` calls notifyListeners the build method fires and passes through the latest version of the ViewModel.
+
+At this point your UI will rebuild with the new state values in the viewmodel.
 
 ## HomeViewModel overview
 
-Let's describe how the presentation logic is managed on the viewmodel.
+When we look at the `HomeViewModel` you'll see a basic Dart class, and that's the goal of Stacked. The only code that should look like Flutter code is the View/Widget code. Everything else should look like a normal Dart class and Dart code.
 
-- An integer private variable is defined as _counter and initialized to 0.
-- A String public variable is defined as counterLabel which shows the value of _counter.
-- A method called incrementCounter which increase _counter and rebuild the HomeView with notifyListeners.
-- A method called showDialog which shows a custom Dialog.
-- A method called showBottomSheet which shows a custom BottomSheet.
-
-The most important part of the presentation logic takes place on incrementCounter method because uses notifyListeners method to update the state of the view. This is how Stacked notifies the framework that the internal state of the object, in this case _counter, has changed.
+This class controls when your build function in the view is fired to rebuild the UI. When you call notifyListeners like in the incrementCounter function then the builder will fire and you'll get the viewmodel in the function where you can read the new value and display it in the UI.
 
 Furthermore, if we take a look at `test/viewmodels/home_viewmodel_test.dart`, we can see how easy is to test the use cases of the presentation logic.
