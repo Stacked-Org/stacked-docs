@@ -1,43 +1,153 @@
 ---
 id: create-tasks
-sidebar_label: "Create Tasks"
+sidebar_label: "Create A Form View for Tasks"
 sidebar_position: 1
 ---
 
 # Create Tasks
 
-Create **AddTask** view using stacked cli:
+Create **AddTask** view using stacked cli by running the following command
 
 ```shell
 stacked create view add_task
 ```
 
-This command will create three files for us, [add_task_view.dart](#add-task-view), [add_task_viewmodel.dart](#add-task-viewmodel) and [add_task_viewmodel_test.dart](#add-task-viewmodel-unit-tests), as long as the rest of the code to make them functional. We only have to worry about the content of those files.
+This command will create three files for us, [add_task_view.dart](#add-task-view), [add_task_viewmodel.dart](#add-task-viewmodel) and [add_task_viewmodel_test.dart](#add-task-viewmodel-unit-tests).
 
-:::note
-As a reminder, when we display a piece of code, in general, we are going to use the final version of it and, of course, we are going to explain the most important parts. So, in this example, the files are not the ones which were created by the *create view* command, they are the modified versions in their final state.
-:::
+## Add Task View
 
-### Add Task View
-
-Here is where should create the presentation of our view, the UI.
-
-:::caution
-TODO: Replace ViewModelBuilderWidget with the new StackedView
-:::
+The `AddTaskView` contains our UI that will be shown. Lets start by looking at the View structure. As you can see we don't extend from `StatelessWidget` or `StatefulWidget` instead we extend from a `StackedView`. 
 
 ```dart
-@FormView(
-  fields: [
-    FormTextField(name: 'title', validator: FormValidators.title),
-    FormTextField(name: 'description', validator: FormValidators.description),
-  ],
-)
-class AddTaskView extends ViewModelBuilderWidget<AddTaskViewModel>
-    with $AddTaskView {
+class AddTaskView extends StackedView<AddTaskViewModel> ... {
   AddTaskView({Key? key}) : super(key: key);
 
   @override
+  // A builder function that accepts a ViewModel
+  Widget builder(
+    BuildContext context,
+    AddTaskViewModel viewModel,
+    Widget? child,
+  ) {
+    return Scaffold(
+      ...
+    );
+  }
+
+  @override
+  // The builder function that constructs the ViewModel
+  AddTaskViewModel viewModelBuilder(
+    BuildContext context,
+  ) => AddTaskViewModel(); 
+}
+```
+
+### How a Stacked View Works
+
+The singular goal of the stacked View is to "bind our ViewModel to our UI (View or Widget)". This allows us to completely separate state logic and code from our UI. The mechanism is quite simple. Here's a little diagram that visually depicts the explanation below.
+
+[Stacked View-ViewModel binding Diagram](../../static/img/todo/view-viewmodel-relationship.png)
+
+1. The `viewModelBuilder` creates our `ViewModel`
+2. We pass that `ViewModel` to our `builder` function that accepts a `ViewModel`
+3. The build function creates a UI that is shown on the device
+4. The user insteracts w/ the UI
+5. The interaction goes to the ViewModel, updates its state, and the ViewModel requests to `rebuildUi`
+6. The `rebuildUi` call then calls the `builder` function with the updated `ViewModel` to rebuild the UI.
+
+That's how simple the process is. And with this process you can manage 100% of all state scenarios without ever having to write state related code in your view file. 
+
+### Forms in Stacked
+
+As with any Todo application, we need to take in text. This requires form functionality. When using Stacked we automatically sync the values from the controller with the ViewModel, reducing the amount of boilerplate required to manage them. The start of the form functionality is to add the `FormView` annotation to your class. 
+
+```dart
+import 'package:stacked/stacked_annotations.dart';
+
+@FormView(
+  fields: [
+    FormTextField(name: 'title'),
+    FormTextField(name: 'description'),
+  ],
+)
+class AddTaskView extends StackedView<AddTaskViewModel> { 
+  ...
+}
+```
+
+This indicates to the generator that we want to generate form code for this class. We need two text fields, so we supply two `FormTextField`'s to the `fields` list with name `title` and `description`. Now we can generate our form code.
+
+```shell
+flutter pub run build_runner build --delete-conflicting-outputs
+```
+
+This will create a new file called `add_task_view.form.dart`. It contains a mixin with the same name as the class but with a `$` infront of it, `$AddTaskView`. This file contains all your `TextEdittingControllers`, `FocusNodes` and functionality to automatically sync those with your viewmodel and some additional functionality we'll cover soon. 
+
+#### Automatic text to ViewModel sync
+The next step is to let the view know you want the text entered by the user to automatically sync to your ViewModel. To do this we have to do a few things.
+
+1. Import the generated form file
+2. Mix in the `$AddTaskView`
+3. Call the `syncFormWithViewModel` function when the model is ready
+
+```dart
+import 'add_task_view.form.dart'; // 1. Import the genereated file
+
+@FormView(
+  fields: [
+    FormTextField(name: 'title'),
+    FormTextField(name: 'description'),
+  ],
+)
+class AddTaskView extends StackedView<AddTaskViewModel>
+    with $AddTaskView { // 2. Mix in $AddTaskView Mixin
+
+  @override
+  Widget builder(
+    BuildContext context,
+    AddTaskViewModel viewModel,
+    Widget? child,
+  ) {
+    return Scaffold(
+     ...
+    );
+  }
+
+  @override
+  void onViewModelReady(AddTaskViewModel viewModel) {
+    syncFormWithViewModel(viewModel);
+  }
+
+  ...
+}
+```
+
+To complete this we need to update the `AddTaskViewModel` to extend from the `FormViewModel` instead of the `BaseViewModel`.
+
+```dart
+class AddTaskViewModel extends FormViewModel {
+  @override
+  void setFormStatus() {}
+}
+```
+
+Now the controllers can be used in any `TextWidget` that accepts a `TextEditingController` and the ViewModel will automatically be updated as that value changes.
+
+### Basic UI
+
+Since this is not a Flutter UI building tutorial I'll keep this short. What we want to create is the following UI
+
+[Stacked View-ViewModel binding Diagram](../../static/img/todo/add_task_ui.png)
+
+Now before you say anything, I know this is the most becautiful Todo UI you've ever seen. So please, if you want to give me compliments on the UI, [join our Slack](#TODO: Add Slack invite url here) where we discuss lots of cool Stacked things 😁
+
+<details>
+<summary>AddTaskView builder code</summary>
+<p>
+Replace your builder function in the `add_test_view.dart` file with the following.
+
+```dart
+@override
   Widget builder(
     BuildContext context,
     AddTaskViewModel viewModel,
@@ -143,231 +253,19 @@ class AddTaskView extends ViewModelBuilderWidget<AddTaskViewModel>
       ),
     );
   }
-
-  @override
-  void onViewModelReady(AddTaskViewModel viewModel) {
-    listenToFormUpdated(viewModel);
-  }
-
-  @override
-  void onDispose(AddTaskViewModel viewModel) {
-    disposeForm();
-  }
-
-  @override
-  AddTaskViewModel viewModelBuilder(BuildContext context) {
-    return AddTaskViewModel();
-  }
-}
 ```
-<p align = "center">add_task_view.dart</p>
+</p>
+</details>
 
-One of the features we are going to explain on this view is forms handling where we automatically sync the values from the controller with the ViewModel, reducing the amount of boilerplate required to manage them.
 
-### Form Setup
-
-To make use of the form functionality, we use the `@FormView` annotation on the View. It will tell the generator what to include when generating. We can see at the top of AddTaskView class that we added two `FormTextField` items in fields list which accepts `FormField` types. A FormTextField requires a name which is used to create a **TextEdigintController** and a **FocusNode**.
-
-### Generate Form Mixin
-
-Run the following command on your terminal to generate `add_task_view.form.dart` which has a mixin holding TextEditingControllers, FocusNodes, and extensions to set validation messages.
-
-```shell
-flutter pub run build_runner build --delete-conflicting-outputs
-```
-
-For this case, generates:
-
-- TextEdigintController:
-    - titleController
-    - descriptionController
-- FocusNodes
-    - titleFocusNode
-    - descriptionFocusNode
-
-### Use Form Mixin
-
-In the view, import the generated file add_task_view.form.dart and extend AddTaskView with $AddTaskView mixin.
-
-To automatically sync the controllers with the viewmodel, you must call `listenToFormUpdated` in onViewModelReady and pass it the model which needs to be FormViewModel type, reason why AddTaskViewModel extends from FormViewModel as you can see below when we show [AddTaskViewModel](#addtaskviewmodel) code.
-
-### Form Validation
-
-To use form validation on your TextEditingControllers you can supply your own custom unit testable validator inside FormTextField. The validator property on FormTextField expects a method that takes a String and returns a nullable String.
-
-Don't forget to run the build runner to update the generated file.
-
-```shell
-flutter pub run build_runner build --delete-conflicting-outputs
-```
-
-The validator is executed for every character and the value returned is stored in [field_name]ValidationMessage. In addition to that, there's also a boolean value called has[field_name]ValidationMessage which indicates if a validation message is present.
-
-The common way to conditionally show a validation message is to make use of the boolean mentioned above and the validation message value. See an example below.
+The most important part of this UI is the fact that we don't have to manage our controllers and can simply write this. 
 
 ```dart
-if (viewModel.hasTitleValidationMessage) Text(viewModel.titleValidationMessage!),
+ TextFormField(
+    controller: titleController,
+    focusNode: titleFocusNode,
+    textAlignVertical: TextAlignVertical.top,
+  ),
 ```
 
-The last thing to mention about the view is that in `onDispose` method we call `disposeForm` and is because the values of the TextEditingControllers are cached but, in this case, we want the input fields to be empty when we navigate back to this view.
-
-### Add Task ViewModel
-
-Here is where should add the presentation logic for our view.
-
-```dart
-class AddTaskViewModel extends FormViewModel {
-  final _log = getLogger('AddTaskViewModel');
-  final _navigationService = locator<NavigationService>();
-  final _tasksService = locator<TasksService>();
-
-  @override
-  void setFormStatus() {}
-
-  bool get canSubmit =>
-      !isBusy &&
-      hasTitle &&
-      !hasTitleValidationMessage &&
-      (hasDescription ? !hasDescriptionValidationMessage : true);
-
-  Future<void> accept() async {
-    setBusy(true);
-
-    try {
-      _log.d('title:$titleValue description:$descriptionValue');
-
-      _tasksService.add(title: titleValue!, description: descriptionValue);
-
-      _navigationService.back();
-    } catch (e) {
-      _log.e(e.toString());
-    }
-
-    setBusy(false);
-  }
-
-  void cancel() {
-    _navigationService.back();
-  }
-}
-```
-<p align = "center">add_task_viewmodel.dart</p>
-
-As AddTaskViewModel extends FormViewModel, we need to override `setFormStatus` to set a global validation message in case of error. If we don't want a global validation message we can leave the method empty as in the code above.
-
-On this viewmodel there are two main dependencies, **NavigationService** and **TasksService**, used to complete our requirement. The first dependency is just used to navigate `back` to HomeView. The second is used to create a task by calling `add` method.
-
-Observe how we get `canSubmit` value to enable or not the submit button of the form. This way we can easily unit test form submission.
-
-### Add Task ViewModel Unit Tests
-
-Here is where should add the unit tests for code coverage of the presentation logic.
-
-```dart
-void main() {
-  AddTaskViewModel _getModel() => AddTaskViewModel();
-
-  group('AddTaskViewModel Tests -', () {
-    setUp(() => registerServices());
-    tearDown(() => locator.reset());
-
-    group('canSubmit -', () {
-      test('When called, should returns True', () {
-        final model = _getModel();
-
-        model.formValueMap['title'] = 'title';
-        model.formValueMap['description'] = 'description';
-
-        expect(model.canSubmit, isTrue);
-      });
-
-      test('When called and model isBusy, should returns False', () {
-        final model = _getModel();
-
-        model.setBusy(true);
-
-        expect(model.canSubmit, isFalse);
-      });
-
-      test('When called and has NOT title, should returns False', () {
-        final model = _getModel();
-
-        model.setBusy(false);
-        model.formValueMap['description'] = 'description';
-
-        expect(model.canSubmit, isFalse);
-      });
-
-      test('When called and hasTitleValidationMessage, should returns False',
-          () {
-        final model = _getModel();
-
-        model.setBusy(false);
-        model.formValueMap['title'] = 'a';
-        model.setValidationMessages({
-          TitleValueKey: 'Please enter a title that\'s 3 characters or longer',
-        });
-
-        expect(model.canSubmit, isFalse);
-      });
-
-      test(
-          'When called, hasDescription and hasDescriptionValidationMessage is False, should returns False',
-          () {
-        final model = _getModel();
-
-        model.setBusy(false);
-        model.formValueMap['title'] = 'abcd';
-        model.formValueMap['description'] = 'abc';
-        model.setValidationMessages({
-          DescriptionValueKey:
-              'Please enter a description that\'s 6 characters or longer',
-        });
-
-        expect(model.canSubmit, isFalse);
-      });
-    });
-
-    group('accept -', () {
-      test('When called, should adds task to tasks list', () async {
-        final tasksService = getAndRegisterTasksService();
-        final model = _getModel();
-
-        model.formValueMap['title'] = 'title';
-        model.formValueMap['description'] = 'description';
-        await model.accept();
-
-        verify(tasksService.add(
-          title: anyNamed('title'),
-          description: anyNamed('description'),
-        ));
-      });
-
-      test('When called, should navigates back to HomeView', () async {
-        final navigationService = getAndRegisterNavigationService();
-        final model = _getModel();
-
-        model.formValueMap['title'] = 'title';
-        model.formValueMap['description'] = 'description';
-        await model.accept();
-
-        verify(navigationService.back());
-      });
-    });
-
-    group('cancel -', () {
-      test('When called, should navigates back to HomeView', () {
-        final navigationService = getAndRegisterNavigationService();
-        final model = _getModel();
-
-        model.cancel();
-
-        verify(navigationService.back());
-      });
-    });
-  });
-}
-```
-<p align = "center">add_task_viewmodel_test.dart</p>
-
-See how easy it is to test all the presentation logic. If you want to practice `Test Driven Development`, just start at this point by defining the unit tests first and then implement the code that passes those tests in the viewmodel.
+The rest of the form functionality will be handled by our previous setup. Next up we'll tackle the state management of the form.
