@@ -6,19 +6,19 @@ sidebar_position: 0
 
 # Overview
 
-In this section, we are going to build a ToDo app using `Stacked`. The complete code of the application can be accessed [here](https://github.com/ferrarafer/stacked_todos), feel free to clone the project and try the app if you are confortable with the basics topics, otherwise, if you are starting with `Stacked` and their ecosystem, I would suggest to complete this section to cover the main concepts of a real example.
+As an easy introduction to Stacked, we are going to build a Todo app. The goal with this is to cover the most important parts of the framework, some features we'll implement in a way that covers some part of what Stacked has to offer. The complete code of the application can be accessed [here](https://github.com/ferrarafer/stacked_todos). 
 
 ![todos-stacked-demo.gif](todos-stacked-demo.gif)
 
 ### Create project
 
-We already seen how to create a project with stacked cli on [getting-started](/docs/getting-started/quick-start) section but let's do it again to start our new project for this app.
+If you haven't already, abefore we start, check out the [getting-started](/docs/getting-started/quick-start) section. This is where we'll take you through installation of the `stacked_tools`. If you have that installed then we'll start by creating our app. 
 
 ```shell
 stacked create app todos
 ```
 
-When a project is created we get two views by default, startup and home views. We are going to use them for loading resources when app starts and shows list of tasks, respectively. But we are going back to this views later.
+When a project is created we get two views in the project,. We are going to use them for loading resources when app starts and shows list of tasks, respectively. But we are going back to this views later.
 
 ### Install packages
 
