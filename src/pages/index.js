@@ -18,7 +18,7 @@ export default function Home() {
     >
       <HomepageHeader />
       <main className="bg-white">
-        <HomepagePackages />
+        {/* <HomepagePackages /> */}
         {/* <CompanySlider /> */}
         {/* <CaseProjects /> */}
       </main>

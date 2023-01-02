@@ -51,12 +51,12 @@ const config = {
       navbar: {
         title: "Stacked",
         items: [
-          {
-            type: "doc",
-            docId: "getting-started/introduction",
-            position: "left",
-            label: "Docs",
-          },
+          // {
+          //   type: "doc",
+          //   docId: "overview",
+          //   position: "left",
+          //   label: "Docs",
+          // },
           // {
           //   position: "left",
           //   label: "Tutorials",
