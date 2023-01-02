@@ -41,7 +41,6 @@ const config = {
   ],
 
   themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       colorMode: {
         defaultMode: "light",
@@ -91,7 +90,7 @@ const config = {
           {
             title: "General resources",
             items: [
-     
+
             ],
           },
           {
@@ -140,6 +139,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: ['dart'],
       },
     }),
 
