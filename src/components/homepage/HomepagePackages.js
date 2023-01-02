@@ -118,10 +118,10 @@ export default function HomepagePackages() {
     <div className="flex flex-col space-y-16 px-2 container w-3/4 py-14">
       {/* Header */}
       <div className="flex flex-col space-y-4 text-center justify-center items-center">
-        <h2 className="text-3xl font-bold">The Cross-Platform App SDK</h2>
+        {/* <h2 className="text-3xl font-bold">The Cross-Platform App SDK</h2>
         <p className="text-gray-500 md:w-2/3 text-center">
           Stacked has all the tools and guides to build apps faster
-        </p>
+        </p> */}
       </div>
 
       {/* List of Packages in Stacked */}

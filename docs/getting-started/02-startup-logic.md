@@ -1,5 +1,6 @@
 ---
 id: startup-logic
+title: Stacked Startup Logic
 sidebar_label: Stacked Startup Logic
 sidebar_position: 2
 ---
@@ -18,7 +19,7 @@ If you created an app using the stacked cli you will have a view and viewmodel c
 
 Below is a diagram that shows you what we want to achieve. We want to navigate to a different place depending on if the user is logged in or not.
 
-[Stacked Startup Logic Diagram](./02-startup-flow.png)
+![Stacked Startup Logic Diagram](./02-startup-flow.png)
 
 This is how the code executes through Stacked:
 1. The app starts and opens the startup view

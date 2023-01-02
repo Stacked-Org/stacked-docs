@@ -4,13 +4,13 @@ sidebar_label: What is Stacked
 sidebar_position: 0
 ---
 
-Stacked is a production framework build in Flutter. For teams or solo developers that require high quality code, Stacked simplifies the development and maintenance of production Flutter applications. Built by [FilledStacks](https://www.youtube.com/filledstacks), a mobile software development agency with experience using Native iOS and Android, Xamarin and now Flutter has build over 30 applications. We know what is required to build big, **scalable**, **testable** and **maintanable applications**, this is the core focus of Stacked.
+Stacked is a production framework built in Flutter. For teams or solo developers that require high quality code, Stacked simplifies the development and maintenance of production Flutter applications. Built by [FilledStacks](https://www.youtube.com/filledstacks), a mobile software development agency with experience using Native iOS and Android, Xamarin and now Flutter has build over 30 applications. We know what is required to build big, **scalable**, **testable** and **maintanable applications**, this is the core focus of Stacked.
 
 - **Scalable**: Stacked is built to make your team scalable and keep your productivity high. With good code conventions and a strong opinion on how to develop functionality, you or your team will have a clear guide around adding and maintaining features.
 
-- **Testable**: We put an emphasis on unit tests and our MVVM architecture is desiged to make unit testing any part of your business logic or state as easy as possible. By splitting your UI from your Business and State logic it's easier to unit. 
+- **Testable**: We put an emphasis on unit tests and our MVVM architecture is desiged to make unit testing any part of your business logic or state as easy as possible.
 
-- **Maintainable**: We have strong opinions on separation of concerns, that with our strict code principles will all you to scale your code consistently and without worry of turning into spaghetti as you grow.
+- **Maintainable**: We have strong opinions on separation of concerns. This in combination with our strict coding principles will allow you to scale your code consistently and without worry of turning into spaghetti as you grow.
 
 Now with its own CLI, it makes it even easier to get into Stacked.
 

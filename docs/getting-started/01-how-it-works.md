@@ -1,5 +1,6 @@
 ---
 id: how-it-works
+title: How does it work
 sidebar_label: How does it work
 sidebar_position: 1
 ---
@@ -47,9 +48,9 @@ class CounterView extends StackedView<CounterViewModel> {
 
 In addition you can also see a required override called `viewModelBuilder`. This function constructs our ViewModel that will store our state. But before we jump into that, let me show you how this View / ViewModel thing works. This is the foundation of Stacked's State Management. The goal of the `StackedView` is to "bind our ViewModel to our UI". This allows us to completely separate state and logic code from our UI. The mechanism is quite simple. 
 
-**Build the UI from the Viewmodel, update the VieWModel and then rebuild the UI from that ViewModel.** Here's a little diagram that visually depicts the explanation below.
+**Build the UI from the Viewmodel, update the ViewModel and then rebuild the UI from that ViewModel.** Here's a little diagram that visually depicts the explanation below.
 
-[Stacked View-ViewModel binding Diagram](../../static/img/todo/view-viewmodel-relationship.png)
+![Stacked View-ViewModel binding Diagram](../../static/img/todo/view-viewmodel-relationship.png)
 
 1. The `viewModelBuilder` creates our `ViewModel`
 2. Stacked passes that `ViewModel` to our `builder` function.
@@ -86,13 +87,13 @@ To wrap up the example, lets display the counter on screen and call the `increme
 
 ```dart
 @override
-  Widget builder(BuildContext context, CounterViewModel model, Widget? child) {
+  Widget builder(BuildContext context, CounterViewModel viewModel, Widget? child) {
     return Scaffold(
       floatingActionButton:
-          FloatingActionButton(onPressed: model.incrementCounter),
+          FloatingActionButton(onPressed: viewModel.incrementCounter),
       body: Center(
         child: Text(
-          model.counter.toString(),
+          viewModel.counter.toString(),
           style: const TextStyle(
             fontSize: 30,
             fontWeight: FontWeight.bold,
@@ -118,6 +119,6 @@ _navigationService.replaceWith(Routes.counterView);
 
 Then you can run your app by running `flutter run` or starting a debug session in VS Code. On screen you should now see a basic counter that increases as you tap on the `FloatingActionButtion`. 
 
-[Example Counter App in Stacked](./01-counter-example.gif)
+![Example Counter App in Stacked](./01-counter-example.gif)
 
 We'll talk about the `StartupView` and the `Navigation` next.
