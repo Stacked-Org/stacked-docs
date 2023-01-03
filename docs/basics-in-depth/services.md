@@ -121,7 +121,7 @@ We create a function on the artist service that use our Facade services to deleg
 
 In your AppService class, the `ArtistService`, what you'll do is:
 
-- Locate the services required through the `locator` _Read more about (Service location in Stacked)[https://www.google.com]_
+- Locate the services required through the `locator`
 - Use their singular functionalities to orchestrate the business logic
 
 In code this translates to the following
