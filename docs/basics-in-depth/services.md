@@ -51,8 +51,7 @@ class Artist {
 }
 ```
 
-In the code above we can see that "the work being done" is all done by the `HomeViewModel`. This means the `HomeViewModel` has the responsibility of structuring the http request (#1), making the request (#1), checking that it was successful (#2) and deserialising the response into a list of Artists (#3, #4, #5). This is quite common in Flutter, and in most cases it actually taught to be done in the view file 🤯🤯, which if you're on this page. I beg you to never do.
-
+In the code above we can see that "the work being done" is all done by the `HomeViewModel`. This means the `HomeViewModel` has the responsibility to structure and make the http request (#1), check that it was successful (#2) and deserialise the response into a list of Artists (#3, #4, #5). This is quite common in Flutter, in fact, in most cases you are taught to do this in your `initState` function 🤯🤯, which if you're on this page. I beg you to never do.
 
 This is where the Facade Service comes in. The `HomeViewModel` like all other viewmodels is there to manage App State Logic and maintain the View state. It should not be doing the actual work mentioned above. To fix this, we introcude a service that wraps all this for us. This is what we want it to look like in our mental model.
 
