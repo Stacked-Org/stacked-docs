@@ -1,19 +1,19 @@
 ---
-id: stacked-tools
-sidebar_label: "Stacked Tools"
+id: stacked-cli
+sidebar_label: "Stacked Cli"
 sidebar_position: 5
 ---
 
-# Stacked Tools[![Pub Version](https://img.shields.io/pub/v/stacked_tools)](https://pub.dev/packages/stacked_tools)
+# Stacked Cli [![Pub Version](https://img.shields.io/pub/v/stacked_cli)](https://pub.dev/packages/stacked_cli)
 
-The stacked cli is apart of the `stacked_tools` package. This CLI is made to speed up the development using the stacked framework.
+The Stacked cli is apart of the `stacked_cli` package. This CLI is made to speed up the development using the Stacked framework.
 
 ## Get Started
 
-To get started you have to install the `stacked_tools` package on your machine
+To get started you have to install the `stacked_cli` package on your machine
 
 ```shell
-dart pub global activate stacked_tools
+dart pub global activate stacked_cli
 ```
 
 ### Creating a Stacked app
@@ -128,7 +128,7 @@ Now you can run `stacked create service myService` and you'll see the files crea
 
 ## Config
 
-If you want to use stacked_tools in a package that doesn't fit the structure that the cli expects then you can configure stacked to look in the correct places. Create a new file in the root of your package called `stacked.config.json`. Inside you can create a json body with the following properties:
+If you want to use stacked_cli in a package that doesn't fit the structure that the cli expects then you can configure stacked to look in the correct places. Create a new file in the root of your package called `stacked.config.json`. Inside you can create a json body with the following properties:
 
 - `views_path`: The relative path where views and viewmodels will be generated. The default value is: `lib/ui/views`
 - `services_path`: The relative path where services will be generated. The default value is: `lib/services`
