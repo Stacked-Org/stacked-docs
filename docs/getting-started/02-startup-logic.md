@@ -28,7 +28,7 @@ This is how the code executes through Stacked:
 4. If the user is logged in we go to `HomeView`
 5. else we go to the `LoginView`
 
-_Note: We the Authentication Service is fake. You should use your own authentication implementation_
+_Note: The Authentication Service is fake. You should use your own authentication implementation_
 
 ## Get the views ready
 
