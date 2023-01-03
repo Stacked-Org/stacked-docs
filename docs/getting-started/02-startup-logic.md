@@ -5,7 +5,7 @@ sidebar_label: Stacked Startup Logic
 sidebar_position: 2
 ---
 
-Stacked comes with some functionality that we've found to be commonly required in all applications. These functionalies include:
+Stacked comes with some functionality that we've found to be commonly required in all applications. These functionalities include:
 1. A place to run some code before the application launches
 2. Navigating
 3. Logging
@@ -15,7 +15,7 @@ In this section we'll cover #1 and touch on some of the others.
 
 # Startup Logic
 
-If you created an app using the stacked cli you will have a view and viewmodel called `startup`. The goal of this view is to show directly after the spalsh screen and give you a place to run your "Startup Logic". The code you want to run before the app starts. This is where you would perform some checks to decide on where to navigate on start. Let's build something to showcase this functionality. 
+If you created an app using the stacked cli you will have a view and viewmodel called `startup`. The goal of this view is to show directly after the splash screen and give you a place to run your "Startup Logic". The code you want to run before the app starts. This is where you would perform some checks to decide on where to navigate on start. Let's build something to showcase this functionality. 
 
 Below is a diagram that shows you what we want to achieve. We want to navigate to a different place depending on if the user is logged in or not.
 
@@ -28,7 +28,7 @@ This is how the code executes through Stacked:
 4. If the user is logged in we go to `HomeView`
 5. else we go to the `LoginView`
 
-_Note: We the Authentication Service is fake. You should use your own authentication implementation_
+_Note: The Authentication Service is fake. You should use your own authentication implementation_
 
 ## Get the views ready
 
@@ -82,7 +82,7 @@ Now we can create our authentication service. Run the following command
 stacked create service authentication
 ```
 
-This will create the service and register it for dependency inversion. Open `authentication_service.dart` where we'll add a new fuction to check if the user is logged in. For now this will return a static value for simplicity sake. 
+This will create the service and register it for dependency inversion. Open `authentication_service.dart` where we'll add a new function to check if the user is logged in. For now this will return a static value for simplicity sake. 
 
 ```dart
 class AuthenticationService {
