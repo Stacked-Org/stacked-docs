@@ -2,7 +2,6 @@
 id: startup-logic
 title: Stacked Startup Logic
 sidebar_label: Stacked Startup Logic
-sidebar_position: 2
 ---
 
 Stacked comes with some functionality that we've found to be commonly required in all applications. These functionalities include:
