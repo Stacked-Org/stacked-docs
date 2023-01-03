@@ -20,7 +20,7 @@ This command will create three files for us:
 2. [counter_viewmodel.dart](#counter-viewmodel-flutter-statemanagement): Store state and perform actions for users as they interact.
 3. counter_viewmodel_test.dart: Contains all the **unit** tests for the `CounterViewModel`
 
-Lets disect the View first. 
+Lets dissect the View first. 
 
 ## Counter View
 
@@ -55,7 +55,7 @@ In addition you can also see a required override called `viewModelBuilder`. This
 1. The `viewModelBuilder` creates our `ViewModel`
 2. Stacked passes that `ViewModel` to our `builder` function.
 3. The `builder` function creates our UI
-4. The user insteracts w/ that UI
+4. The user interacts w/ that UI
 5. The interaction goes to the `ViewModel`, updates the `ViewModel`, then we requests to `rebuildUi`.
 6. The `rebuildUi` function then triggers the `builder` function with the updated `ViewModel` to rebuild the UI.
 
