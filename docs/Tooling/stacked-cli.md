@@ -1,10 +1,10 @@
 ---
-id: stacked-cli
-sidebar_label: "Stacked Cli"
+id: stacked-tools
+sidebar_label: "Stacked Tools"
 sidebar_position: 5
 ---
 
-# Stacked Cli [![Pub Version](https://img.shields.io/pub/v/stacked_cli)](https://pub.dev/packages/stacked_tools)
+# Stacked Tools[![Pub Version](https://img.shields.io/pub/v/stacked_tools)](https://pub.dev/packages/stacked_tools)
 
 The stacked cli is apart of the `stacked_tools` package. This CLI is made to speed up the development using the stacked framework.
 
@@ -15,8 +15,6 @@ To get started you have to install the `stacked_tools` package on your machine
 ```shell
 dart pub global activate stacked_tools
 ```
-
-This will add the stacked_tools binaries to your `pub_cache`. 
 
 ### Creating a Stacked app
 
@@ -143,13 +141,15 @@ Only included the paths you want to use. If you exclude one the default value wi
 
 ```json
 {
-    "views_path" : "lib/ui/views",
-    "services_path" : "lib/services",
-    "stacked_app_path" : "lib/app/app.dart",
-    "test_helpers_path" : "test/helpers/test_helpers.dart",
-    "test_services_path" : "test/services",
-    "test_views_path" : "test/viewmodels",
+    "stacked_app_file_path" : "app/app.dart",
+    "services_path" : "services",
+    "views_path" : "ui/views",
+    "test_helpers_file_path" : "helpers/test_helpers.dart",
+    "test_services_path" : "services",
+    "test_views_path" : "viewmodels",
     "locator_name" : "locator",
-    "register_mocks_function" : "registerServices"
+    "register_mocks_function" : "registerServices",
+    "v1": false, // Indicates if you want to use ViewModelBuilder(v1) or the the new StackedView (v2)
+    "line_length": 80 // Passed into the flutter formatter when running cli commands
 }
 ```
