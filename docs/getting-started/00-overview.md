@@ -21,10 +21,10 @@ Now with its own CLI, it makes it even easier to get into Stacked.
 Make sure you have Flutter installed and setup. If not head over to [Flutter Install](https://docs.flutter.dev/get-started/install) to get is setup
 :::
 
-To start with stacked install the stacked_tools package through pub by running 
+To start with stacked install the stacked_cli package through pub by running 
 
 ```shell
-dart pub global activate stacked_tools
+dart pub global activate stacked_cli
 ```
 
 This will give you access to all the stacked goodies. 
