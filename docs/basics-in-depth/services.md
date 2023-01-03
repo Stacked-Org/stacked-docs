@@ -121,7 +121,7 @@ We create a function on the artist service that use our Facade services to deleg
 
 In your AppService class, the `ArtistService`, what you'll do is:
 
-- Locate the services required through the `locator`
+- Locate the services required through the `locator` _Service location doc coming soon!_
 - Use their singular functionalities to orchestrate the business logic
 
 In code this translates to the following
