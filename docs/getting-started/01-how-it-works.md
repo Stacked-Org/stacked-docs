@@ -2,7 +2,6 @@
 id: how-it-works
 title: How does it work
 sidebar_label: How does it work
-sidebar_position: 1
 ---
 
 Stacked creates a simple View to ViewModel relationship that allows us to perform state management without a lot of boilerplate code. The idea is to completely separate our state from our UI to allow us to easily test and extend logic without affecting the UI. Let me show you how that works. 
