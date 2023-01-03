@@ -63,12 +63,12 @@ const config = {
           // },
           // { to: "/blog", label: "Contributions", position: "left" },
           // { to: "/blog", label: "Teams", position: "left" },
-          {
-            to: "https://www.filledstacks.com/",
-            label: "Learn",
-            position: "right",
-            className: "navbar-button",
-          },
+          // {
+          //   to: "https://www.filledstacks.com/",
+          //   label: "Learn",
+          //   position: "right",
+          //   className: "navbar-button",
+          // },
           {
             to: "https://github.com/FilledStacks/stacked",
             position: "right",
