@@ -10,7 +10,7 @@ Allowing the user to input data into your app is a big part of all apps. This is
 2. We automatically sync the value the user types with the ViewModel
 3. We provide basic validation checks in the ViewModel
 
-Lets create some basic form functionality
+Let's create some basic form functionality
 
 # Create the view
 
@@ -42,7 +42,7 @@ Now we can run the generate command to create our form code.
 stacked generate
 ```
 
-This will create a new file called `text_reverse_view.form.dart`. It contains a mixin with the same name as the class but with a `$` infront of it, `$TextReverseView`. This file contains all your `TextEdittingControllers`, `FocusNodes` and functionality to automatically sync those with your viewmodel, we'll cover this in detail later. 
+This will create a new file called `text_reverse_view.form.dart`. It contains a mixin with the same name as the class but with a `$` infront of it, `$TextReverseView`. This file contains all your `TextEditingControllers`, `FocusNodes`, and functionality to automatically sync those with your viewmodel, we'll cover this in detail later. 
 
 ### Automatic text to ViewModel sync
 
@@ -53,7 +53,7 @@ The next step is to let the view know you want the text entered by the user to a
 3. Call the `syncFormWithViewModel` function when the `viewModel` is ready
 
 ```dart
-import 'add_task_view.form.dart'; // 1. Import the genereated file
+import 'add_task_view.form.dart'; // 1. Import the generated file
 
 @FormView(fields: [
   FormTextField(name: 'reverseInput'),
@@ -96,7 +96,7 @@ Since this is not a Flutter UI building tutorial I'll keep this short. What we w
 
 ![Stacked form Example UI](./04-reverse-text-screenshot.png)
 
-Now before you say anything, I know this is the most becautiful form UI you've ever seen. So please, if you want to give me compliments on the UI, [join our Slack](https://join.slack.com/t/filledstacks/shared_invite/zt-1mmpc84as-g_3l8bLHkEFekRfXnr7MXQ) where we discuss lots of cool Stacked things 😁
+Now before you say anything, I know this is the most beautiful form UI you've ever seen. So please, if you want to give me compliments on the UI, [join our Slack](https://join.slack.com/t/filledstacks/shared_invite/zt-1mmpc84as-g_3l8bLHkEFekRfXnr7MXQ) where we discuss lots of cool Stacked things 😁
 
 <details>
 <summary>TextReverseView builder code</summary>
@@ -210,7 +210,7 @@ class TextReverseValidators {
 }
 ```
 
-To use this, we supply is as a validator to the `FormTextField` annotation.
+To use this, we supply it as a validator to the `FormTextField` annotation.
 
 ```dart
 @FormView(fields: [
