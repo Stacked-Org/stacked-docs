@@ -53,7 +53,7 @@ class Artist {
 
 In the code above we can see that "the work being done" is all done by the `HomeViewModel`. This means the `HomeViewModel` has the responsibility to structure and make the http request (#1), check that it was successful (#2) and deserialise the response into a list of Artists (#3, #4, #5). This is quite common in Flutter, in fact, in most cases you are taught to do this in your `initState` function 🤯🤯, which if you're on this page. I beg you to never do.
 
-This is where the Facade Service comes in. The `HomeViewModel` like all other viewmodels is there to manage App State Logic and maintain the View state. It should not be doing the actual work mentioned above. To fix this, we introcude a service that wraps all this for us. This is what we want it to look like in our mental model.
+This is where the Facade Service comes in. The `HomeViewModel` like all other viewmodels is there to manage App State Logic and maintain the View state. It should not be doing the actual work mentioned above. To fix this, we introduce a service that wraps all this for us. This is what we want it to look like in our mental model.
 
 ![Stacked architecture breakdown that shows what code does the actual work](../../static/img/tutorial/services-who-does-the-work.png)
 
@@ -98,7 +98,7 @@ class HomeViewModel extends BaseViewModel {
 ```
 
 That's all that's required to create a Facade Service. With this small change, your code benefits in the following ways: 
-- **Seperation of Concerns / Single responsibiltiy**: You have now separated the concern of http requests, desrialise, error checking and model construction from the viewmodel. The ViewModel can now focus only on managing the state for the view.
+- **Separation of Concerns / Single responsibility**: You have now separated the concern of http requests, deserialise, error checking and model construction from the viewmodel. The ViewModel can now focus only on managing the state for the view.
 - **More Testable**: Since the hard dependency on the Http package has been removed it means you can mock out the `apiService` and write deterministic unit tests for your viewmodel. 
 - **DRY Code**: Any other Viewmodel, or service that requires this functionality can simply locate the service and make use of the `getArtists` function. No need to repeat it somewhere else.
 - **Code Readability**: This is my opinion, but the code looks better and it's easy to see at a high level what's expected of the code without having to see the construction of http requests and the messyness of deserialising that into a separate list. 
@@ -107,7 +107,7 @@ This pattern is the core of Stacked's appeal. In almost every situation the Stac
 
 ### App Service
 
-An App Service (for lack of a better name) is where your business logic lies. These types of services orchastrate the interaction between Facade services to complete some domain (business) logic. Take for example an `ArtistService` that has a function that does the following: 
+An App Service (for lack of a better name) is where your business logic lies. These types of services orchestrate the interaction between Facade services to complete some domain (business) logic. Take for example an `ArtistService` that has a function that does the following: 
 
 - Check if a user is logged in
 - Fetch artists when a user is logged in
