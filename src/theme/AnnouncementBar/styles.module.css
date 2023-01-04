@@ -9,6 +9,11 @@
   --docusaurus-announcement-bar-height: auto;
 }
 
+img {
+  max-height: 400px;
+  object-fit: contain;
+}
+
 .announcementBar {
   display: flex;
   align-items: center;
