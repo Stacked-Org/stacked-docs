@@ -65,7 +65,7 @@ The way we know where to add modifications into your code is by reading what we 
 This command creates all the scaffolding to add a new view into the project. 
 
 1. Creates a new folder with the view name in `lib/ui/views/`
-2. Creates a new view and viewmodel files in `lib/ui/views/viewName/`
+2. Creates a new view and viewmodel files in `lib/ui/views/view_name/`
 3. Creates the ViewModel tests file in the `test/viewmodel_tests/` folder
 4. Adds the route to the `lib/app/app.dart` file
 
@@ -81,7 +81,7 @@ And underneath your last route add
 // @stacked-route
 ```
 
-Now if you run `stacked create view myView` you'll see that all the files are generated AND we also add the route into your `app.dart` file. The modifications are optional so if you don't have it they won't happen and everything else will still work. 
+Now if you run `stacked create view profile` you'll see that all the files are generated AND we also add the route into your `app.dart` file. The modifications are optional so if you don't have it they won't happen and everything else will still work. 
 
 ### Create Service
 
@@ -124,18 +124,18 @@ Underneath your last registration in `registerServices` add
 // @stacked-mock-register
 ```
 
-Now you can run `stacked create service myService` and you'll see the files created plus all the registration happens.
+Now you can run `stacked create service user` and you'll see the files created plus all the registration happens.
 
 ## Config
 
-If you want to use stacked_cli in a package that doesn't fit the structure that the cli expects then you can configure stacked to look in the correct places. Create a new file in the root of your package called `stacked.config.json`. Inside you can create a json body with the following properties:
+If you want to use stacked_cli in a package that doesn't fit the structure that the cli expects then you can configure stacked to look in the correct places. Create a new file in the root of your package called `stacked.json`. Inside you can create a json body with the following properties:
 
-- `views_path`: The relative path where views and viewmodels will be generated. The default value is: `lib/ui/views`
-- `services_path`: The relative path where services will be generated. The default value is: `lib/services`
-- `stacked_app_path`: The relative path to the file that contains the `StackedApp` setup. The default value is: `lib/app/app.dart`
-- `test_helpers_path`: The relative path to the file that contains the test_helpers (mocks, registerService, etc). Default: `test/helpers/test_helpers.dart`
-- `test_services_path`: The relative path to where the service's unit tests will be generated. Default: `test/services`
-- `test_views_path`: The relative path to where the viewmodel's unit tests will be generated. Default: `test/viewmodels`
+- `views_path`: The relative path where views and viewmodels will be generated. The default value is: `ui/views`
+- `services_path`: The relative path where services will be generated. The default value is: `services`
+- `stacked_app_path`: The relative path to the file that contains the `StackedApp` setup. The default value is: `app/app.dart`
+- `test_helpers_path`: The relative path to the file that contains the test_helpers (mocks, registerService, etc). Default: `helpers/test_helpers.dart`
+- `test_services_path`: The relative path to where the service's unit tests will be generated. Default: `services`
+- `test_views_path`: The relative path to where the viewmodel's unit tests will be generated. Default: `viewmodels`
 - `locator_name`: The name of the locator that mock services are registered on. This is used when creating a new service using the `create service` command. Default: `locator`
 - `register_mocks_function`: The name of the function that registers all the mocks when running a test. This is used when generating a test file during `create service` command. Default: `registerServices`
 
