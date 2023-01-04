@@ -6,7 +6,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Flutter Stacked Architecture - FilledStacks",
+  title: "Stacked - Flutter Framework",
   tagline: "The perfect community for your mobile app development project",
   url: "https://your-docusaurus-test-site.com",
   baseUrl: "/",
