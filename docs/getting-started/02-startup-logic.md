@@ -40,36 +40,56 @@ stacked create view login
 When completed open `login_view.dart` and change the background color to red
 
 ```dart
-class LoginView extends StatelessWidget {
-  const LoginView({super.key});
+class LoginView extends StackedView<LoginViewModel> {
+  const LoginView({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return ViewModelBuilder<LoginViewModel>.reactive(
-      viewModelBuilder: () => LoginViewModel(),
-      builder: (context, model, child) => const Scaffold(
-        backgroundColor: Colors.red,
+  Widget builder(
+    BuildContext context,
+    LoginViewModel viewModel,
+    Widget? child,
+  ) {
+    return Scaffold(
+      backgroundColor: Colors.red,
+      body: Container(
+        padding: const EdgeInsets.only(left: 25.0, right: 25.0),
       ),
     );
   }
+
+  @override
+  LoginViewModel viewModelBuilder(
+    BuildContext context,
+  ) =>
+      LoginViewModel();
 }
 ```
 
 Now open `home_view.dart` and change the background color to purple
 
 ```dart
-class HomeView extends StatelessWidget {
+class HomeView extends StackedView<HomeViewModel> {
   const HomeView({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return ViewModelBuilder<HomeViewModel>.reactive(
-      viewModelBuilder: () => HomeViewModel(),
-      builder: (context, model, child) => const Scaffold(
-        backgroundColor: Colors.purple,
+  Widget builder(
+    BuildContext context,
+    HomeViewModel viewModel,
+    Widget? child,
+  ) {
+    return Scaffold(
+      backgroundColor: Colors.purple,
+      body: Container(
+        padding: const EdgeInsets.only(left: 25.0, right: 25.0),
       ),
     );
   }
+
+  @override
+  HomeViewModel viewModelBuilder(
+    BuildContext context,
+  ) =>
+      HomeViewModel();
 }
 ```
 
