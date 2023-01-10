@@ -6,13 +6,28 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'The Flutter Production Framework',
-  tagline: 'Stacked gives you a great developer experience with all the features you need for production. State management, Navigation and a clear separation of concerns. Get started with the CLI dev tools.',
+  title: 'The Production Flutter Framework',
+  tagline: 'Build scalable, testable and maintainable code for you and your team.',
   url: 'https://stacked.filledstacks.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
+
+  plugins: [
+    async function configureTailwind(context, options) {
+      return {
+        name: 'docusaurus-tailwindcss',
+        configurePostCss(postcssOptions) {
+          // Appends TailwindCss and AutoPrefixer
+          postcssOptions.plugins.push(require('tailwindcss'));
+          postcssOptions.plugins.push(require('autoprefixer'));
+          return postcssOptions;
+        }
+      }
+    }
+
+  ],
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
