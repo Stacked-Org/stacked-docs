@@ -2,6 +2,7 @@
 id: how-it-works
 title: How Does it Work
 sidebar_label: How does it work
+tags: [Getting Started]
 ---
 
 Stacked creates a simple View to ViewModel relationship that allows us to perform state management without a lot of boilerplate code. The idea is to completely separate our state from our UI, allowing us to easily test and extend logic without affecting the UI. Let's see how that works.
@@ -52,7 +53,7 @@ In addition, you can also see a required override called `viewModelBuilder`. Thi
 
 **Build the UI from the ViewModel, update the ViewModel and then rebuild the UI from that ViewModel.** Here's a little diagram that visually depicts the explanation below:
 
-![Stacked View-ViewModel binding Diagram](../../static/img/todo/view-viewmodel-relationship.png)
+![Stacked View-ViewModel binding Diagram](/img/todo/view-viewmodel-relationship.png)
 
 1. The `viewModelBuilder` creates our `ViewModel`
 2. Stacked passes that `ViewModel` to our `builder` function

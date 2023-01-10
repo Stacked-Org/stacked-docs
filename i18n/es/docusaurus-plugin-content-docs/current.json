@@ -1,0 +1,18 @@
+{
+  "version.label": {
+    "message": "Siguiente",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Getting Started": {
+    "message": "Introducción",
+    "description": "The label for category Getting Started in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Basics in Depth": {
+    "message": "En Profundidad",
+    "description": "The label for category Basics in Depth in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Tooling": {
+    "message": "Herramientas",
+    "description": "The label for category Tooling in sidebar tutorialSidebar"
+  }
+}
