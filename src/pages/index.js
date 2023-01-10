@@ -10,7 +10,10 @@ function HomepageHeader() {
   return (
     <header className="bg-white py-48">
       <div className="container mx-auto text-center py-24 px-48 md:px-24 sm:px-8">
-      <h1 class="text-5xl md:text-8xl font-extrabold leading-tighter tracking-tighter mb-4 aos-init aos-animate" data-aos="zoom-y-out">The <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">production</span><h1>App framework</h1></h1>
+      <h1 class="text-5xl md:text-8xl font-extrabold leading-tighter tracking-tighter mb-4 aos-init aos-animate" data-aos="zoom-y-out">
+        <p>The <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">production</span></p>
+        <p>app framework</p>
+      </h1>
         <p className="text-3xl py-2 text-gray-500 px-32">{siteConfig.tagline}</p>
 
         <div className="py-12">
