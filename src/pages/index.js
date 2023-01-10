@@ -1,26 +1,40 @@
-import React from "react";
-import Layout from "@theme/Layout";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import HomepageHeader from "../components/homepage/HomepageHeader";
-import HomepagePackages from "../components/homepage/HomepagePackages";
-import CompanySlider from "../components/homepage/CompanySlider";
-import CaseProjects from "../components/homepage/CaseProjects";
+import React from 'react';
+import clsx from 'clsx';
+import Link from '@docusaurus/Link';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Layout from '@theme/Layout';
+import HomepageFeatures from '@site/src/components/HomepageFeatures';
+
+import styles from './index.module.css';
+
+function HomepageHeader() {
+  const {siteConfig} = useDocusaurusContext();
+  return (
+    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+      <div className="container">
+        <h1 className="hero__title">{siteConfig.title}</h1>
+        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <div className={styles.buttons}>
+          <Link
+            className="button button--secondary button--lg"
+            to="/docs/getting-started/overview">
+            Start Learning
+          </Link>
+        </div>
+      </div>
+    </header>
+  );
+}
 
 export default function Home() {
-  const { siteConfig } = useDocusaurusContext();
+  const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={siteConfig.title}
-      description="Stacked gives you a great developer experience with all the features
-      you need for production. Navigation, Dependency Injection, Clear
-      Docs, Easy setup with a custom cli for easy setup."
-      wrapperClassName="bg-gray-100 landing-page"
-    >
+      title="Stacked"
+      description="The Flutter Production Framework">
       <HomepageHeader />
-      <main className="bg-white">
-        {/* <HomepagePackages /> */}
-        {/* <CompanySlider /> */}
-        {/* <CaseProjects /> */}
+      <main>
+        <HomepageFeatures />
       </main>
     </Layout>
   );
