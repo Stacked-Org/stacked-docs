@@ -64,9 +64,9 @@ const config = {
             require.resolve('./src/css/tailwind.css'),
           ],
         },
-        googleAnalytics: {
-          trackingID: 'UA-41171112-5',
-          anonymizeIP: false,
+        gtag: {
+          trackingID: 'G-H1BMJ7YTDP',
+          anonymizeIP: true,
         },
       }),
     ],
