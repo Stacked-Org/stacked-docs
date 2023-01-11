@@ -50,6 +50,10 @@ This will create a new service called `StripeService` in the services folder and
 
 When you've changed something manually, or added a new model. Instead of executing the command `flutter pub run build_runner build --delete-conflicting-outputs` you can simply run `stacked generate`.
 
+### Update CLI
+
+When you want to update `stacked_cli` app. Instead of executing the command `dart pub global activate stacked_cli` you can simply run `stacked update`.
+
 ## Use cli on existing project
 
 Using the stacked cli in an existing project takes a little bit more effort than above. There's a few things you have to ensure.
