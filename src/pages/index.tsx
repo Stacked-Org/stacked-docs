@@ -21,7 +21,8 @@ export default function Home() {
         </div>
 
         <a
-          href="/"
+          href="https://github.com/Filledstacks/stacked"
+          target="_blank"
           className="flex items-center px-4 py-2 text-lg text-black transition-all bg-gray-100 rounded-full outline-none ring-transparent focus:ring-purple-500 ring hover:no-underline hover:text-black hover:bg-gray-200"
         >
           <GithubIcon className="mr-4" />
