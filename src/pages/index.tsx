@@ -2,6 +2,7 @@ import React, { useCallback, useState } from "react";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { motion } from "framer-motion";
+import { CLIIcon } from "../components/Icons";
 
 export default function Home() {
   const {
@@ -41,6 +42,53 @@ export default function Home() {
           </Link>
         </motion.div>
       </main>
+
+      <div className="bg-gray-50">
+        <section className="container flex gap-4 flex-col-reverse md:flex-row justify-evenly items-center min-h-[35vh] mx-auto py-16">
+          <div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+            >
+              <CLIIcon />
+            </motion.div>
+            <motion.h1
+              initial={{ y: 100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{
+                duration: 0.6,
+                delay: 0.4,
+                type: "spring",
+                bounce: 0.5,
+              }}
+              className="text-4xl"
+            >
+              A Powerful CLI
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.45 }}
+              className="max-w-md text-xl"
+            >
+              Never write boilerplate code again. With Stacked CLI you can
+              generate Views, Services and more
+              <a href="/docs/tooling/stacked-cli" className="block mt-2">
+                Learn More
+              </a>
+            </motion.p>
+          </div>
+          <motion.img
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.4 }}
+            className="w-full max-w-2xl"
+            src="/img/landing/cli.svg"
+            alt=""
+          />
+        </section>
+      </div>
     </>
   );
 }
