@@ -35,10 +35,10 @@ export default function Home() {
         >
           The{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-br from-indigo-800 to-purple-400">
-            Flutter framework
+            Flutter Framework
           </span>
           <br />
-          for production
+          for Production
         </motion.h1>
         <motion.div
           initial={{ opacity: 0 }}
@@ -86,9 +86,8 @@ export default function Home() {
               transition={{ delay: 0.05 }}
               className="max-w-md text-xl"
             >
-              Never write boilerplate code again. With Stacked CLI you can
-              generate Views, Services and more. Focus on the code, we take care
-              of the tedious tasks for you
+              Never write boilerplate code again. The Stacked CLI
+              generates yout Views, Services and more.
               <a href="/docs/tooling/stacked-cli" className="block mt-2">
                 Learn More
               </a>
@@ -132,8 +131,8 @@ export default function Home() {
             transition={{ delay: 0.05 }}
             className="max-w-md text-xl"
           >
-            No more setting up multiple controllers and forgetting to dispose
-            the
+            No more setting up multiple controllers and and cluttering
+            up your build function. Let Stacked handle it.
             <a href="/docs/getting-started/form-basics" className="block mt-2">
               Learn More
             </a>
