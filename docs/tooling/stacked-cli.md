@@ -48,6 +48,16 @@ stacked create service stripe
 
 This will create a new Service called `StripeService` in the `services` folder and add it to the dependencies in the `app.dart` file.
 
+### Add a New Bottom Sheet
+
+From the root folder of your Stacked application, run the command:
+
+```shell
+stacked create bottom_sheet alert
+```
+
+This will create a new BottomSheet called `AlertSheet` in the `ui/bottom_sheets` folder. This will also add the enum type to BottomSheetType, as well as add the SheetBuilder to the available builders in `ui/setup/setup_bottom_sheet_ui.dart` file.
+
 ### Generate Stacked Code
 
 When you've changed something manually, or added a new model, instead of executing the command `flutter pub run build_runner build --delete-conflicting-outputs` you can simply run `stacked generate`.
@@ -131,6 +141,35 @@ Under your last Service registration in `registerServices`, add:
 
 Now, when you run `stacked create service user`, you'll see the files created for the `UserService` and all the registration will happen automatically.
 
+### Create BottomSheet
+
+This command creates all the scaffolding to add a new BottomSheet into the project:
+
+1. Creates a new folder with the Sheet name in `lib/ui/bottom_sheets/`
+2. Creates the new Sheet file in `lib/ui/bottom_sheets/sheet_name/`
+3. Adds the enum type to BottomSheetType enum
+4. Adds the SheetBuilder to the `lib/ui/setup/setup_bottom_sheet_ui.dart` file
+
+For us to achieve #3, we need to know where is your BottomSheetType enum. To indicate that we use the **template identifiers**, open your file where BottomSheetType enum is defined and under the last enum reference, add:
+
+```dart
+// @stacked-bottom-sheet-type
+```
+
+For us to achieve #4, we need to know where to add the builder and its import. To indicate that we use the **template identifiers**, open your `lib/ui/setup/setup_bottom_sheet_ui.dart` file and under the last import, add:
+
+```dart
+// @stacked-import
+```
+
+And underneath your last builder add:
+
+```dart
+// @stacked-bottom-sheet-builder
+```
+
+Now if you run `stacked create bottom_sheet alert` you'll see that all the files are generated AND we also add the enum type into your `BottomSheetType` enum and we register the `SheetBuilder` into BottomSheetService. The modifications are optional so if you don't have the template identifiers, Stacked will still generate the necessary files but won't automatically add the enum type and register the builder. Everything else will still work though.
+
 
 ## Config
 
@@ -138,6 +177,7 @@ If you want to use `stacked_cli` in a package that doesn't fit the structure tha
 
 - `views_path`: The relative path where Views and ViewModels will be generated. The default value is: `ui/views`
 - `services_path`: The relative path where Services will be generated. The default value is: `services`
+- `bottom_sheets_path`: The relative path where BottomSheets will be generated. The default value is: `ui/bottom_sheets`
 - `stacked_app_path`: The relative path to the file that contains the `StackedApp` setup. The default value is: `app/app.dart`
 - `test_helpers_path`: The relative path to the file that contains the test_helpers (mocks, registerService, etc). Default: `helpers/test_helpers.dart`
 - `test_services_path`: The relative path to where the Services' unit tests will be generated. Default: `services`
@@ -154,6 +194,7 @@ Only include the paths you want to customize. If you exclude a path, the default
     "stacked_app_file_path" : "app/app.dart",
     "services_path" : "services",
     "views_path" : "ui/views",
+    "bottom_sheets_path": "ui/bottom_sheets",
     "test_helpers_file_path" : "helpers/test_helpers.dart",
     "test_services_path" : "services",
     "test_views_path" : "viewmodels",
