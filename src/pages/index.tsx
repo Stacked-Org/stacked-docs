@@ -131,7 +131,7 @@ export default function Home() {
             transition={{ delay: 0.05 }}
             className="max-w-md text-xl"
           >
-            No more setting up multiple controllers and and cluttering
+            No more setting up multiple controllers and cluttering
             up your build function. Let Stacked handle it.
             <a href="/docs/getting-started/form-basics" className="block mt-2">
               Learn More
