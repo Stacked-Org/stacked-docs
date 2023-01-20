@@ -56,7 +56,17 @@ From the root folder of your Stacked application, run the command:
 stacked create bottom_sheet alert
 ```
 
-This will create a new BottomSheet called `AlertSheet` in the `ui/bottom_sheets` folder. This will also add the enum type to BottomSheetType, as well as add the SheetBuilder to the available builders in `ui/setup/setup_bottom_sheet_ui.dart` file.
+This will create a new BottomSheet called `AlertSheet` in the `ui/bottom_sheets` folder. This will also add the value to BottomSheetType enum, as well as add the SheetBuilder to the available builders in `ui/setup/setup_bottom_sheet_ui.dart` file.
+
+### Add a New Dialog
+
+From the root folder of your Stacked application, run the command:
+
+```shell
+stacked create dialog error
+```
+
+This will create a new Dialog called `ErrorDialog` in the `ui/dialogs` folder. This will also add the value to DialogType enum, as well as add the DialogBuilder to the available builders in `ui/setup/setup_dialog_ui.dart` file.
 
 ### Generate Stacked Code
 
@@ -146,11 +156,11 @@ Now, when you run `stacked create service user`, you'll see the files created fo
 This command creates all the scaffolding to add a new BottomSheet into the project:
 
 1. Creates a new folder with the Sheet name in `lib/ui/bottom_sheets/`
-2. Creates the new Sheet file in `lib/ui/bottom_sheets/sheet_name/`
-3. Adds the enum type to BottomSheetType enum
+2. Creates a new Sheet file in `lib/ui/bottom_sheets/sheet_name/`
+3. Adds a new value to DialogType enum
 4. Adds the SheetBuilder to the `lib/ui/setup/setup_bottom_sheet_ui.dart` file
 
-For us to achieve #3, we need to know where is your BottomSheetType enum. To indicate that we use the **template identifiers**, open your file where BottomSheetType enum is defined and under the last enum reference, add:
+For us to achieve #3, we need to know where is your BottomSheetType enum. To indicate that we use the **template identifiers**, open your file where BottomSheetType enum is defined and under the last value, add:
 
 ```dart
 // @stacked-bottom-sheet-type
@@ -168,22 +178,56 @@ And underneath your last builder add:
 // @stacked-bottom-sheet-builder
 ```
 
-Now if you run `stacked create bottom_sheet alert` you'll see that all the files are generated AND we also add the enum type into your `BottomSheetType` enum and we register the `SheetBuilder` into BottomSheetService. The modifications are optional so if you don't have the template identifiers, Stacked will still generate the necessary files but won't automatically add the enum type and register the builder. Everything else will still work though.
+Now if you run `stacked create bottom_sheet alert` you'll see that all the files are generated AND we also add the value into your `BottomSheetType` enum and we register the `SheetBuilder` into BottomSheetService. The modifications are optional so if you don't have the template identifiers, Stacked will still generate the necessary files but won't automatically add the value on the enum and register the builder. Everything else will still work though.
+
+### Create Dialog
+
+This command creates all the scaffolding to add a new Dialog into the project:
+
+1. Creates a new folder with the Dialog name in `lib/ui/dialogs/`
+2. Creates a new Dialog file in `lib/ui/dialogs/dialog_name/`
+3. Adds a new value to DialogType enum
+4. Adds a DialogBuilder to the `lib/ui/setup/setup_dialog_ui.dart` file
+
+For us to achieve #3, we need to know where is your DialogType enum. To indicate that we use the **template identifiers**, open your file where DialogType enum is defined and under the last value, add:
+
+```dart
+// @stacked-dialog-type
+```
+
+For us to achieve #4, we need to know where to add the builder and its import. To indicate that we use the **template identifiers**, open your `lib/ui/setup/setup_dialog_ui.dart` file and under the last import, add:
+
+```dart
+// @stacked-import
+```
+
+And underneath your last builder add:
+
+```dart
+// @stacked-dialog-builder
+```
+
+Now if you run `stacked create dialog error` you'll see that all the files are generated AND we also add the value into your `DialogType` enum and we register the `DialogBuilder` into DialogService. The modifications are optional so if you don't have the template identifiers, Stacked will still generate the necessary files but won't automatically add the value on the enum and register the builder. Everything else will still work though.
 
 
 ## Config
 
 If you want to use `stacked_cli` in a package that doesn't fit the structure that the CLI expects, then you can configure Stacked to look in the correct places. Create a new file in the root folder of your package called `stacked.json`. Inside the file, create a JSON body with the following properties:
 
-- `views_path`: The relative path where Views and ViewModels will be generated. The default value is: `ui/views`
-- `services_path`: The relative path where Services will be generated. The default value is: `services`
-- `bottom_sheets_path`: The relative path where BottomSheets will be generated. The default value is: `ui/bottom_sheets`
-- `stacked_app_path`: The relative path to the file that contains the `StackedApp` setup. The default value is: `app/app.dart`
-- `test_helpers_path`: The relative path to the file that contains the test_helpers (mocks, registerService, etc). Default: `helpers/test_helpers.dart`
-- `test_services_path`: The relative path to where the Services' unit tests will be generated. Default: `services`
-- `test_views_path`: The relative path to where the ViewModels' unit tests will be generated. Default: `viewmodels`
-- `locator_name`: The name of the locator that Services are registered with. This is used when creating a new Service using the `create service` command. Default: `locator`
-- `register_mocks_function`: The name of the function that registers all the Mocks when running a test. This is used when generating a test file during `create service` command. Default: `registerServices`
+- `views_path`: The relative path where Views and ViewModels will be generated. Default: `ui/views`.
+- `services_path`: The relative path where Services will be generated. Default: `services`.
+- `bottom_sheets_path`: The relative path where BottomSheets will be generated. Default: `ui/bottom_sheets`.
+- `bottom_sheet_type_file_path`: The file path where BottomSheetType enum is located. Default: `enums/bottom_sheet_type.dart`.
+- `bottom_sheet_builder_file_path`: The file path where BottomSheet builder is located. Default: `ui/setup/setup_bottom_sheet_ui.dart`.
+- `dialogs_path`: The relative path where Dialogs will be generated. Default: `ui/dialogs`.
+- `dialog_type_file_path`: The file path where DialogType enum is located. Default: `enums/dialog_type.dart`.
+- `dialog_builder_file_path`: The file path where Dialog builder is located. Default: `ui/setup/setup_dialog_ui.dart`.
+- `stacked_app_path`: The relative path to the file that contains the `StackedApp` setup. Default: `app/app.dart`.
+- `test_helpers_path`: The relative path to the file that contains the test_helpers (mocks, registerService, etc). Default: `helpers/test_helpers.dart`.
+- `test_services_path`: The relative path to where the Services' unit tests will be generated. Default: `services`.
+- `test_views_path`: The relative path to where the ViewModels' unit tests will be generated. Default: `viewmodels`.
+- `locator_name`: The name of the locator that Services are registered with. This is used when creating a new Service using the `create service` command. Default: `locator`.
+- `register_mocks_function`: The name of the function that registers all the Mocks when running a test. This is used when generating a test file during `create service` command. Default: `registerServices`.
 
 Only include the paths you want to customize. If you exclude a path, the default value will be used for it.
 
@@ -195,6 +239,11 @@ Only include the paths you want to customize. If you exclude a path, the default
     "services_path" : "services",
     "views_path" : "ui/views",
     "bottom_sheets_path": "ui/bottom_sheets",
+    "bottom_sheet_type_file_path": "enums/bottom_sheet_type.dart",
+    "bottom_sheet_builder_file_path": "ui/setup/setup_bottom_sheet_ui.dart",
+    "dialogs_path": "ui/dialogs",
+    "dialog_type_file_path": "enums/dialog_type.dart",
+    "dialog_builder_file_path": "ui/setup/setup_dialog_ui.dart",
     "test_helpers_file_path" : "helpers/test_helpers.dart",
     "test_services_path" : "services",
     "test_views_path" : "viewmodels",
