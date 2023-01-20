@@ -4,11 +4,9 @@ title: Services
 sidebar_label: Services
 ---
 
-
 # What is a Service?
 
 In addition to having a View (renders our UI) and a ViewModel (contains all the view state logic) we also have Services. A service, put in plain terms, is the class that does or orchestrates the actual work. There are two types of services.
-
 
 ## Service Types
 
@@ -34,7 +32,7 @@ class HomeViewModel extends BaseViewModel {
       // #4: Get relevant data from the response
       final artistMaps =
           responseBodyAsMap['data'] as List<Map<String, dynamic>>;
-      
+
       // #5: Deserialize into a list of artists
       _artists = artistMaps.map(Artist.fromJson).toList();
     }
@@ -103,7 +101,7 @@ class HomeViewModel extends BaseViewModel {
 That's all that is required to create a Facade Service. With this small change, your code benefits in the following ways:
 
 - **Separation of Concerns / Single responsibility**: You have now separated the concern of http requests, deserialize, error checking and model construction from the ViewModel. The ViewModel can now focus only on managing the state for the view.
-- **More Testable**: Since the hard dependency on the Http package has been removed it means you can mock out the `ApiService` and write deterministic unit tests for your ViewModel. 
+- **More Testable**: Since the hard dependency on the Http package has been removed it means you can mock out the `ApiService` and write deterministic unit tests for your ViewModel.
 - **DRY Code**: Any other ViewModel or Service that requires this functionality can simply locate the service and make use of the `getArtists` function. No need to repeat it somewhere else.
 - **Code Readability**: In my opinion, the code looks better and it's easy to see - at a high level - what's expected without having to see the construction of the http requests and the messiness of deserializing the request into a separate list.
 
@@ -111,7 +109,7 @@ This pattern is the core of Stacked's appeal. In almost every situation the Stac
 
 ### App Service
 
-An App Service (for lack of a better name) is where your business logic lies. These types of services orchestrate the interaction between Facade Services to complete some domain (business) logic. Take for example an `ArtistService` that has a function that does the following: 
+An App Service (for lack of a better name) is where your business logic lies. These types of services orchestrate the interaction between Facade Services to complete some domain (business) logic. Take for example an `ArtistService` that has a function that does the following:
 
 - Checks if a user is logged in
 - Fetches artists when a user is logged in
