@@ -108,16 +108,16 @@ Widget builder(BuildContext context, CounterViewModel viewModel, Widget? child) 
 }
 ```
 
-And the last thing to do is to open up `startup_view.dart` and change:
+And the last thing to do is to open up `startup_viewmodel.dart` and change:
 
 ```dart
-_navigationService.replaceWith(Routes.homeView);
+_navigationService.replaceWithHomeView();
 ```
 
 to
 
 ```dart
-_navigationService.replaceWith(Routes.counterView);
+_navigationService.replaceWithCounterView();
 ```
 
 Finally, run your app by running `flutter run` or starting a debug session in VS Code. On the screen, you should now see a basic counter that increases as you tap on the `FloatingActionButton`.
