@@ -58,7 +58,7 @@ In the code above, we can see that "the work being done" is all done by the `Hom
 
 This is where the Facade Service comes in. The `HomeViewModel`, like all other ViewModels, is there to manage the app state logic and to maintain the View state. It should not be doing the actual work mentioned above. To fix this, we introduce a service that wraps all of this for us. This is what we want it to look like in our mental model:
 
-![Stacked architecture breakdown that shows what code does the actual work](../../static/img/tutorial/services-who-does-the-work.png)
+![Stacked architecture breakdown that shows what code does the actual work](/img/tutorial/services-who-does-the-work.png)
 
 As indicated by the red block, the View and the ViewModel should do no work. They delegate to the service, where all the actual work is done. Let's look at an example. In your stacked project run:
 
@@ -119,7 +119,7 @@ An App Service (for lack of a better name) is where your business logic lies. Th
 
 This is how we want this "Feature" to look in our mental model:
 
-![App Service orchestration using Facade Services](../../static/img/tutorial/services-app-service-orchestration.png)
+![App Service orchestration using Facade Services](/img/tutorial/services-app-service-orchestration.png)
 
 We create a function in the `ArtistService` that uses our Facade Services to delegate the actual work to be done. Let's see how that looks in code. _This code assumes that the other services are already created. This is not a full example of creating an Auth Service or a DB Service, but instead, only showcases how to use those services._
 

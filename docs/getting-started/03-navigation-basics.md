@@ -4,13 +4,13 @@ title: Navigation Basics
 sidebar_label: Navigation basics
 ---
 
-If you've followed along from the [Beginning](./00-overview.md) you would have seen this code:
+If you've followed along from the [Beginning](00-overview.md) you would have seen this code:
 
 ```dart
 _navigationService.replaceWith(Routes.homeView);
 ```
 
-Navigation is part of Stacked Services, a group of services within Stacked that helps you perform certain tasks in your code. _To learn more about What a service is, [read this](../basics-in-depth/services.md)_.
+Navigation is part of Stacked Services, a group of services within Stacked that helps you perform certain tasks in your code. _To learn more about What a service is, [read this](/basics-in-depth/services.md)_.
 
 The services currently included are:
 
@@ -53,7 +53,7 @@ _navigationService.navigateToHomeView();
 
 ### Navigate to a View with Arguments
 
-In your Stacked app generated at [the beginning](./00-overview.md), open `home_view.dart` where we'll pass in a value to it through its constructor:
+In your Stacked app generated at [the beginning](00-overview.md), open `home_view.dart` where we'll pass in a value to it through its constructor:
 
 ```dart
 class HomeView extends StackedView<HomeViewModel> {
