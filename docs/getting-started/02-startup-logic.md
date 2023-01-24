@@ -20,7 +20,7 @@ If you created an app using the Stacked CLI you will have a View and ViewModel c
 
 Below is a diagram that shows you what we want to achieve. We want to navigate to a different place depending on whether the user is logged in or not.
 
-![Stacked Startup Logic Diagram](./02-startup-flow.png)
+![Stacked Startup Logic Diagram](/img/getting-started/02-startup-flow.png)
 
 This is how the code executes through Stacked:
 

@@ -96,7 +96,7 @@ Now the controllers can be used in any `TextWidget` that accepts a `TextEditingC
 
 Since this is not a "Flutter UI building" tutorial, I'll keep this short. What we want to create is the following UI:
 
-![Stacked form Example UI](./04-reverse-text-screenshot.png)
+![Stacked form Example UI](/img/getting-started/04-reverse-text-screenshot.png)
 
 Now before you say anything, I know this is the most beautiful form UI you've ever seen. So please, if you want to give me compliments on the UI, [join our Slack](https://join.slack.com/t/filledstacks/shared_invite/zt-1mmpc84as-g_3l8bLHkEFekRfXnr7MXQ) where we discuss lots of cool Stacked things. 😁
 
@@ -225,6 +225,6 @@ To use this, we supply it as a validator to the `FormTextField` annotation:
 
 Now we can run `stacked generate`, which will make use of this new validator. If you run your app and type in text with a number, you'll see it prints out a red validation message with what we return. It should look something like this:
 
-![Stacked form validation message](./04-form-validation.gif)
+![Stacked form validation message](/img/getting-started/04-form-validation.gif)
 
 The UI for the validation message is basic. It's text that displays only when `hasReverseInputValidationMessage` is true. This is a property that's also generated for you. This brings our Form Basics to an end. We are working on a deep dive of Stacked Forms that will be coming soon.
