@@ -55,18 +55,18 @@ The next step is to let the View know that you want the text entered by the user
 3. Call the `syncFormWithViewModel` function when the `viewModel` is ready
 
 ```dart
-import 'add_task_view.form.dart'; // 1. Import the generated file
+import 'text_reverse_view.form.dart'; // 1. Import the generated file
 
 @FormView(fields: [
   FormTextField(name: 'reverseInput'),
 ])
 class TextReverseView extends StackedView<TextReverseViewModel>
-  with $TextReverseView { // 2. Mix in $AddTaskView Mixin
+  with $TextReverseView { // 2. Mix in $TextReverseView Mixin
 
   @override
   Widget builder(
     BuildContext context,
-    AddTaskViewModel viewModel,
+    TextReverseViewModel viewModel,
     Widget? child,
   ) {
     return Scaffold(
@@ -75,7 +75,7 @@ class TextReverseView extends StackedView<TextReverseViewModel>
   }
 
   @override
-  void onViewModelReady(AddTaskViewModel viewModel) {
+  void onViewModelReady(TextReverseViewModel viewModel) {
     syncFormWithViewModel(viewModel);
   }
   ...
@@ -162,7 +162,7 @@ The most important part of this UI is the fact that we don't have to create or m
 TextFormField(controller: reverseInputController),
 ```
 
-The rest of the form functionality will be handled by our previous setup. The last thing to do is to actually reverse the text. In the `ReverseTextViewModel` we'll add a new dynamic property that will return the reversed text or a placeholder string if no text is entered:
+The rest of the form functionality will be handled by our previous setup. The last thing to do is to actually reverse the text. In the `TextReverseViewModel` we'll add a new dynamic property that will return the reversed text or a placeholder string if no text is entered:
 
 ```dart
 import 'package:stacked/stacked.dart';
