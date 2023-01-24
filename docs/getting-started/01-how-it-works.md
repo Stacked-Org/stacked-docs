@@ -122,6 +122,6 @@ _navigationService.replaceWith(Routes.counterView);
 
 Finally, run your app by running `flutter run` or starting a debug session in VS Code. On the screen, you should now see a basic counter that increases as you tap on the `FloatingActionButton`.
 
-![Example Counter App in Stacked](./01-counter-example.gif)
+![Example Counter App in Stacked](/img/getting-started/01-counter-example.gif)
 
 We'll talk about the `StartupView` and `Navigation` next.
