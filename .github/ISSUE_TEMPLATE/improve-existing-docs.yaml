@@ -1,0 +1,44 @@
+name: Improve existing content
+description: Make a suggestion to improve the content in an existing document.
+labels:
+  - content
+body:
+  - type: markdown
+    attributes:
+      value: |
+        * For questions, ask in [Slack](https://filledstacks.slack.com).
+        * Before you file an issue read the [Contributing guide](https://github.com/FilledStacks/stacked-docs/blob/master/CONTRIBUTING.md).
+        * Check to make sure someone hasn't already opened a similar [issue](https://github.com/FilledStacks/stacked-docs/issues).
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: This project has a Code of Conduct that all participants are expected to understand and follow.
+      options:
+        - label: I have read and agree to the Stacked Docs project's [Code of Conduct](https://github.com/FilledStacks/stacked-docs/blob/master/CODE_OF_CONDUCT.md)
+          required: true
+
+  - type: textarea
+    attributes:
+      label: What document on stacked.filledstacks.com is affected?
+      description: Please link to the document you'd like to see updated.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: What part(s) of the document would you like to see updated?
+      description: |
+        - Give as much detail as you can to help us understand the change you want to see. 
+        - Why should the docs be changed? What use cases does it support? 
+        - What is the expected outcome?
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Additional information
+      description: Add any other context or screenshots about the feature request here.
+    validations:
+      required: false
