@@ -1,41 +1,29 @@
-# Website
+# Stacked Docs <!-- omit in toc --> 
+ 
+This repository contains the documentation website code and Markdown source files for [stacked.filledstacks.com](https://stacked.filledstacks.com).
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+Use the table of contents icon on the top left corner of this document to get to a specific section of this guide quickly.
 
-### Installation
+## Contributing
 
-```
-$ yarn
-```
+See [the contributing guide](CONTRIBUTING.md) for detailed instructions on how to get started with our project. 
 
-### Local Development
+We accept different [types of contributions](./contributing/types-of-contributions.md), including some that don't require you to write a single line of code.
 
-```
-$ yarn start
-```
+On the Stacked Docs site, you can click the edit this page button at the bottom of the page to open a pull request for quick fixes like typos, updates, or link fixes.
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+For more complex contributions, you can open an issue using the most appropriate [issue template](https://github.com/FilledStacks/stacked-docs/issues/new/choose) to describe the changes you'd like to see.
 
-### Build
+If you're looking for a way to contribute, you can scan through our [existing issues](https://github.com/FilledStacks/stacked-docs/issues) for something to work on. When ready, check out [Getting Started with Contributing](/CONTRIBUTING.md) for detailed instructions.
 
-```
-$ yarn build
-```
+### Join us in discussions
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+We use Slack to talk about all sorts of topics related to Stacked and this site. For example: if you'd like help troubleshooting a PR, have a great new idea, or want to share something amazing you've learned in our docs, join us in the [Slack](https://filledstacks.slack.com/).
 
-### Deployment
+## License
 
-Using SSH:
+**TODO**: complete by Dane
 
-```
-$ USE_SSH=true yarn deploy
-```
+## Thanks :purple_heart:
 
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+Thanks for all your contributions and efforts towards improving the Stacked documentation. We thank you for being part of our :sparkles: community :sparkles:!
