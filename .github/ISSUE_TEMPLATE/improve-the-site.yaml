@@ -1,0 +1,44 @@
+name: Improve the stacked.filledstacks.com site
+description: Make a suggestion or report a problem about the technical implementation of stacked.filledstacks.com.
+labels:
+  - content
+body:
+  - type: markdown
+    attributes:
+      value: |
+        * For questions, ask in [Discussions](https://github.com/github/docs/discussions).
+        * Before you file an issue read the [Contributing guide](https://github.com/github/docs/blob/main/CONTRIBUTING.md).
+        * Check to make sure someone hasn't already opened a similar [issue](https://github.com/github/docs/issues).
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: This project has a Code of Conduct that all participants are expected to understand and follow.
+      options:
+        - label: I have read and agree to the Stacked Docs project's [Code of Conduct](https://github.com/FilledStacks/stacked-docs/blob/master/CODE_OF_CONDUCT.md)
+          required: true
+
+  - type: textarea
+    attributes:
+      label: What document on stacked.filledstacks.com is affected?
+      description: Include links to documents where you're seeing a problem, screenshots, what browser you're using, etc.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: What changes are you suggesting?
+      description: |
+        - Give as much detail as you can to help us understand the change you want to see. 
+        - Why should the docs be changed? What use cases does it support? 
+        - What is the expected outcome?
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Additional information
+      description: Any additional information, configuration, or data that might be necessary to reproduce the issue.
+    validations:
+      required: false
