@@ -261,5 +261,62 @@
   "theme.tags.tagsPageTitle": {
     "message": "Etiquetas",
     "description": "The title of the tag list page"
+  },
+  "index.main.title.the": {
+    "message": "El"
+  },
+  "index.main.title.flutterFramework": {
+    "message": "Flutter Framework"
+  },
+  "index.main.title.forProduction": {
+    "message": "para Producción"
+  },
+  "index.main.subtitle": {
+    "message": "Cree código escalable, testeable y mantenible para usted y su equipo."
+  },
+  "index.main.button": {
+    "message": "Empezar"
+  },
+  "index.powerfulCli.title": {
+    "message": "Una Potente CLI"
+  },
+  "index.powerfulCli.description": {
+    "message": "No vuelvas a escribir código repetitivo. Stacked CLI genera tus vistas, servicios y mucho más."
+  },
+  "index.powerfulCli.button": {
+    "message": "Aprender Más"
+  },
+  "index.forms.title": {
+    "message": "Formularios fáciles de usar"
+  },
+  "index.forms.description": {
+    "message": "Olvídate de configurar varios controladores y de saturar tu función de construcción. Deja que Stacked se encargue."
+  },
+  "index.forms.button": {
+    "message": "Aprender Más"
+  },
+  "index.more.title": {
+    "message": "Y mucho más..."
+  },
+  "index.more.stateManagement": {
+    "message": "Manejo de Estados"
+  },
+  "index.mroe.startupLogic": {
+    "message": "Funcionalidad de la lógica de inicio"
+  },
+  "index.more.navigation": {
+    "message": "Navegación"
+  },
+  "index.more.dialogBuilders": {
+    "message": "Constructor de Interfaz de Diálogo"
+  },
+  "index.more.bottomSheetBuilders": {
+    "message": "Constructor de Interfaz de Hojas Inferiores"
+  },
+  "index.more.dependencyInversion": {
+    "message": "Inversión de Dependencia"
+  },
+  "index.more.unitTests": {
+    "message": "Ejemplos de Pruebas Unitarias"
   }
 }

@@ -3,6 +3,7 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { motion } from "framer-motion";
 import { CLIIcon, FormIcon } from "../components/Icons";
+import Translate, {translate} from '@docusaurus/Translate';
 
 const container = {
   hidden: { opacity: 0 },
@@ -33,12 +34,12 @@ export default function Home() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, type: "spring", bounce: 0.5 }}
         >
-          The{" "}
+          <Translate id="index.main.title.the">The</Translate>{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-br from-indigo-800 to-purple-400">
-            Flutter Framework
+            <Translate id="index.main.title.flutterFramework">Flutter Framework</Translate>
           </span>
           <br />
-          for Production
+          <Translate id="index.main.title.forProduction">for Production</Translate>
         </motion.h1>
         <motion.div
           initial={{ opacity: 0 }}
@@ -47,13 +48,13 @@ export default function Home() {
           className="flex flex-col items-center"
         >
           <p className="max-w-[50ch] text-center py-2 text-3xl text-gray-500">
-            {tagline}
+            <Translate id="index.main.subtitle">Build scalable, testable and maintainable code for you and your team.</Translate>
           </p>
           <Link
             to="/docs/getting-started/overview"
             className="hover:text-white hover:no-underline px-6 py-4 text-lg font-semibold text-white transition-all bg-black border-none rounded outline-none cursor-pointer ring-transparent focus:ring-purple-500 ring hover:bg-[#444] active:scale-90"
           >
-            Get Started
+            <Translate id="index.main.button">Get Started</Translate>
           </Link>
         </motion.div>
       </main>
@@ -78,7 +79,7 @@ export default function Home() {
               }}
               className="text-4xl"
             >
-              A Powerful CLI
+              <Translate id="index.powerfulCli.title">A Powerful CLI</Translate>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0 }}
@@ -86,11 +87,11 @@ export default function Home() {
               transition={{ delay: 0.05 }}
               className="max-w-md text-xl"
             >
-              Never write boilerplate code again. The Stacked CLI
-              generates yout Views, Services and more.
-              <a href="/docs/tooling/stacked-cli" className="block mt-2">
-                Learn More
-              </a>
+              <Translate id="index.powerfulCli.description">Never write boilerplate code again. The Stacked CLI
+              generates your Views, Services and more.</Translate>
+              <Link to="/docs/tooling/stacked-cli" className="block mt-2">
+                <Translate id="index.powerfulCli.button">Learn More</Translate>
+              </Link>
             </motion.p>
           </div>
           <motion.img
@@ -123,7 +124,7 @@ export default function Home() {
             }}
             className="text-4xl"
           >
-            Forms made easy
+            <Translate id="index.forms.title">Forms made easy</Translate>
           </motion.h3>
           <motion.p
             initial={{ opacity: 0 }}
@@ -131,11 +132,11 @@ export default function Home() {
             transition={{ delay: 0.05 }}
             className="max-w-md text-xl"
           >
-            No more setting up multiple controllers and cluttering
-            up your build function. Let Stacked handle it.
-            <a href="/docs/getting-started/form-basics" className="block mt-2">
-              Learn More
-            </a>
+            <Translate id="index.forms.description">No more setting up multiple controllers and cluttering
+            up your build function. Let Stacked handle it.</Translate>
+            <Link to="/docs/getting-started/form-basics" className="block mt-2">
+              <Translate id="index.forms.button">Learn More</Translate>
+            </Link>
           </motion.p>
         </div>
         <motion.img
@@ -159,7 +160,7 @@ export default function Home() {
             }}
             className="text-4xl"
           >
-            And a lot more...
+            <Translate id="index.more.title">And a lot more...</Translate>
           </motion.h3>
           <motion.ul
             className="flex flex-col text-lg text-left list-none"
@@ -168,15 +169,13 @@ export default function Home() {
             whileInView="show"
             transition={{ delay: 0.05, staggerChildren: 1 }}
           >
-            <motion.li variants={item}>✅ State management</motion.li>
-            <motion.li variants={item}>
-              ✅ Start-up logic functionality
-            </motion.li>
-            <motion.li variants={item}>✅ Navigation</motion.li>
-            <motion.li variants={item}>✅ Dialog UI builders</motion.li>
-            <motion.li variants={item}>✅ BottomSheet UI builder</motion.li>
-            <motion.li variants={item}>✅ Dependency Inversion</motion.li>
-            <motion.li variants={item}>✅ Unit tests example</motion.li>
+            <motion.li variants={item}>✅ <Translate id="index.more.stateManagement">State management</Translate></motion.li>
+            <motion.li variants={item}>✅ <Translate id="index.mroe.startupLogic">Start-up logic functionality</Translate></motion.li>
+            <motion.li variants={item}>✅ <Translate id="index.more.navigation">Navigation</Translate></motion.li>
+            <motion.li variants={item}>✅ <Translate id="index.more.dialogBuilders">Dialog UI builders</Translate></motion.li>
+            <motion.li variants={item}>✅ <Translate id="index.more.bottomSheetBuilders">BottomSheet UI builders</Translate></motion.li>
+            <motion.li variants={item}>✅ <Translate id="index.more.dependencyInversion">Dependency Inversion</Translate></motion.li>
+            <motion.li variants={item}>✅ <Translate id="index.more.unitTests">Unit tests example</Translate></motion.li>
           </motion.ul>
         </section>
       </div>
