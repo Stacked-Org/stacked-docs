@@ -1,7 +1,8 @@
 ---
 id: overview
 title: Visión General
-sidebar_label: ¿Qué es Stacked?
+sidebar_label: Qué es Stacked
+tags: [introducción]
 ---
 
 Stacked es un framework de producción construido sobre Flutter. Para equipos o desarrolladores individuales que necesitan código de alta calidad, Stacked simplifica el desarrollo y mantenimiento de aplicaciones Flutter de producción. Construido por [FilledStacks](https://www.youtube.com/filledstacks), una agencia de desarrollo de software móvil con experiencia en Native iOS y Android, Xamarin, y ahora Flutter, habiendo construido más de 30 aplicaciones. Sabemos lo que se necesita para construir aplicaciones grandes, **escalables**, **testeables** y **mantenibles**, este es el enfoque central de Stacked.
