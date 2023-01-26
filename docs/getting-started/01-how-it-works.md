@@ -10,7 +10,7 @@ Stacked creates a simple View to ViewModel relationship that allows us to perfor
 
 # Let's Try it Out
 
-In the app that you created during the [Get Started guide](00-overview.md) we'll create a new View called `counter`, I know, very original, but this is just to show you the basics of Stacked. To create a new View with Stacked run the following command:
+In the app that you created during the [Get Started guide](00-overview.md#create-a-stacked-app) we'll create a new View called `counter`, I know, very original, but this is just to show you the basics of Stacked. To create a new View with Stacked run the following command:
 
 ```shell
 stacked create view counter
