@@ -91,10 +91,10 @@ const config = {
           src: 'img/logo.png',
         },
         items: [
-          // {
-          //   type: 'localeDropdown',
-          //   position: 'right',
-          // },
+          {
+            type: 'localeDropdown',
+            position: 'right',
+          },
           {
             href: 'https://github.com/Filledstacks/stacked',
             position: 'right',
