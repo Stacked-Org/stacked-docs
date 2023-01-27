@@ -18,7 +18,7 @@ To get started, install the `stacked_cli` package on your machine:
 dart pub global activate stacked_cli
 ```
 
-### Creating a Stacked App
+### Creating a App
 
 To create your first Stacked app, all you need to do is run:
 
@@ -68,13 +68,13 @@ stacked create dialog error
 
 This will create a new Dialog called `ErrorDialog` in the `ui/dialogs` folder. This will also add the value to DialogType enum, as well as add the DialogBuilder to the available builders in `ui/setup/setup_dialog_ui.dart` file.
 
-### Generate Stacked Code
+### Generate Code
 
 When you've changed something manually, or added a new model, instead of executing the command `flutter pub run build_runner build --delete-conflicting-outputs` you can simply run `stacked generate`.
 
 ### Update CLI
 
-When you want to update a `stacked_cli` app, instead of executing the command `dart pub global activate stacked_cli` you can simply run `stacked update`.
+When you want to update the `stacked_cli` app, instead of executing the command `dart pub global activate stacked_cli` you can simply run `stacked update`.
 
 
 ## Use the CLI with Existing Project
@@ -85,7 +85,7 @@ Using the Stacked CLI with an existing project takes a little bit more effort th
 2. If you have tests setup as presented in the [unit testing videos](https://youtu.be/5BFlo9k3KNU) your helper file should be `test/helpers/test_helpers.dart`
 3. You tell Stacked where to make the modifications
 
-The way we know where to add modifications into your code is by reading what we call a **template identifier**. This tells our tools, "At this position you can make a modification". For now, we only have two scaffolding commands:
+The way we know where to add modifications into your code is by reading what we call a **template identifier**. This tells our tools, "At this position you can make a modification". For now, we only have four scaffolding commands:
 
 ### Create View
 
@@ -157,7 +157,7 @@ This command creates all the scaffolding to add a new BottomSheet into the proje
 
 1. Creates a new folder with the Sheet name in `lib/ui/bottom_sheets/`
 2. Creates a new Sheet file in `lib/ui/bottom_sheets/sheet_name/`
-3. Adds a new value to DialogType enum
+3. Adds a new value to BottomSheetType enum
 4. Adds the SheetBuilder to the `lib/ui/setup/setup_bottom_sheet_ui.dart` file
 
 For us to achieve #3, we need to know where is your BottomSheetType enum. To indicate that we use the **template identifiers**, open your file where BottomSheetType enum is defined and under the last value, add:
