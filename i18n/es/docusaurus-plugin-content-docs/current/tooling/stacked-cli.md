@@ -57,7 +57,7 @@ Desde la carpeta raíz de su aplicación Stacked, ejecute el comando:
 stacked create bottom_sheet alert
 ```
 
-Esto creará una nueva Hoja Inferior llamada `AlertSheet` en la carpeta `ui/bottom_sheets`. Esto también añadirá el valor al enum BottomSheetType y añadirá el SheetBuilder a los constructores disponibles en el archivo `ui/setup/setup_bottom_sheet_ui.dart`.
+Esto creará una nueva Hoja Inferior llamada `AlertSheet` en la carpeta `ui/bottom_sheets` y la añadirá a las dependencias del archivo `app.dart`. Por defecto, esto también creará un SheetModel y el archivo de prueba unitaria. Si sólo quieres un BottomSheet sin el modelo y su test, simplemente pasa la bandera `--no-model` al comando.
 
 ### Añadir un Nuevo Diálogo
 
@@ -67,7 +67,7 @@ Desde la carpeta raíz de su aplicación Stacked, ejecute el comando:
 stacked create dialog error
 ```
 
-Esto creará un nuevo Diálogo llamado `ErrorDialog` en la carpeta `ui/dialogs`. Esto también añadirá el valor al enum DialogType y añadirá el DialogBuilder a los constructores disponibles en el archivo `ui/setup/setup_dialog_ui.dart`.
+Esto creará un nuevo Diálogo llamado `ErrorDialog` en la carpeta `ui/dialogs` y lo añadirá a las dependencias del archivo `app.dart`. Por defecto, esto también creará un DialogModel y el archivo de prueba unitaria. Si sólo quieres un diálogo sin el modelo y su test, simplemente pasa la bandera `--no-model` al comando.
 
 ### Generar Código
 
@@ -158,28 +158,15 @@ Este comando crea todo el andamiaje necesario para añadir una nueva Hoja Inferi
 
 1. Crea una nueva carpeta con el nombre de la Hoja en `lib/ui/bottom_sheets/`
 2. Crea un nuevo archivo de Hoja en `lib/ui/bottom_sheets/sheet_name/`
-3. Añade un nuevo valor al enum BottomSheetType
-4. Añade un constructor de Hoja (SheetBuilder) al fichero `lib/ui/setup/setup_bottom_sheet_ui.dart`
+3. Registra la Hoja con tu `StackedApp`
 
-Para lograr #3, necesitamos saber dónde está su enum BottomSheetType. Para indicar que estamos utilizando los **identificadores de plantilla**, abra el archivo donde está definido el enum BottomSheetType y bajo el último valor, añada:
-
-```dart
-// @stacked-bottom-sheet-type
-```
-
-Para lograr #4, necesitamos saber dónde añadir el constructor y su importación. Para indicar que estamos usando los **identificadores de plantilla**, abre tu archivo `lib/ui/setup/setup_bottom_sheet_ui.dart` y bajo la último importación añade:
+Para lograr #3, necesitamos saber dónde añadir el registro de dependencia. Abre tu fichero `lib/app/app.dart` y bajo el último registro de dependencia dentro de la propiedad `bottomsheets` de StackedApp, añade:
 
 ```dart
-// @stacked-import
+// @stacked-bottom-sheet
 ```
 
-Y debajo del último constructor añade:
-
-```dart
-// @stacked-bottom-sheet-builder
-```
-
-Ahora si ejecutas `stacked create bottom_sheet alert` verás que se crean todos los archivos Y además añadimos el valor a su enum `BottomSheetType` y registramos el `SheetBuilder` en el BottomSheetService. Las modificaciones son opcionales, por lo que si no tiene los identificadores de plantilla, Stacked seguirá generando los archivos necesarios, pero no añadirá automáticamente el valor al enum ni registrará el constructor. Todo lo demás seguirá funcionando.
+Si ahora ejecutas `stacked create bottom_sheet alert` verás que se crean todos los archivos Y registramos el `SheetBuilder` con el `BottomSheetService`. Las modificaciones son opcionales, así que si no tienes los identificadores de plantilla, Stacked seguirá generando los archivos necesarios, pero no registrará automáticamente las dependencias. Todo lo demás seguirá funcionando.
 
 ### Crear Diálogo
 
@@ -187,28 +174,15 @@ Este comando crea todo el andamiaje necesario para añadir un nuevo Diálogo al 
 
 1. Crea una nueva carpeta con el nombre del Diálogo en `lib/ui/dialogs/`
 2. Crea un nuevo archivo de Diálogo en `lib/ui/dialogs/dialog_name/`
-3. Añade un nuevo valor al enum DialogType
-4. Añade un constructor de Diálogo (DialogBuilder) al fichero `lib/ui/setup/setup_dialog_ui.dart`
+3. Registra el Diálogo con tu `StackedApp`
 
-Para lograr #3, necesitamos saber dónde está tu enum DialogType. Para indicar que estamos usando los **identificadores de plantilla**, abre el archivo donde está definido el enum DialogType y bajo el último valor, añade:
-
-```dart
-// @stacked-dialog-type
-```
-
-Para lograr #4, necesitamos saber dónde añadir el constructor y su importación. Para indicar que estamos usando los **template identifiers**, abre tu archivo `lib/ui/setup/setup_dialog_ui.dart` y bajo el último import, añade:
+Para lograr #3, necesitamos saber dónde añadir el registro de dependencia. Abre tu fichero `lib/app/app.dart` y bajo el último registro de dependencia dentro de la propiedad `dialogs` de StackedApp, añade:
 
 ```dart
-// @stacked-import
+// @stacked-dialog
 ```
 
-Y bajo el último constructor añade:
-
-```dart
-// @stacked-dialog-builder
-```
-
-Ahora si ejecutas `stacked create dialog error` verás que se generan todos los archivos Y además añadimos el valor a su enum `DialogType` y registramos el `DialogBuilder` en DialogService. Las modificaciones son opcionales, así que si no tienes los identificadores de plantilla, Stacked generará los archivos necesarios, pero no añadirá automáticamente el valor al enum ni registrará el constructor. Todo lo demás seguirá funcionando.
+Si ahora ejecutas `stacked create dialog error` verás que se generan todos los archivos Y registramos el `DialogBuilder` con el `DialogService`. Las modificaciones son opcionales, así que si no tienes los identificadores de plantilla, Stacked seguirá generando los archivos necesarios, pero no registrará automáticamente las dependencias. Todo lo demás seguirá funcionando.
 
 
 ## Configuración
@@ -218,11 +192,7 @@ Si quieres usar `stacked_cli` en un paquete que no se ajusta a la estructura que
 - `views_path`: La ruta relativa donde se generarán Vistas y Modelos de Vista. Por defecto: `ui/views`.
 - `services_path`: La ruta relativa donde se generarán los Servicios. Por defecto: `services`.
 - `bottom_sheets_path`: La ruta relativa donde se generarán las Hojas Inferiores. Por defecto: `ui/bottom_sheets`.
-- `bottom_sheet_type_file_path`: La ruta del archivo donde se encuentra el enum BottomSheetType. Por defecto: `enums/bottom_sheet_type.dart`.
-- `bottom_sheet_builder_file_path`: La ruta del archivo donde se encuentra el constructor de Hoja Inferior. Por defecto: `ui/setup/setup_bottom_sheet_ui.dart`.
 - `dialogs_path`: La ruta relativa donde se generarán los Diálogos. Por defecto: `ui/dialogs`.
-- `dialog_type_file_path`: La ruta del archivo donde se encuentra el enum DialogType. Por defecto: `enums/dialog_type.dart`.
-- `dialog_builder_file_path`: La ruta del archivo donde se encuentra el constructor de Diálogo. Por defecto: `ui/setup/setup_dialog_ui.dart`.
 - `stacked_app_path`: La ruta relativa al archivo que contiene la configuración de `StackedApp`. Por defecto: `app/app.dart`.
 - `test_helpers_path`: La ruta relativa al archivo que contiene los `test_helpers` (servicios simulados, registerService, etc). Por defecto: `helpers/test_helpers.dart`.
 - `test_services_path`: La ruta relativa a donde se generarán las pruebas unitarias de los Servicios. Por defecto: `services`.
@@ -240,11 +210,7 @@ Incluye sólo las rutas que quieras personalizar. Si excluyes una ruta, se utili
     "services_path" : "services",
     "views_path" : "ui/views",
     "bottom_sheets_path": "ui/bottom_sheets",
-    "bottom_sheet_type_file_path": "enums/bottom_sheet_type.dart",
-    "bottom_sheet_builder_file_path": "ui/setup/setup_bottom_sheet_ui.dart",
     "dialogs_path": "ui/dialogs",
-    "dialog_type_file_path": "enums/dialog_type.dart",
-    "dialog_builder_file_path": "ui/setup/setup_dialog_ui.dart",
     "test_helpers_file_path" : "helpers/test_helpers.dart",
     "test_services_path" : "services",
     "test_views_path" : "viewmodels",
