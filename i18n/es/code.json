@@ -277,6 +277,9 @@
   "index.main.button": {
     "message": "Empezar"
   },
+  "index.main.likeUs": {
+    "message": "Danos me gusta en Pub 👍"
+  },
   "index.powerfulCli.title": {
     "message": "Una Potente CLI"
   },
