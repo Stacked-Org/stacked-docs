@@ -66,7 +66,7 @@ From the root folder of your Stacked application, run the command:
 stacked create dialog error
 ```
 
-This will create a new Dialog called `ErrorDialog` in the `ui/dialogs` folder. This will also add the value to DialogType enum, as well as add the DialogBuilder to the available builders in `ui/setup/setup_dialog_ui.dart` file.
+This will create a new Dialog called `ErrorDialog` in the `ui/dialogs` folder and add it to the dependencies in the `app.dart` file. By default, this will also create a DialogModel and the unit test file. If you only want a Dialog without a model and their test you just need to pass the flag `--no-model` to the command.
 
 ### Generate Code
 
@@ -173,28 +173,15 @@ This command creates all the scaffolding to add a new Dialog into the project:
 
 1. Creates a new folder with the Dialog name in `lib/ui/dialogs/`
 2. Creates a new Dialog file in `lib/ui/dialogs/dialog_name/`
-3. Adds a new value to DialogType enum
-4. Adds a DialogBuilder to the `lib/ui/setup/setup_dialog_ui.dart` file
+3. Registers the Dialog with your `StackedApp`
 
-For us to achieve #3, we need to know where is your DialogType enum. To indicate that we use the **template identifiers**, open your file where DialogType enum is defined and under the last value, add:
-
-```dart
-// @stacked-dialog-type
-```
-
-For us to achieve #4, we need to know where to add the builder and its import. To indicate that we use the **template identifiers**, open your `lib/ui/setup/setup_dialog_ui.dart` file and under the last import, add:
+For us to achieve #3, we need to know where to add the dependency registration. Open your `lib/app/app.dart` file and under the last dependency registration inside `dialogs` property of StackedApp, add:
 
 ```dart
-// @stacked-import
+// @stacked-dialog
 ```
 
-And underneath your last builder add:
-
-```dart
-// @stacked-dialog-builder
-```
-
-Now if you run `stacked create dialog error` you'll see that all the files are generated AND we also add the value into your `DialogType` enum and we register the `DialogBuilder` into DialogService. The modifications are optional so if you don't have the template identifiers, Stacked will still generate the necessary files but won't automatically add the value on the enum and register the builder. Everything else will still work though.
+Now if you run `stacked create dialog error` you'll see that all the files are generated AND we register the `DialogBuilder` into DialogService. The modifications are optional so if you don't have the template identifiers, Stacked will still generate the necessary files but won't automatically register the dependencies. Everything else will still work though.
 
 
 ## Config
