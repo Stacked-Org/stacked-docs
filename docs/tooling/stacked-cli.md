@@ -56,7 +56,7 @@ From the root folder of your Stacked application, run the command:
 stacked create bottom_sheet alert
 ```
 
-This will create a new BottomSheet called `AlertSheet` in the `ui/bottom_sheets` folder. This will also add the value to BottomSheetType enum, as well as add the SheetBuilder to the available builders in `ui/setup/setup_bottom_sheet_ui.dart` file.
+This will create a new BottomSheet called `AlertSheet` in the `ui/bottom_sheets` folder and add it to the dependencies in the `app.dart` file. By default, this will also create a SheetModel and the unit test file. If you only want a BottomSheet without a model and their test you just need to pass the flag `--no-model` to the command.
 
 ### Add a New Dialog
 
@@ -157,28 +157,15 @@ This command creates all the scaffolding to add a new BottomSheet into the proje
 
 1. Creates a new folder with the Sheet name in `lib/ui/bottom_sheets/`
 2. Creates a new Sheet file in `lib/ui/bottom_sheets/sheet_name/`
-3. Adds a new value to BottomSheetType enum
-4. Adds the SheetBuilder to the `lib/ui/setup/setup_bottom_sheet_ui.dart` file
+3. Registers the BottomSheet with your `StackedApp`
 
-For us to achieve #3, we need to know where is your BottomSheetType enum. To indicate that we use the **template identifiers**, open your file where BottomSheetType enum is defined and under the last value, add:
-
-```dart
-// @stacked-bottom-sheet-type
-```
-
-For us to achieve #4, we need to know where to add the builder and its import. To indicate that we use the **template identifiers**, open your `lib/ui/setup/setup_bottom_sheet_ui.dart` file and under the last import, add:
+For us to achieve #3, we need to know where to add the dependency registration. Open your `lib/app/app.dart` file and under the last dependency registration inside `bottomsheets` property of StackedApp, add:
 
 ```dart
-// @stacked-import
+// @stacked-bottom-sheet
 ```
 
-And underneath your last builder add:
-
-```dart
-// @stacked-bottom-sheet-builder
-```
-
-Now if you run `stacked create bottom_sheet alert` you'll see that all the files are generated AND we also add the value into your `BottomSheetType` enum and we register the `SheetBuilder` into BottomSheetService. The modifications are optional so if you don't have the template identifiers, Stacked will still generate the necessary files but won't automatically add the value on the enum and register the builder. Everything else will still work though.
+Now if you run `stacked create bottom_sheet alert` you'll see that all the files are generated AND we register the `SheetBuilder` into BottomSheetService. The modifications are optional so if you don't have the template identifiers, Stacked will still generate the necessary files but won't automatically register the dependencies. Everything else will still work though.
 
 ### Create Dialog
 
