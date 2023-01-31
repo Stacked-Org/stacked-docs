@@ -191,11 +191,7 @@ If you want to use `stacked_cli` in a package that doesn't fit the structure tha
 - `views_path`: The relative path where Views and ViewModels will be generated. Default: `ui/views`.
 - `services_path`: The relative path where Services will be generated. Default: `services`.
 - `bottom_sheets_path`: The relative path where BottomSheets will be generated. Default: `ui/bottom_sheets`.
-- `bottom_sheet_type_file_path`: The file path where BottomSheetType enum is located. Default: `enums/bottom_sheet_type.dart`.
-- `bottom_sheet_builder_file_path`: The file path where BottomSheet builder is located. Default: `ui/setup/setup_bottom_sheet_ui.dart`.
 - `dialogs_path`: The relative path where Dialogs will be generated. Default: `ui/dialogs`.
-- `dialog_type_file_path`: The file path where DialogType enum is located. Default: `enums/dialog_type.dart`.
-- `dialog_builder_file_path`: The file path where Dialog builder is located. Default: `ui/setup/setup_dialog_ui.dart`.
 - `stacked_app_path`: The relative path to the file that contains the `StackedApp` setup. Default: `app/app.dart`.
 - `test_helpers_path`: The relative path to the file that contains the test_helpers (mocks, registerService, etc). Default: `helpers/test_helpers.dart`.
 - `test_services_path`: The relative path to where the Services' unit tests will be generated. Default: `services`.
@@ -213,11 +209,7 @@ Only include the paths you want to customize. If you exclude a path, the default
     "services_path" : "services",
     "views_path" : "ui/views",
     "bottom_sheets_path": "ui/bottom_sheets",
-    "bottom_sheet_type_file_path": "enums/bottom_sheet_type.dart",
-    "bottom_sheet_builder_file_path": "ui/setup/setup_bottom_sheet_ui.dart",
     "dialogs_path": "ui/dialogs",
-    "dialog_type_file_path": "enums/dialog_type.dart",
-    "dialog_builder_file_path": "ui/setup/setup_dialog_ui.dart",
     "test_helpers_file_path" : "helpers/test_helpers.dart",
     "test_services_path" : "services",
     "test_views_path" : "viewmodels",
