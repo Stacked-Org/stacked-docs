@@ -2,7 +2,7 @@
  
 This repository contains the documentation website code and Markdown source files for [stacked.filledstacks.com](https://stacked.filledstacks.com).
 
-Use the table of contents icon on the top left corner of this document to get to a specific section of this guide quickly.
+Use the table of contents icon in the top left corner of this document to get to a specific section of this guide quickly.
 
 ## Contributing
 
@@ -22,7 +22,7 @@ We use Slack to talk about all sorts of topics related to Stacked and this site.
 
 ## License
 
-**TODO**: complete by Dane
+[MIT License](/LICENSE)
 
 ## Thanks :purple_heart:
 
