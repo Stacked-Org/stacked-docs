@@ -7,12 +7,12 @@ sidebar_label: View Models
 
 # What is a View Model?
 
-As we saw in previous chapters, a ViewModel is simply a Dart class that extends ChangeNotifier and is responsible for the presentation logic of the View, managing its state and performing actions for users as they interact with the View.
+As we saw in previous chapters, a ViewModel is simply a Dart class that extends `ChangeNotifier` and is responsible for the presentation logic of the View, managing its state and performing actions for users as they interact with the View.
 
 
 ## BaseViewModel
 
-This is a ChangeNotifier with busy state indication functionality. This allows you to set a busy state based on an object passed it. This will most likely be the properties on the extended ViewModel. It came from the need to have busy states for multiple values in the same ViewModels without relying on implicit state values. It also contains a helper function to indicate busy while a future is executing. This way we avoid having to call setBusy before and after every Future call.
+The `default` ViewModel of the Stacked architecture with **busy state** and **error state** handling. Allows you to set either state based on an object passed to it, most likely a property on the extended ViewModel. It came from the need to have busy states for multiple values in the same ViewModels without relying on implicit state values. It also contains a helper function to indicate busy while a Future is running. This way we avoid having to call `setBusy` before and after each Future call.
 
 To use the BaseViewModel you can extend it and make use of the busy functionality as follows.
 
@@ -160,6 +160,8 @@ In this case the error can be retrieved using `viewModel.error(BusyObjectKey)` o
 
 
 ## Special View Models
+
+In addition to the BaseViewModel, Stacked includes a number of special ViewModels that reduce the boilerplate code required for common use cases. These are described below.
 
 ### ReactiveViewModel
 
