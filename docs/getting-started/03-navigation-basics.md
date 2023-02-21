@@ -109,3 +109,87 @@ _navigationService.clearStackAndShow(Routes.homeView);
 ```
 
 More advanced docs and tutorials for navigation are coming soon.
+
+### Custom Transitions
+
+In Flutter the `MaterialRoute` and `CupertinoRoute` has pre-defined transitions. To supply your own transition you have to use a `CustomRoute`. Stacked allows you to do that. The transition can be suppllied to the `StackedApp` to ensure any navigation to this view uses the supplied transition, or it can be supplied when navigating to the view. 
+
+**Supplied at App Level**
+
+In your `app.dart` file when you define the route use a `CustomRoute` over a `Material` or `CupertinoRoute`.
+
+```dart
+@StackedApp(routes: [
+  MaterialRoute(page: StartupView),
+  MaterialRoute(page: HomeView),
+  CustomRoute(page: CounterView), // <== Custom Route
+  // @stacked-route
+])
+class App {}
+```
+
+The custom route allows you to supply a transition property as well. This HAS to be a static builder function. Stacked comes with pre-defined transitions which you can use. We cover the basic transitions like `fadeIn`, `zoomIn`, `slideLeft`, `slideRight` and many more under the `TransitionsBuilders` class. Lets use the fade for our example.
+
+```dart
+@StackedApp(routes: [
+  ...
+  CustomRoute(
+    page: CounterView, 
+    transitionsBuilder: TransitionsBuilders.fadeIn,
+  ),
+  // @stacked-route
+])
+class App {}
+```
+
+Now run `stacked generate` and when you navigate to this view you'll see it fade in. If you want no transition (this is usually preferred on web) then remove the transition builder and only keep the `CustomRoute`.
+
+**Set Transition When Navigating**
+
+In addition to supplying the transition at an app level you can also supply the transition when you perform the navigation. To achieve this your route still has to be a `CustomRoute` to ensure that Flutter allows Stacked to build the transition you want. This does not require a regenerate of the code to get it working, only that the code has been regenerated as a `CustomRoute`.
+
+```dart
+  await _navigationServce.navigateTo(
+    Routes.secondView,
+    transition: TransitionsBuilders.fadeIn,
+  );
+```
+
+**Build Your Own Transition**
+
+The way to build the transition is quite simple. You create a class with your `Transitions` and inside you create a static function with the following signature. `Widget Function(BuildContext context, Animation<double> animation, Animation<double> secondaryAnimation, Widget child)` . This function will be called as the transition happens. Here's an example a transition using the `Animations` package.
+
+```dart
+import 'package:animations/animations.dart';
+import 'package:flutter/material.dart';
+
+class CustomRouteTransition {
+  static Widget sharedAxis(BuildContext context, Animation<double> animation,
+      Animation<double> secondaryAnimation, Widget child) {
+
+    // Here you can use any Existing Transition class in Flutter
+    return SharedAxisTransition(
+      animation: animation,
+      secondaryAnimation: secondaryAnimation,
+      transitionType: SharedAxisTransitionType.scaled,
+      child: child,
+    );
+  }
+}
+```
+
+This can be used as the same as the Transitions that ship with Stacked in the `TransitionBuilders` class. 
+
+```dart
+// In app.dart
+CustomRoute(
+  page: CounterView, 
+  transitionsBuilder: CustomRouteTransition.sharedAxis,
+),
+
+// When navigating
+await _navigationServce.navigateTo(
+  Routes.secondView,
+  transition: transitionsBuilder: CustomRouteTransition.sharedAxis,
+);
+```
