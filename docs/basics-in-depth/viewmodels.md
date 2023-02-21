@@ -184,7 +184,7 @@ That's it. To see a full example take a look at the example in the git repo.
 
 ### StreamViewModel
 
-This `ViewModel` extends the `BaseViewModel` and provides functionality to easily listen and react to stream data. It allows you to supply a `Stream` of type `T` which it will subscribe to, manage subscription (dispose when done), and give you callbacks where you can modify/manipulate the data. It will automatically rebuild the `ViewModel` as new stream values come in. It has 1 required override which is the stream getter and 4 optional overrides.
+This `ViewModel` extends the `BaseViewModel` and provides functionality to easily listen and react to stream data. It allows you to supply a `Stream` of type `T` which it will subscribe to, manage subscription (dispose when done), and give you callbacks where you can modify/manipulate the data. It will automatically rebuild the `View` as new stream values come in. It has 1 required override which is the stream getter and 4 optional overrides.
 
 - **stream**: Returns the `Stream` you would like to listen to
 - **onData**: Called after the view has rebuilt and provides you with the data to use
