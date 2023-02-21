@@ -12,7 +12,7 @@ As we saw in previous chapters, a ViewModel is simply a Dart class that extends 
 
 ## BaseViewModel
 
-This is a ChangeNotifier with busy state indication functionality. This allows you to set a busy state based on an object passed it. This will most likely be the properties on the extended ViewModel. It came from the need to have busy states for multiple values in the same ViewModels without relying on implicit state values. It also contains a helper function to indicate busy while a future is executing. This way we avoid having to call setBusy before and after every Future call.
+The most important functionality that this viewmodel provides is the busy functionality and the rebuilding of the UI. There are 2 types of busy functions, one that sets the entire viewmodel to busy and one that sets busy with a specific key.  
 
 To use the BaseViewModel you can extend it and make use of the busy functionality as follows.
 
@@ -78,8 +78,6 @@ class WidgetOneView extends StackedView<WidgetOneViewModel> {
   }
 }
 ```
-
-All the major functionality for the BaseViewModel is shown above.
 
 ### Busy handling
 
