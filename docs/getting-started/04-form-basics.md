@@ -228,3 +228,19 @@ Now we can run `stacked generate`, which will make use of this new validator. If
 ![Stacked form validation message](/img/getting-started/04-form-validation.gif)
 
 The UI for the validation message is basic. It's text that displays only when `hasReverseInputValidationMessage` is true. This is a property that's also generated for you. This brings our Form Basics to an end. We are working on a deep dive of Stacked Forms that will be coming soon.
+
+### Using Form Viewmodel with Others like Future and Stream
+
+The Form functionality is housed within a mixin called `FormStateHelper`. This means if you already have a `ViewModel` that extends from one of the special ViewModels like `FutureViewModel` or `StreamViewModel` you can simply mix that with the `FormStateHelper`. See example below.
+
+```dart
+// Original class that you want to add form functionality to 
+class ContentViewModel extends FutureViewModel<Posts> {
+  ...
+}
+
+// Do instead
+class ContentViewModel extends FutureViewModel<Posts> with FormStateHelper{
+  ...
+}
+```
