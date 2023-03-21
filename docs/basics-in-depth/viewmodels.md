@@ -2,6 +2,7 @@
 id: viewmodels
 title: View Models
 sidebar_label: View Models
+sidebar_position: 1
 ---
 
 
@@ -156,7 +157,7 @@ class BusyExampleViewModel extends BaseViewModel {
 }
 ```
 
-In this case the error can be retrieved using `viewModel.error(BusyObjectKey)` or you can simply check if there is an error for the key using `mode.hasErrorForKey(BusyObjectKey)`. If you want to react to an error from your future you can override `onFutureError` which will return the exception and the key you used for that future. The Specialty `ViewModels` have their own onError override but this one can be used in there as well if needed.
+In this case the error can be retrieved using `viewModel.error(BusyObjectKey)` or you can simply check if there is an error for the key using `viewModel.hasErrorForKey(BusyObjectKey)`. If you want to react to an error from your future you can override `onFutureError` which will return the exception and the key you used for that future. The Specialty `ViewModels` have their own onError override but this one can be used in there as well if needed.
 
 
 ## Special View Models
@@ -168,19 +169,36 @@ In addition to the BaseViewModel, Stacked includes a number of special ViewModel
 This ViewModel extends the `BaseViewModel` and adds a function that allows you to listen to services that are being used in the ViewModel. There are two things you have to do to make a ViewModel react to changes in a service.
 
 1. Extend from `ReactiveViewModel`.
-2. Implement `reactiveServices` getter that returns a list of reactive services.
+2. Implement `listenableServices` getter that returns a list of listenable services.
 
 ```dart
 class AnyViewModel extends ReactiveViewModel {
   final _postsService = locator<PostsService>();
+
   int get postCount => _postsService.postCount;
 
   @override
-  List<ReactiveServiceMixin> get reactiveServices => [_postsService];
+  List<ListenableServiceMixin> get listenableServices => [_postsService];
 }
 ```
 
-That's it. To see a full example take a look at the example in the git repo.
+On the Service side, the Service has to use the `ListenableServiceMixin` and pass to `listenToReactiveValues` the properties to be listened to.
+
+```dart
+class PostService with ListenableServiceMixin {
+  PostService {
+    listenToReactiveValues([_postCount]);
+  }
+
+  int _postCount = 0;
+  int get postCount => _postCount;
+
+  Future<void> increment() async {
+    _postCount++;
+    notifyListeners(); // ViewModels listening postCount value are notified and their View is rebuild
+  }
+}
+```
 
 ### StreamViewModel
 
@@ -258,7 +276,7 @@ class FutureExampleViewModel extends FutureViewModel<String> {
 }
 ```
 
-This will automatically set the view's isBusy property and will indicate false when it's complete. It also exposes have a `dataReady` property that can be used. This will indicate true when the data is available. The `ViewModel` can be used in a view as follows.
+This will automatically set the view's isBusy property and will indicate false when it's complete. It also exposes a `dataReady` property that can be used. This will indicate true when the data is available. The `ViewModel` can be used in a view as follows.
 
 ```dart
 class FutureExampleView extends StatelessWidget {
