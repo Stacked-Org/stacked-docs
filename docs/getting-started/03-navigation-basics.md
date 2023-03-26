@@ -149,7 +149,7 @@ Now run `stacked generate` and when you navigate to this view you'll see it fade
 In addition to supplying the transition at an app level you can also supply the transition when you perform the navigation. To achieve this your route still has to be a `CustomRoute` to ensure that Flutter allows Stacked to build the transition you want. This does not require a regenerate of the code to get it working, only that the code has been regenerated as a `CustomRoute`.
 
 ```dart
-  await _navigationServce.navigateTo(
+  await _navigationService.navigateTo(
     Routes.secondView,
     transition: TransitionsBuilders.fadeIn,
   );
@@ -188,7 +188,7 @@ CustomRoute(
 ),
 
 // When navigating
-await _navigationServce.navigateTo(
+await _navigationService.navigateTo(
   Routes.secondView,
   transition: transitionsBuilder: CustomRouteTransition.sharedAxis,
 );
