@@ -186,7 +186,7 @@ On the Service side, the Service has to use the `ListenableServiceMixin` and pas
 
 ```dart
 class PostService with ListenableServiceMixin {
-  PostService {
+  PostService() {
     listenToReactiveValues([_postCount]);
   }
 
