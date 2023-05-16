@@ -98,7 +98,7 @@ Since this is not a "Flutter UI building" tutorial, I'll keep this short. What w
 
 ![Stacked form Example UI](/img/getting-started/04-reverse-text-screenshot.png)
 
-Now before you say anything, I know this is the most beautiful form UI you've ever seen. So please, if you want to give me compliments on the UI, [join our Slack](https://join.slack.com/t/filledstacks/shared_invite/zt-1mmpc84as-g_3l8bLHkEFekRfXnr7MXQ) where we discuss lots of cool Stacked things. 😁
+Now before you say anything, I know this is the most beautiful form UI you've ever seen. So please, if you want to give me compliments on the UI, [join our Discord](https://discord.gg/auR5sJyx) where we discuss lots of cool Stacked things. 😁
 
 <details>
 <summary>TextReverseView builder code</summary>

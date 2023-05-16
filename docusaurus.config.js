@@ -127,8 +127,8 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Slack',
-                href: 'https://filledstacks.slack.com',
+                label: 'Discord',
+                href: 'https://discord.gg/auR5sJyx',
               },
               {
                 label: 'Stack Overflow',

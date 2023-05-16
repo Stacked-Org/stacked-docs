@@ -23,9 +23,9 @@
     "message": "Tooling",
     "description": "The label of footer link with label=Tooling linking to /docs/tooling/stacked-cli"
   },
-  "link.item.label.Slack": {
-    "message": "Slack",
-    "description": "The label of footer link with label=Slack linking to https://filledstacks.slack.com"
+  "link.item.label.Discord": {
+    "message": "Discord",
+    "description": "The label of footer link with label=Discord linking to https://discord.gg/auR5sJyx"
   },
   "link.item.label.Stack Overflow": {
     "message": "Stack Overflow",

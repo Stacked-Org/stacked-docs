@@ -1,10 +1,10 @@
 # Types of contributions :memo:
 You can contribute to the Stacked Docs content and site in several ways. This repo is a place to discuss and collaborate on stacked.filledstacks.com! Our small, but mighty :muscle: team is maintaining this repo; to preserve our bandwidth, off topic conversations will be closed.
 
-### :mega: Slack
-Slack are where we have conversations.
+### :mega: Discord
+Discord is where we have conversations.
 
-If you'd like help troubleshooting a docs PR you're working on, have a great new idea, or want to share something amazing you've learned in our docs, join us in [Slack](https://filledstacks.slack.com/).
+If you'd like help troubleshooting a docs PR you're working on, have a great new idea, or want to share something amazing you've learned in our docs, join us in [Discord](https://discord.gg/auR5sJyx).
 
 ### :lady_beetle: Issues
 [Issues](https://docs.github.com/en/github/managing-your-work-on-github/about-issues) are used to track tasks that contributors can help with. If an issue has a triage label, we haven't reviewed it yet, and you shouldn't begin work on it.
