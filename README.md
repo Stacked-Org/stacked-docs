@@ -16,6 +16,10 @@ For more complex contributions, you can open an issue using the most appropriate
 
 If you're looking for a way to contribute, you can scan through our [existing issues](https://github.com/FilledStacks/stacked-docs/issues) for something to work on. When ready, check out [Getting Started with Contributing](/CONTRIBUTING.md) for detailed instructions.
 
+## Schedule
+
+[FilledStacks](https://github.com/filledstacks): Wednesdays I write more docs or examples for Stacked 
+
 ### Join us in discussions
 
 There is a Discord to talk about all sorts of topics related to Stacked and FilledStacks. For example: if you'd like help troubleshooting a PR, have a great new idea, or want to share something amazing you've learned in our docs, join us in the [Discord](https://discord.gg/auR5sJyx).
