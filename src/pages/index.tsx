@@ -57,7 +57,7 @@ export default function Home() {
             <Translate id="index.main.button">Get Started</Translate>
           </Link>
           <Link to="https://masterflutterweb.carrd.co/" target="_blank" className="mt-6 hover:text-white hover:no-underline px-6 py-4 text-lg font-semibold text-white transition-all bg-sky-700 border-none rounded outline-none cursor-pointer ring-transparent focus:ring-purple-500 ring hover:bg-[#444] active:scale-90">
-            <Translate id="index.main.likeUs">Master Stacked For the Web</Translate>
+            <Translate id="index.main.likeUs">Master Stacked on the Web</Translate>
           </Link>
         </motion.div>
       </main>
