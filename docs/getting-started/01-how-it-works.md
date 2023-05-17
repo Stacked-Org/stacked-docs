@@ -125,3 +125,9 @@ Finally, run your app by running `flutter run` or starting a debug session in VS
 ![Example Counter App in Stacked](/img/getting-started/01-counter-example.gif)
 
 We'll talk about the `StartupView` and `Navigation` next.
+
+---
+
+## We're ready for the Web 🚀
+
+Master Flutter on the web with the official [Flutter Web Course](https://masterflutterweb.carrd.co/)

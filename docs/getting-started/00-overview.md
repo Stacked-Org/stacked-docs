@@ -55,3 +55,9 @@ You should see a loading screen with loading indicator, followed by a View with 
 - Unit tests example
 
 Everything that you need to build a production flutter app with your team.
+
+---
+
+## We're ready for the Web 🚀
+
+Master Flutter on the web with the official [Flutter Web Course](https://masterflutterweb.carrd.co/)

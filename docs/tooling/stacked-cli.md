@@ -219,3 +219,9 @@ Only include the paths you want to customize. If you exclude a path, the default
     "line_length": 80 // Passed into the flutter formatter when running CLI commands
 }
 ```
+
+---
+
+## We're ready for the Web 🚀
+
+Master Flutter on the web with the official [Flutter Web Course](https://masterflutterweb.carrd.co/)

@@ -516,3 +516,9 @@ Where the `ViewModel` is just this.
 ```dart
 class HomeViewModel extends IndexTrackingViewModel {}
 ```
+
+---
+
+## We're ready for the Web 🚀
+
+Master Flutter on the web with the official [Flutter Web Course](https://masterflutterweb.carrd.co/)

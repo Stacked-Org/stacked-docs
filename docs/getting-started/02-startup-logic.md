@@ -147,3 +147,9 @@ We start off by getting the services we need, `AuthenticationService` which we c
 :::info Complex Startup Tutorial
 [Here is a more complex tutorial](https://www.filledstacks.com/post/practical-guide-to-unit-testing-in-flutter/#writing-a-unit-test) that covers some additional scenarios during startup logic.
 :::
+
+---
+
+## We're ready for the Web 🚀
+
+Master Flutter on the web with the official [Flutter Web Course](https://masterflutterweb.carrd.co/)

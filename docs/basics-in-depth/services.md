@@ -157,3 +157,9 @@ class ArtistService {
 We locate each of the Services and then use their functionalities to achieve our goal. This makes our feature development process very clear and easy to read when looking at our App Services.
 
 This wraps up our definition of Services.
+
+---
+
+## We're ready for the Web 🚀
+
+Master Flutter on the web with the official [Flutter Web Course](https://masterflutterweb.carrd.co/)

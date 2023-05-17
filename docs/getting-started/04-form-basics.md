@@ -244,3 +244,9 @@ class ContentViewModel extends FutureViewModel<Posts> with FormStateHelper{
   ...
 }
 ```
+
+---
+
+## We're ready for the Web 🚀
+
+Master Flutter on the web with the official [Flutter Web Course](https://masterflutterweb.carrd.co/)
