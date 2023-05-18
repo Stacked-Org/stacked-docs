@@ -13,7 +13,7 @@ export default function DocItemTOCDesktop() {
         maxHeadingLevel={frontMatter.toc_max_heading_level}
         className={ThemeClassNames.docs.docTocDesktop}
       />
-      <iframe src="https://filledstacks.substack.com/embed" width="350" height="320" style={{ border: "1px solid #EEE", background: "white" }}></iframe>
+      <iframe src="https://filledstacks.substack.com/embed" width="320" height="320" style={{ border: "1px solid #EEE", background: "white" }}></iframe>
     </div>
   );
 }
