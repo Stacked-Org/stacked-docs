@@ -3,7 +3,7 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { motion } from "framer-motion";
 import { CLIIcon, FormIcon } from "../components/Icons";
-import Translate, {translate} from '@docusaurus/Translate';
+import Translate, { translate } from '@docusaurus/Translate';
 
 const container = {
   hidden: { opacity: 0 },
@@ -62,6 +62,7 @@ export default function Home() {
         </motion.div>
       </main>
 
+
       <div className="bg-gray-50">
         <section className="container text-center md:text-left flex gap-4 flex-col-reverse md:flex-row justify-evenly items-center min-h-[35vh] mx-auto py-16">
           <div>
@@ -91,7 +92,7 @@ export default function Home() {
               className="max-w-md text-xl"
             >
               <Translate id="index.powerfulCli.description">Never write boilerplate code again. The Stacked CLI
-              generates your Views, Services and more.</Translate>
+                generates your Views, Services and more.</Translate>
               <Link to="/docs/tooling/stacked-cli" className="block mt-2">
                 <Translate id="index.powerfulCli.button">Learn More</Translate>
               </Link>
@@ -139,7 +140,7 @@ export default function Home() {
             className="max-w-md text-xl"
           >
             <Translate id="index.forms.description">No more setting up multiple controllers and cluttering
-            up your build function. Let Stacked handle it.</Translate>
+              up your build function. Let Stacked handle it.</Translate>
             <Link to="/docs/getting-started/form-basics" className="block mt-2">
               <Translate id="index.forms.button">Learn More</Translate>
             </Link>
@@ -215,7 +216,7 @@ export default function Home() {
             }}
             className="text-4xl"
           >
-            <Translate id="index.more.title">And a lot more...</Translate>
+            <Translate id="index.more.title">Stay up to date</Translate>
           </motion.h3>
           <motion.ul
             className="flex flex-col text-lg text-left list-none"
@@ -224,13 +225,7 @@ export default function Home() {
             whileInView="show"
             transition={{ delay: 0.05, staggerChildren: 1 }}
           >
-            <motion.li variants={item}>✅ <Translate id="index.more.stateManagement">State management</Translate></motion.li>
-            <motion.li variants={item}>✅ <Translate id="index.mroe.startupLogic">Start-up logic functionality</Translate></motion.li>
-            <motion.li variants={item}>✅ <Translate id="index.more.navigation">Navigation</Translate></motion.li>
-            <motion.li variants={item}>✅ <Translate id="index.more.dialogBuilders">Dialog UI builders</Translate></motion.li>
-            <motion.li variants={item}>✅ <Translate id="index.more.bottomSheetBuilders">BottomSheet UI builders</Translate></motion.li>
-            <motion.li variants={item}>✅ <Translate id="index.more.dependencyInversion">Dependency Inversion</Translate></motion.li>
-            <motion.li variants={item}>✅ <Translate id="index.more.unitTests">Unit tests example</Translate></motion.li>
+            <motion.li variants={item}><iframe src="https://filledstacks.substack.com/embed" width="480" height="320" style={{ border: "1px solid #EEE", background: "white" }}></iframe></motion.li>
           </motion.ul>
         </section>
       </div>
