@@ -240,7 +240,7 @@ class ContentViewModel extends FutureViewModel<Posts> {
 }
 
 // Do instead
-class ContentViewModel extends FutureViewModel<Posts> with FormStateHelper{
+class ContentViewModel extends FutureViewModel<Posts> with FormStateHelper implements FormViewModel {
   ...
 }
 ```
