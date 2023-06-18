@@ -112,7 +112,7 @@ More advanced docs and tutorials for navigation are coming soon.
 
 ### Custom Transitions
 
-In Flutter the `MaterialRoute` and `CupertinoRoute` has pre-defined transitions. To supply your own transition you have to use a `CustomRoute`. Stacked allows you to do that. The transition can be suppllied to the `StackedApp` to ensure any navigation to this view uses the supplied transition, or it can be supplied when navigating to the view. 
+In Flutter the `MaterialRoute` and `CupertinoRoute` has pre-defined transitions. To supply your own transition you have to use a `CustomRoute`. Stacked allows you to do that. The transition can be supplied to the `StackedApp` to ensure any navigation to this view uses the supplied transition, or it can be supplied when navigating to the view. 
 
 **Supplied at App Level**
 
