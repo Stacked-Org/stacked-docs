@@ -517,6 +517,18 @@ Where the `ViewModel` is just this.
 class HomeViewModel extends IndexTrackingViewModel {}
 ```
 
+Another function it has is `setCurrentWebPageIndex` which sets the current index using current Route on Web Platform. Allows to get the index from url during a browser refresh which means the app starts from scracth. Can be used as follows:
+
+```dart
+class BottomNavExampleViewModel extends IndexTrackingViewModel {
+  final _routerService = exampleLocator<RouterService>();
+
+  BottomNavExampleViewModel() {
+    setCurrentWebPageIndex(_routerService);
+  }
+}
+```
+
 ---
 
 ## We're ready for the Web 🚀
