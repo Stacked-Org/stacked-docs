@@ -158,7 +158,7 @@ export default function Home() {
 
 
       {/* ===== Course banner section ===== */}
-      <div className="bg-gray-50">
+      {/* <div className="bg-gray-50">
         <section className="container text-center md:text-left flex gap-4 flex-col-reverse md:flex-row justify-evenly items-center min-h-[35vh] mx-auto py-16">
           <div>
             <motion.div
@@ -201,7 +201,7 @@ export default function Home() {
             alt=""
           />
         </section>
-      </div>
+      </div> */}
 
 
       <div className="bg-gray-50">
