@@ -51,12 +51,14 @@ This will create a new View called `LoginView` with its associated ViewModel in 
 
 The following `arguments` are available on create view command:
 
-**-h, --help**: Prints this usage information.  
-**--[no-]exclude-route**: When a route is excluded it will not be added to your app.dart routes collection.  
-**--[no-]v1**: When v1 or use-builder is provided, ViewModelBuilder will be used instead of StackedView.  
-**-t, --template**: Selects the type of starter template to use when creating a new app. One oriented for mobile first or web first. Available options: mobile (default), web.  
-**-c, --config-path**: Sets the file path for the custom config.  
-**-l, --line-length**: When a number is provided, it will be used as the line length for formatting code.  
+| Argument                  | Alias | Description                                                                                                      |
+| ------------------------- | ----- | ---------------------------------------------------------------------------------------------------------------- |
+| --help                    | -h    | Prints this usage information.                                                                                   |
+| --[no-]exclude-route      |       | When a route is excluded it will not be added to your app.dart routes collection.                                |
+| --[no-]v1                 |       | When v1 or use-builder is provided, ViewModelBuilder will be used instead of StackedView.                        |
+| --template                | -t    | Selects the type of starter template to use when creating a new app. One oriented for mobile first or web first. Allowed: **mobile**, web. |
+| --config-path             | -c    | Sets the file path for the custom config.                                                                        |
+| --line-length             | -l    | When a number is provided, it will be used as the line length for formatting code.                               |
 
 ### Add a New Service
 
