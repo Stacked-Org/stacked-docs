@@ -113,6 +113,17 @@ stacked create dialog error
 
 This will create a new Dialog called `ErrorDialog` in the `ui/dialogs` folder and add it to the dependencies in the `app.dart` file. By default, this will also create a DialogModel and the unit test file. If you only want a Dialog without a model and their test you just need to pass the flag `--no-model` to the command.
 
+The following `arguments` are available on create dialog command:
+
+| Argument                  | Alias | Description                                                                                                              |
+| ------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------ |
+| --help                    | -h    | Prints this usage information.                                                                                           |
+| --[no-]exclude-route      |       | When a route is excluded it will not be added to your app.dart routes collection.                                        |
+| --[no-]model              |       | When model is provided, StackedView will be used instead of StatelessWidget and a Model will be created. Defaults: **true**. |
+| --template                | -t    | Selects the type of dialog to create instead of the default empty dialog. Allowed: **empty**.                            |
+| --config-path             | -c    | Sets the file path for the custom config.                                                                                |
+| --line-length             | -l    | When a number is provided, it will be used as the line length for formatting code.                                       |
+
 ### Generate Code
 
 When you've changed something manually, or added a new model, instead of executing the command `flutter pub run build_runner build --delete-conflicting-outputs` you can simply run `stacked generate`.
