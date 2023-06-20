@@ -92,6 +92,17 @@ stacked create bottom_sheet alert
 
 This will create a new BottomSheet called `AlertSheet` in the `ui/bottom_sheets` folder and add it to the dependencies in the `app.dart` file. By default, this will also create a SheetModel and the unit test file. If you only want a BottomSheet without a model and their test you just need to pass the flag `--no-model` to the command.
 
+The following `arguments` are available on create bottom_sheet command:
+
+| Argument                  | Alias | Description                                                                                                              |
+| ------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------ |
+| --help                    | -h    | Prints this usage information.                                                                                           |
+| --[no-]exclude-route      |       | When a route is excluded it will not be added to your app.dart routes collection.                                        |
+| --[no-]model              |       | When model is provided, StackedView will be used instead of StatelessWidget and a Model will be created. Defaults: **true**. |
+| --template                | -t    | Selects the type of starter template to use when creating a new app. One oriented for mobile first or web first. Allowed: **mobile**, web. |
+| --config-path             | -c    | Sets the file path for the custom config.                                                                                |
+| --line-length             | -l    | When a number is provided, it will be used as the line length for formatting code.                                       |
+
 ### Add a New Dialog
 
 From the root folder of your Stacked application, run the command:
