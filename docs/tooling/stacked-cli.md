@@ -58,7 +58,7 @@ The following `arguments` are available on create view command:
 | --help                    | -h    | Prints this usage information.                                                                                   |
 | --[no-]exclude-route      |       | When a route is excluded it will not be added to your app.dart routes collection.                                |
 | --[no-]v1                 |       | When v1 or use-builder is provided, ViewModelBuilder will be used instead of StackedView.                        |
-| --template                | -t    | Selects the type of starter template to use when creating a new app. One oriented for mobile first or web first. Allowed: **mobile**, web. |
+| --template                | -t    | Selects the type of view to create instead of the default empty view.                                            |
 | --config-path             | -c    | Sets the file path for the custom config.                                                                        |
 | --line-length             | -l    | When a number is provided, it will be used as the line length for formatting code.                               |
 
@@ -78,7 +78,7 @@ The following `arguments` are available on create service command:
 | ------------------------- | ----- | ---------------------------------------------------------------------------------------------------------------- |
 | --help                    | -h    | Prints this usage information.                                                                                   |
 | --[no-]exclude-dependency |       | When a route is excluded it will not be added to your app.dart routes collection.                                |
-| --template                | -t    | Selects the type of starter template to use when creating a new app. One oriented for mobile first or web first. Allowed: **mobile**, web. |
+| --template                | -t    | Selects the type of service to create instead of the default empty service.                                      |
 | --config-path             | -c    | Sets the file path for the custom config.                                                                        |
 | --line-length             | -l    | When a number is provided, it will be used as the line length for formatting code.                               |
 
@@ -99,7 +99,7 @@ The following `arguments` are available on create bottom_sheet command:
 | --help                    | -h    | Prints this usage information.                                                                                           |
 | --[no-]exclude-route      |       | When a route is excluded it will not be added to your app.dart routes collection.                                        |
 | --[no-]model              |       | When model is provided, StackedView will be used instead of StatelessWidget and a Model will be created. Defaults: **true**. |
-| --template                | -t    | Selects the type of starter template to use when creating a new app. One oriented for mobile first or web first. Allowed: **mobile**, web. |
+| --template                | -t    | Selects the type of bottom sheet to create instead of the default empty bottom sheet.                                    |
 | --config-path             | -c    | Sets the file path for the custom config.                                                                                |
 | --line-length             | -l    | When a number is provided, it will be used as the line length for formatting code.                                       |
 
@@ -120,7 +120,7 @@ The following `arguments` are available on create dialog command:
 | --help                    | -h    | Prints this usage information.                                                                                           |
 | --[no-]exclude-route      |       | When a route is excluded it will not be added to your app.dart routes collection.                                        |
 | --[no-]model              |       | When model is provided, StackedView will be used instead of StatelessWidget and a Model will be created. Defaults: **true**. |
-| --template                | -t    | Selects the type of dialog to create instead of the default empty dialog. Allowed: **empty**.                            |
+| --template                | -t    | Selects the type of dialog to create instead of the default empty dialog.                                                |
 | --config-path             | -c    | Sets the file path for the custom config.                                                                                |
 | --line-length             | -l    | When a number is provided, it will be used as the line length for formatting code.                                       |
 
