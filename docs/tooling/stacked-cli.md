@@ -49,6 +49,15 @@ stacked create view login
 
 This will create a new View called `LoginView` with its associated ViewModel in the `ui/views` folder. This will also create the ViewModel tests file, as well as add the View to the available routes in `app.dart` file.
 
+The following `arguments` are available on create view command:
+
+**-h, --help**: Prints this usage information.  
+**--[no-]exclude-route**: When a route is excluded it will not be added to your app.dart routes collection.  
+**--[no-]v1**: When v1 or use-builder is provided, ViewModelBuilder will be used instead of StackedView.  
+**-t, --template**: Selects the type of starter template to use when creating a new app. One oriented for mobile first or web first. Available options: mobile (default), web.  
+**-c, --config-path**: Sets the file path for the custom config.  
+**-l, --line-length**: When a number is provided, it will be used as the line length for formatting code.  
+
 ### Add a New Service
 
 From the root folder of your Stacked application, run the command:
