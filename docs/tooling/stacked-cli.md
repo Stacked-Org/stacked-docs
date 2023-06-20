@@ -68,6 +68,16 @@ stacked create service stripe
 
 This will create a new Service called `StripeService` in the `services` folder and add it to the dependencies in the `app.dart` file.
 
+The following `arguments` are available on create service command:
+
+| Argument                  | Alias | Description                                                                                                      |
+| ------------------------- | ----- | ---------------------------------------------------------------------------------------------------------------- |
+| --help                    | -h    | Prints this usage information.                                                                                   |
+| --[no-]exclude-dependency |       | When a route is excluded it will not be added to your app.dart routes collection.                                |
+| --template                | -t    | Selects the type of starter template to use when creating a new app. One oriented for mobile first or web first. Allowed: **mobile**, web. |
+| --config-path             | -c    | Sets the file path for the custom config.                                                                        |
+| --line-length             | -l    | When a number is provided, it will be used as the line length for formatting code.                               |
+
 ### Add a New Bottom Sheet
 
 From the root folder of your Stacked application, run the command:
