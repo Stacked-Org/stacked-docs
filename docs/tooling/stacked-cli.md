@@ -28,6 +28,17 @@ stacked create app my_app
 
 This will create a new flutter app based on your flutter version, add all the code required for a Stacked app and generate the required code. When the command completes navigate into the my_app folder and run the app.
 
+The following `arguments` are available on create app command:
+
+**-h, --help**: Prints this usage information.  
+**--[no-]v1**: When v1 or use-builder is provided, ViewModelBuilder will be used instead of StackedView.  
+**-t, --template**: Selects the type of starter template to use when creating a new app. One oriented for mobile first or web first. Available options: mobile (default), web.  
+**-c, --config-path**: Sets the file path for the custom config.  
+**--description**: The description to use for your new Flutter project. This string ends up in the pubspec.yaml file.  
+**--org**: The organization responsible for your new Flutter project, in reverse domain name notation.  
+**--platforms**: The platforms supported by this project. Platform folders will be generated in the target project. Available options: ios, android, windows, linux, macos, web  
+**-l, --line-length**: When a number is provided, it will be used as the line length for formatting code.  
+
 ### Add a New View
 
 From the root folder of your Stacked application, run the command:
