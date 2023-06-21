@@ -244,35 +244,45 @@ Now if you run `stacked create dialog error` you'll see that all the files are g
 
 If you want to use `stacked_cli` in a package that doesn't fit the structure that the CLI expects, then you can configure Stacked to look in the correct places. Create a new file in the root folder of your package called `stacked.json`. Inside the file, create a JSON body with the following properties:
 
-- `views_path`: The relative path where Views and ViewModels will be generated. Default: `ui/views`.
-- `services_path`: The relative path where Services will be generated. Default: `services`.
-- `bottom_sheets_path`: The relative path where BottomSheets will be generated. Default: `ui/bottom_sheets`.
-- `dialogs_path`: The relative path where Dialogs will be generated. Default: `ui/dialogs`.
-- `stacked_app_path`: The relative path to the file that contains the `StackedApp` setup. Default: `app/app.dart`.
-- `test_helpers_path`: The relative path to the file that contains the test_helpers (mocks, registerService, etc). Default: `helpers/test_helpers.dart`.
-- `test_services_path`: The relative path to where the Services' unit tests will be generated. Default: `services`.
-- `test_views_path`: The relative path to where the ViewModels' unit tests will be generated. Default: `viewmodels`.
-- `locator_name`: The name of the locator that Services are registered with. This is used when creating a new Service using the `create service` command. Default: `locator`.
-- `register_mocks_function`: The name of the function that registers all the Mocks when running a test. This is used when generating a test file during `create service` command. Default: `registerServices`.
+| Property | Description |
+| -------- | ----------- |
+| bottom_sheets_path | The path where BottomSheets will be generated. |
+| dialogs_sheets_path | The path where Dialogs will be generated. |
+| line_length | Passed into the Flutter formatter when running CLI commands. |
+| locator_name | The name of the locator that Services are registered with. This is used when creating a new Service using the `create service` command. |
+| prefer_web | Determines to use or not web template when no template argument is passed. |
+| register_mocks_function | The name of the function that registers all the Mocks when running a test. This is used when generating a test file during `create service` command. |
+| services_path | The path where Services will be generated. |
+| stacked_app_file_path | The path to the file that contains the `StackedApp` setup. |
+| test_helpers_file_path | The path to the file that contains the test helpers (mocks, registerService, etc). |
+| test_services_path | The path where the unit tests of the Services will be generated. |
+| test_views_path | The path where the unit tests of the ViewModels will be generated. |
+| test_widgets_path | The path where the unit tests of the Widgets will be generated. |
+| v1 | Indicates whether you want to use ViewModelBuilder (v1) or StackedView (v2). |
+| views_path | The path where Views and ViewModels will be generated. |
+| widgets_path | The path where Widgets and WidgetModels will be generated. |
 
 Only include the paths you want to customize. If you exclude a path, the default value will be used for it.
 
-### Example
+### Default Stacked configuration
 
 ```json
 {
-    "stacked_app_file_path" : "app/app.dart",
-    "services_path" : "services",
-    "views_path" : "ui/views",
     "bottom_sheets_path": "ui/bottom_sheets",
     "dialogs_path": "ui/dialogs",
-    "test_helpers_file_path" : "helpers/test_helpers.dart",
-    "test_services_path" : "services",
-    "test_views_path" : "viewmodels",
-    "locator_name" : "locator",
-    "register_mocks_function" : "registerServices",
-    "v1": false, // Indicates whether you want to use ViewModelBuilder(v1) or the the new StackedView (v2)
-    "line_length": 80 // Passed into the flutter formatter when running CLI commands
+    "line_length": 80,
+    "locator_name": "locator",
+    "prefer_web": true,
+    "register_mocks_function": "registerServices",
+    "services_path": "services",
+    "stacked_app_file_path": "app/app.dart",
+    "test_helpers_file_path": "helpers/test_helpers.dart",
+    "test_services_path": "services",
+    "test_views_path": "viewmodels",
+    "test_widgets_path": "widget_models",
+    "v1": false,
+    "views_path": "ui/views",
+    "widgets_path": "ui/widgets/common"
 }
 ```
 
