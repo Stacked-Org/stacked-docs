@@ -18,7 +18,7 @@ To get started, install the `stacked_cli` package on your machine:
 dart pub global activate stacked_cli
 ```
 
-### Creating a App
+### Creating a new App
 
 To create your first Stacked app, all you need to do is run:
 
@@ -41,7 +41,7 @@ The following `arguments` are available on create app command:
 | --platforms               |       | The platforms supported by this project. Platform folders will be generated in the target project. Allowed: ios, android, windows, linux, macos, web |
 | --line-length             | -l    | When a number is provided, it will be used as the line length for formatting code.                               |
 
-### Add a New View
+### Add a new View
 
 From the root folder of your Stacked application, run the command:
 
@@ -62,7 +62,7 @@ The following `arguments` are available on create view command:
 | --config-path             | -c    | Sets the file path for the custom config.                                                                        |
 | --line-length             | -l    | When a number is provided, it will be used as the line length for formatting code.                               |
 
-### Add a New Service
+### Add a new Service
 
 From the root folder of your Stacked application, run the command:
 
@@ -82,7 +82,7 @@ The following `arguments` are available on create service command:
 | --config-path             | -c    | Sets the file path for the custom config.                                                                        |
 | --line-length             | -l    | When a number is provided, it will be used as the line length for formatting code.                               |
 
-### Add a New Bottom Sheet
+### Add a new Bottom Sheet
 
 From the root folder of your Stacked application, run the command:
 
@@ -103,7 +103,7 @@ The following `arguments` are available on create bottom_sheet command:
 | --config-path             | -c    | Sets the file path for the custom config.                                                                                |
 | --line-length             | -l    | When a number is provided, it will be used as the line length for formatting code.                                       |
 
-### Add a New Dialog
+### Add a new Dialog
 
 From the root folder of your Stacked application, run the command:
 
@@ -123,6 +123,27 @@ The following `arguments` are available on create dialog command:
 | --template                | -t    | Selects the type of dialog to create instead of the default empty dialog.                                                |
 | --config-path             | -c    | Sets the file path for the custom config.                                                                                |
 | --line-length             | -l    | When a number is provided, it will be used as the line length for formatting code.                                       |
+
+### Add a new Widget
+
+From the root folder of your Stacked application, run the command:
+
+```shell
+stacked create widget users_list
+```
+
+This will create a new Widget called `UsersList` with its associated WidgetModel called `UsersListModel` in the `ui/widgets/common/users_list` folder. This will also create the WidgetModel test file inside `test/widget_models/`.
+
+The following `arguments` are available on create view command:
+
+| Argument                  | Alias | Description                                                                                                      |
+| ------------------------- | ----- | ---------------------------------------------------------------------------------------------------------------- |
+| --help                    | -h    | Prints this usage information.                                                                                   |
+| --[no-]model              |       | When model is provided, StackedView will be used instead of StatelessWidget and a Model will be created.         |
+| --template                | -t    | Selects the type of widget to create instead of the default empty widget.                                        |
+| --config-path             | -c    | Sets the file path for the custom config.                                                                        |
+| --path                    | -p    | Sets the path for the component.                                                                                 |
+| --line-length             | -l    | When a number is provided, it will be used as the line length for formatting code.                               |
 
 ### Generate Code
 
