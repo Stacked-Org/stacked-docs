@@ -11,7 +11,7 @@ Si has seguido desde el [inicio](00-overview.md) habrás visto este código:
 _navigationService.replaceWith(Routes.homeView);
 ```
 
-La navegación forma parte de los Servicios de Stacked, un grupo de servicios dentro de Stacked que te ayuda a realizar ciertas tareas en tu código. _Para saber más sobre qué es un servicio, [lee esto](/basics-in-depth/services.md)_.
+La navegación forma parte de los Servicios de Stacked, un grupo de servicios dentro de Stacked que te ayuda a realizar ciertas tareas en tu código. _Para saber más sobre qué es un servicio, [lee esto](/in-depth/services.md)_.
 
 Los servicios incluidos actualmente son:
 
