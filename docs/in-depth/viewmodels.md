@@ -2,7 +2,7 @@
 id: viewmodels
 title: View Models
 sidebar_label: View Models
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 
