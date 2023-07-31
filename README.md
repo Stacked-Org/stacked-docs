@@ -4,6 +4,12 @@ This repository contains the documentation website code and Markdown source file
 
 Use the table of contents icon in the top left corner of this document to get to a specific section of this guide quickly.
 
+## Maintenance Schedule
+
+This schedule indicates when work will be done on Stacked. Work includes fixing issues, building new features, improving the code stability or implementing automation. If there is no urgent breaking bug you can expect responses to your issues on the days listed below from one of the maintainers.
+
+- [Fernando](https://github.com/ferrarafer): Monday
+
 ## Contributing
 
 See [the contributing guide](CONTRIBUTING.md) for detailed instructions on how to get started with our project. 
@@ -15,10 +21,6 @@ On the Stacked Docs site, you can click the edit this page button at the bottom 
 For more complex contributions, you can open an issue using the most appropriate [issue template](https://github.com/FilledStacks/stacked-docs/issues/new/choose) to describe the changes you'd like to see.
 
 If you're looking for a way to contribute, you can scan through our [existing issues](https://github.com/FilledStacks/stacked-docs/issues) for something to work on. When ready, check out [Getting Started with Contributing](/CONTRIBUTING.md) for detailed instructions.
-
-## Schedule
-
-[FilledStacks](https://github.com/filledstacks): Wednesdays I write more docs or examples for Stacked 
 
 ### Join us in discussions
 
