@@ -48,7 +48,7 @@ export default function Home() {
           className="flex flex-col items-center"
         >
           <p className="max-w-[50ch] text-center py-2 text-3xl text-gray-500">
-            <Translate id="index.main.subtitle">Build scalable, testable and maintainable code for you and your team.</Translate>
+            <Translate id="index.main.subtitle">Write testable and maintainable code for you and your team.</Translate>
           </p>
           <Link
             to="/docs/getting-started/overview"
@@ -155,53 +155,6 @@ export default function Home() {
           alt=""
         />
       </section>
-
-
-      {/* ===== Course banner section ===== */}
-      {/* <div className="bg-gray-50">
-        <section className="container text-center md:text-left flex gap-4 flex-col-reverse md:flex-row justify-evenly items-center min-h-[35vh] mx-auto py-16">
-          <div>
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              className="flex justify-center md:justify-start"
-            >
-              <motion.h1 >🌍</motion.h1>
-            </motion.div>
-            <motion.h2
-              initial={{ y: 100, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{
-                duration: 0.6,
-                type: "spring",
-                bounce: 0.5,
-              }}
-              className="text-4xl"
-            >
-              <Translate id="index.course.title">An Official Stacked Web Course</Translate>
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.05 }}
-              className="max-w-md text-xl"
-            >
-              <Translate id="index.course.description">A 29 chapter detailed course to building production applications with Stacked, on the Web</Translate>
-              <Link to="https://masterflutterweb.carrd.co/" className="block mt-2">
-                <Translate id="index.course.button">Learn More</Translate>
-              </Link>
-            </motion.p>
-          </div>
-          <motion.img
-            initial={{ x: 100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.4 }}
-            className="w-full max-w-2xl"
-            src="/img/landing/course-cover.svg"
-            alt=""
-          />
-        </section>
-      </div> */}
 
 
       <div className="bg-gray-50">
