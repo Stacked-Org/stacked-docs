@@ -99,7 +99,7 @@ Dado que esto no es un tutorial de "construir una interfaz de usuario Flutter", 
 
 ![UI Ejemplo de Formulario Stacked](/img/getting-started/04-reverse-text-screenshot.png)
 
-Antes de que digas nada, sé que esta es la interfaz de usuario de formularios más bonita que has visto nunca. Así que por favor, si quieres hacerme cumplidos sobre la interfaz de usuario, [Únete a nuestro Discord](https://discord.gg/auR5sJyx) donde discutimos un montón de cosas geniales de Stacked. 😁
+Antes de que digas nada, sé que esta es la interfaz de usuario de formularios más bonita que has visto nunca. Así que por favor, si quieres hacerme cumplidos sobre la interfaz de usuario, [Únete a nuestro Discord](https://discord.gg/SAsvNZRep3) donde discutimos un montón de cosas geniales de Stacked. 😁
 
 <details>
 <summary>TextReverseView código de construcción</summary>

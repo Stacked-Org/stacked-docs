@@ -53,4 +53,4 @@ That’s what we’re working towards. Eventually we’ll replace the `Navigatio
 
 Yes. The `RouterService` works the same as the `NavigationService`. The only difference is that it has more functionality catered towards url-style navigation. Things like dynamic path segments, route redirects, queryParameters and route guarding. 
 
-If you have more frequently asked questions please post them in the discussions on git or in the [community discord](https://discord.gg/kTqfywkp).
+If you have more frequently asked questions please post them in the discussions on git or in the [community discord](https://discord.gg/SAsvNZRep3).

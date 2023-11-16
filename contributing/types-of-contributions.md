@@ -4,7 +4,7 @@ You can contribute to the Stacked Docs content and site in several ways. This re
 ### :mega: Discord
 Discord is where we have conversations.
 
-If you'd like help troubleshooting a docs PR you're working on, have a great new idea, or want to share something amazing you've learned in our docs, join us in [Discord](https://discord.gg/auR5sJyx).
+If you'd like help troubleshooting a docs PR you're working on, have a great new idea, or want to share something amazing you've learned in our docs, join us in [Discord](https://discord.gg/SAsvNZRep3).
 
 ### :lady_beetle: Issues
 [Issues](https://docs.github.com/en/github/managing-your-work-on-github/about-issues) are used to track tasks that contributors can help with. If an issue has a triage label, we haven't reviewed it yet, and you shouldn't begin work on it.

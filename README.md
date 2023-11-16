@@ -24,7 +24,7 @@ If you're looking for a way to contribute, you can scan through our [existing is
 
 ### Join us in discussions
 
-There is a Discord to talk about all sorts of topics related to Stacked and FilledStacks. For example: if you'd like help troubleshooting a PR, have a great new idea, or want to share something amazing you've learned in our docs, join us in the [Discord](https://discord.gg/auR5sJyx).
+There is a Discord to talk about all sorts of topics related to Stacked and FilledStacks. For example: if you'd like help troubleshooting a PR, have a great new idea, or want to share something amazing you've learned in our docs, join us in the [Discord](https://discord.gg/SAsvNZRep3).
 
 ## License
 
