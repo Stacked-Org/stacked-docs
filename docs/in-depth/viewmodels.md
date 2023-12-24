@@ -483,7 +483,7 @@ class HomeView extends StatelessWidget {
           type: BottomNavigationBarType.fixed,
           backgroundColor: Colors.grey[800],
           currentIndex: viewModel.currentTabIndex,
-          onTap: viewModel.setTabIndex,
+          onTap: viewModel.setIndex,
           items: [
             BottomNavigationBarItem(
               title: Text('Posts'),
