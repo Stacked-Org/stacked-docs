@@ -63,6 +63,11 @@ import 'text_reverse_view.form.dart'; // 1. Import the generated file
 class TextReverseView extends StackedView<TextReverseViewModel>
   with $TextReverseView { // 2. Mix in $TextReverseView Mixin
 
+@override
+  void onViewModelReady(TextReverseViewModel viewModel) {
+    syncFormWithViewModel(viewModel);
+  }  //3. override the function
+
   @override
   Widget builder(
     BuildContext context,
