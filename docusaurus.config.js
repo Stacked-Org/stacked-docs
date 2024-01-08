@@ -44,6 +44,7 @@ const config = {
     localeConfigs: {
       en: { label: 'English' },
       es: { label: 'Español' },
+      fr: { label: 'Français' },
     },
   },
 
