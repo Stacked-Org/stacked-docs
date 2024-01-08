@@ -1,0 +1,10 @@
+{
+  "title": {
+    "message": "Stacked",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "Stacked Logo",
+    "description": "The alt text of navbar logo"
+  }
+}
