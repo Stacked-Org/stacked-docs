@@ -13,7 +13,7 @@ Overview of the workflow to create a translated document on the website:
 
 ### Configure alternative locale
 
-Add the locale you want to work for translation as in the code below. On the code we can see that the Spanish locale has been added to the configuration.
+Add the locale you want to work for translation as in the code below. On the code we can see that the Spanish and French locales have been added to the configuration.
 
 ```javascript
 i18n: {
@@ -22,6 +22,7 @@ i18n: {
     localeConfigs: {
         en: { label: 'English' },
         es: { label: 'Español' },
+        fr: { label: 'Français' },
     },
 },
 ```
@@ -106,6 +107,6 @@ Official Docusaurus content plugins extensively use Markdown/MDX files and allow
 Copy your docs Markdown files from `docs/` to `i18n/{locale}/docusaurus-plugin-content-docs/current`, and translate them:
 
 ```bash
-mkdir -p i18n/fr/docusaurus-plugin-content-docs/current
-cp -r docs/** i18n/fr/docusaurus-plugin-content-docs/current
+mkdir -p i18n/{locale}/docusaurus-plugin-content-docs/current
+cp -r docs/** i18n/{locale}/docusaurus-plugin-content-docs/current
 ```
