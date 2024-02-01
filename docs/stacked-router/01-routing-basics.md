@@ -8,7 +8,7 @@ Stacked has been device installed, app-only since the beginning of the product. 
 
 For that reason, we recently introduced a new service to Stacked that has better support for the web. It’s called the `RouterService`. This is the service that serves the same purpose as the `NavigationSevice` but is better suited for navigation on the web. The setup for the `RouterService` has one extra step compared to the `NavigationService`.
 
-_This setup is included if you generate a `Stacked` project using the`—template=web` option when creating an app with the CLI._
+_This setup is included if you generate a `Stacked` project using the`—t web` option when creating an app with the CLI._
 
 # Web Navigation Setup
 
