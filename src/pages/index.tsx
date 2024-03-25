@@ -59,13 +59,49 @@ export default function Home() {
           <Link to="https://masterflutterweb.carrd.co/" target="_blank" className="mt-6 hover:text-white hover:no-underline px-6 py-4 text-lg font-semibold text-white transition-all bg-sky-700 border-none rounded outline-none cursor-pointer ring-transparent focus:ring-purple-500 ring hover:bg-[#444] active:scale-90">
             <Translate id="index.main.likeUs">Master Stacked on the Web</Translate>
           </Link>
-          <p className="max-w-[50ch] text-center py-2 text-1xl text-gray-500">Featured on the Official Flutter channel 👇</p>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/06vVccZvGuo?si=T86bVSE92gWlMk5m" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
         </motion.div>
       </main>
 
 
       <div className="bg-gray-50">
+        <section className="container text-center md:text-left flex gap-4 flex-col-reverse md:flex-row-reverse justify-evenly items-center min-h-[35vh] mx-auto py-16">
+          <div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="flex justify-center md:justify-start"
+            >
+
+            </motion.div>
+            <motion.h3
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                duration: 0.6,
+                type: "spring",
+                bounce: 0.5,
+              }}
+              className="text-4xl"
+            >
+              <Translate id="index.forms.title">Featured on Official Flutter Channel</Translate>
+            </motion.h3>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.05 }}
+              className="max-w-md text-xl"
+            >
+              <Translate id="index.forms.description">Learn everything about Stacked by creating an app with Dane (creator) and Craig (Flutter DevRel Lead) in this live stream on the left.</Translate>
+              <Link to="/docs/getting-started/form-basics" className="block mt-2">
+              </Link>
+            </motion.p>
+          </div>
+          <motion.div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/06vVccZvGuo?si=T86bVSE92gWlMk5m" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </motion.div>
+        </section>
         <section className="container text-center md:text-left flex gap-4 flex-col-reverse md:flex-row justify-evenly items-center min-h-[35vh] mx-auto py-16">
           <div>
             <motion.div
