@@ -59,6 +59,8 @@ export default function Home() {
           <Link to="https://masterflutterweb.carrd.co/" target="_blank" className="mt-6 hover:text-white hover:no-underline px-6 py-4 text-lg font-semibold text-white transition-all bg-sky-700 border-none rounded outline-none cursor-pointer ring-transparent focus:ring-purple-500 ring hover:bg-[#444] active:scale-90">
             <Translate id="index.main.likeUs">Master Stacked on the Web</Translate>
           </Link>
+          <p className="max-w-[50ch] text-center py-2 text-1xl text-gray-500">Featured on the Official Flutter channel 👇</p>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/06vVccZvGuo?si=T86bVSE92gWlMk5m" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </motion.div>
       </main>
 
