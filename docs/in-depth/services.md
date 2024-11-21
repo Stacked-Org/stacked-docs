@@ -156,6 +156,51 @@ class ArtistService {
 
 We locate each of the Services and then use their functionalities to achieve our goal. This makes our feature development process very clear and easy to read when looking at our App Services.
 
+## Reactive Services
+A scenario we encountered is how to react to values changed by different ViewModels. The stacked architecture makes provision for this
+through `ReactiveViewModel` and `ListenableServiceMixin`.
+
+### ReactiveServiceMixin
+In the stacked library, we have a `ReactiveServiceMixin` which can be used to store a state that is needed across multiple ViewModels. The approach is simple. Just set the state variable and call `notifyListeners()`. This will notify any ViewModel that registered this ReactiveServiceMixin, and the UI will be updated accordingly. 
+
+An example of such a service looks like the following:
+
+```dart
+class AudioService with ReactiveServiceMixin{
+  bool _isPlaying = false;
+  bool get isPlaying => _isPlaying;
+
+  void Play(){
+    playAudio();
+    _isPlaying = true;
+    notifyListeners();
+  }
+
+  void Stop(){
+    stopAudio();
+    _isPlaying = false;
+    notifyListeners();
+  }
+}
+```
+Simple right? Then how do we register this ReactiveService with multiple viewmodels? Let's move onto the `ReactiveViewModel`.
+
+### ReactiveViewModel
+This ViewModel extends the `BaseViewModel` and adds a function that allows you to listen to services that are being used in the ViewModel. There are two things you have to do to make a ViewModel react to changes in a service.
+
+1. Extend from `ReactiveViewModel`.
+2. Implement the `listenableServices` getter that return a list of reactive services.
+
+```dart
+class AnyViewModel extends ReactiveViewModel {
+  final _audioService = locator<AudioService>();
+  bool get isPlaying => _audioService.isPlaying;
+
+  @override
+  List<ReactiveServiceMixin> get reactiveServices => [_audioService];
+}
+```
+
 This wraps up our definition of Services.
 
 ---
