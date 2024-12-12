@@ -426,7 +426,7 @@ class MultipleFuturesExampleView extends StatelessWidget {
 
 ### MultipleStreamViewModel
 
-De forma similar al `StreamViewModel`, también tenemos un `MultipleStreamViewModel` que le permite proporcionar múltiples flujos a través de un Map<String, Stream>. Cualquiera de los valores de estos streams se almacenará en data[key] y lo mismo ocurre con los errores. Cada valor emitido llamará a `notifyListeners()` para actualizar la interfaz de usuario. El `MultipleStreamViewModel` requiere que se redefina el `streamsMap`.
+De forma similar al `StreamViewModel`, también tenemos un `MultipleStreamViewModel` que le permite proporcionar múltiples flujos a través de un Map\<String, Stream\>. Cualquiera de los valores de estos streams se almacenará en data[key] y lo mismo ocurre con los errores. Cada valor emitido llamará a `notifyListeners()` para actualizar la interfaz de usuario. El `MultipleStreamViewModel` requiere que se redefina el `streamsMap`.
 
 ```dart
 const String _NumbersStreamKey = 'numbers-stream';

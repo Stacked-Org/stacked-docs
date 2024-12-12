@@ -29,10 +29,10 @@ i18n: {
 
 ### Translation files
 
-All translation data for the selected locale is stored in i18n/{locale}. Each plugin sources its own translated content under the corresponding folder, while the code.json file defines all text labels used in the React code.
+All translation data for the selected locale is stored in i18n/\{locale\}. Each plugin sources its own translated content under the corresponding folder, while the code.json file defines all text labels used in the React code.
 
 **Note**
-After copying files around, restart your site with npm run start -- --locale {locale}. Hot-reload will work better when editing existing files.
+After copying files around, restart your site with npm run start -- --locale \{locale\}. Hot-reload will work better when editing existing files.
 
 ```bash
 npm run start -- --locale es
